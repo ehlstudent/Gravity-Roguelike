@@ -45,7 +45,8 @@ namespace GravityRoguelike.World
             targetTilemap.ClearAllTiles();
         }
 
-        private void ValidateReferences()
+        /// <summary>Checks required references without changing output, for preflight before data edits.</summary>
+        public void ValidateReferences()
         {
             if (targetTilemap == null)
                 throw new InvalidOperationException("RoomTilemapRenderer requires a dedicated target Tilemap. Existing output was not cleared.");
