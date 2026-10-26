@@ -27,6 +27,17 @@ namespace GravityRoguelike.World
     {
         [SerializeField] private RectInt worldBounds = new RectInt(0, 0, 60, 36);
         [SerializeField] private int worldSeed = 123;
+        [Header("Random placement (component context menu)")]
+        [SerializeField] private int requestedRoomCount = 8;
+        [SerializeField] private int minRoomWidth = 8;
+        [SerializeField] private int maxRoomWidth = 18;
+        [SerializeField] private int minRoomHeight = 6;
+        [SerializeField] private int maxRoomHeight = 14;
+        [SerializeField] private int minimumGap = 2;
+        [SerializeField] private int maxPlacementAttempts = 500;
+        [TextArea(2, 4)]
+        [SerializeField] private string lastGenerationSummary;
+        [Header("Editable room layout")]
         [SerializeField] private List<RoomPreviewEntry> rooms = new List<RoomPreviewEntry>
         {
             new RoomPreviewEntry(1, new RectInt(4, 4, 16, 12), 101),
@@ -44,6 +55,52 @@ namespace GravityRoguelike.World
         private WireBounds[] roomWires = Array.Empty<WireBounds>();
         private string lastReportedErrors;
         private bool rebuildPending = true;
+
+        [ContextMenu("Generate New Random Layout")]
+        private void GenerateNewRandomLayout()
+        {
+#if UNITY_EDITOR
+            UnityEditor.Undo.RecordObject(this, "Randomize World Seed");
+#endif
+
+            worldSeed = Guid.NewGuid().GetHashCode();
+            GenerateRoomLayout();
+        }
+        /// <summary>Explicitly replaces the editable preview layout; never called by repaint or Update.</summary>
+        [ContextMenu("Generate Room Layout")]
+        private void GenerateRoomLayout()
+        {
+            try
+            {
+                RoomPlacementResult result = RoomPlacementGenerator.Generate(worldBounds, worldSeed,
+                    requestedRoomCount, minRoomWidth, maxRoomWidth, minRoomHeight, maxRoomHeight,
+                    minimumGap, maxPlacementAttempts);
+#if UNITY_EDITOR
+                UnityEditor.Undo.RecordObject(this, "Generate Room Layout");
+#endif
+                var generatedRooms = new List<RoomPreviewEntry>(result.PlacedCount);
+                foreach (RoomData room in result.World.Rooms)
+                    generatedRooms.Add(new RoomPreviewEntry(room.Id, room.Bounds, room.Seed));
+                rooms = generatedRooms;
+                lastGenerationSummary = $"Last generation: placed {result.PlacedCount}/{result.RequestedCount} rooms in {result.AttemptsUsed} attempts."
+                    + (result.FinishedEarly ? $" Attempt limit reached; shortfall: {result.RequestedCount - result.PlacedCount}." : " Request completed.");
+                RebuildPreview();
+                rebuildPending = false;
+                if (result.FinishedEarly) Debug.LogWarning(lastGenerationSummary, this);
+                else Debug.Log(lastGenerationSummary, this);
+#if UNITY_EDITOR
+                UnityEditor.EditorUtility.SetDirty(this);
+                if (!Application.isPlaying && gameObject.scene.IsValid())
+                    UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+                UnityEditor.SceneView.RepaintAll();
+#endif
+            }
+            catch (ArgumentException exception)
+            {
+                // Preserve the last layout when settings are invalid.
+                Debug.LogWarning($"Room layout generation failed: {exception.Message}", this);
+            }
+        }
 
         private struct WireBounds
         {
