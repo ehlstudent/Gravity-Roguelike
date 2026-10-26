@@ -168,7 +168,7 @@ MonoBehaviour:
     y: 0
     width: 80
     height: 80
-  worldSeed: 1250048565
+  worldSeed: 2028033625
   requestedRoomCount: 8
   minRoomWidth: 8
   maxRoomWidth: 20
@@ -176,64 +176,64 @@ MonoBehaviour:
   maxRoomHeight: 14
   minimumGap: 2
   maxPlacementAttempts: 500
-  lastGenerationSummary: 'Last generation: placed 8/8 rooms in 14 attempts. Request completed.'
+  lastGenerationSummary: 'Last generation: placed 8/8 rooms in 17 attempts. Request completed.'
   rooms:
   - Id: 1
     Bounds:
-      x: 15
-      y: 44
-      width: 8
-      height: 12
-    Seed: 682462777
+      x: 63
+      y: 57
+      width: 13
+      height: 10
+    Seed: 1413825837
   - Id: 2
     Bounds:
-      x: 21
-      y: 18
-      width: 17
+      x: 33
+      y: 27
+      width: 12
       height: 10
-    Seed: 517178585
+    Seed: 1176424460
   - Id: 3
     Bounds:
-      x: 19
-      y: 5
-      width: 11
-      height: 8
-    Seed: 612716418
+      x: 35
+      y: 7
+      width: 14
+      height: 13
+    Seed: 477106923
   - Id: 4
     Bounds:
-      x: 34
-      y: 47
-      width: 20
-      height: 10
-    Seed: 371712368
+      x: 52
+      y: 29
+      width: 10
+      height: 12
+    Seed: 1273437239
   - Id: 5
     Bounds:
-      x: 64
-      y: 17
-      width: 14
+      x: 56
+      y: 4
+      width: 9
       height: 14
-    Seed: 1126773965
+    Seed: 148680538
   - Id: 6
     Bounds:
-      x: 42
-      y: 23
-      width: 19
-      height: 14
-    Seed: 1075235715
+      x: 71
+      y: 30
+      width: 8
+      height: 10
+    Seed: 2017930243
   - Id: 7
     Bounds:
-      x: 1
-      y: 3
-      width: 9
+      x: 46
+      y: 61
+      width: 15
       height: 10
-    Seed: 976676738
+    Seed: 1577864688
   - Id: 8
     Bounds:
-      x: 13
-      y: 30
-      width: 14
-      height: 11
-    Seed: 90360668
+      x: 50
+      y: 46
+      width: 9
+      height: 12
+    Seed: 1934887515
   worldColor: {r: 0, g: 0.85, b: 1, a: 1}
   roomColor: {r: 0.3, g: 1, b: 0.35, a: 1}
   validationSummary: 'Valid preview: 8 rooms. Cyan: world; green: valid rooms; red: invalid rooms.'
