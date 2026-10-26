@@ -56,6 +56,41 @@ namespace GravityRoguelike.World
         private string lastReportedErrors;
         private bool rebuildPending = true;
 
+        /// <summary>Places rooms using this preview's Inspector settings, without changing the preview.</summary>
+        public RoomPlacementResult CreatePlacement()
+        {
+            return RoomPlacementGenerator.Generate(worldBounds, worldSeed,
+                requestedRoomCount, minRoomWidth, maxRoomWidth, minRoomHeight, maxRoomHeight,
+                minimumGap, maxPlacementAttempts);
+        }
+
+        /// <summary>Displays a placement result as editable bounds; does not alter its cell contents.</summary>
+        public void ShowPlacement(RoomPlacementResult result)
+        {
+            if (result == null) throw new ArgumentNullException(nameof(result));
+#if UNITY_EDITOR
+            UnityEditor.Undo.RecordObject(this, "Show Room Layout");
+#endif
+            worldBounds = result.World.Bounds;
+            worldSeed = result.World.Seed;
+            var generatedRooms = new List<RoomPreviewEntry>(result.PlacedCount);
+            foreach (RoomData room in result.World.Rooms)
+                generatedRooms.Add(new RoomPreviewEntry(room.Id, room.Bounds, room.Seed));
+            rooms = generatedRooms;
+            lastGenerationSummary = $"Last generation: placed {result.PlacedCount}/{result.RequestedCount} rooms in {result.AttemptsUsed} attempts."
+                + (result.FinishedEarly ? $" Attempt limit reached; shortfall: {result.RequestedCount - result.PlacedCount}." : " Request completed.");
+            RebuildPreview();
+            rebuildPending = false;
+            if (result.FinishedEarly) Debug.LogWarning(lastGenerationSummary, this);
+            else Debug.Log(lastGenerationSummary, this);
+#if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(this);
+            if (!Application.isPlaying && gameObject.scene.IsValid())
+                UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+            UnityEditor.SceneView.RepaintAll();
+#endif
+        }
+
         [ContextMenu("Generate New Random Layout")]
         private void GenerateNewRandomLayout()
         {
@@ -72,28 +107,7 @@ namespace GravityRoguelike.World
         {
             try
             {
-                RoomPlacementResult result = RoomPlacementGenerator.Generate(worldBounds, worldSeed,
-                    requestedRoomCount, minRoomWidth, maxRoomWidth, minRoomHeight, maxRoomHeight,
-                    minimumGap, maxPlacementAttempts);
-#if UNITY_EDITOR
-                UnityEditor.Undo.RecordObject(this, "Generate Room Layout");
-#endif
-                var generatedRooms = new List<RoomPreviewEntry>(result.PlacedCount);
-                foreach (RoomData room in result.World.Rooms)
-                    generatedRooms.Add(new RoomPreviewEntry(room.Id, room.Bounds, room.Seed));
-                rooms = generatedRooms;
-                lastGenerationSummary = $"Last generation: placed {result.PlacedCount}/{result.RequestedCount} rooms in {result.AttemptsUsed} attempts."
-                    + (result.FinishedEarly ? $" Attempt limit reached; shortfall: {result.RequestedCount - result.PlacedCount}." : " Request completed.");
-                RebuildPreview();
-                rebuildPending = false;
-                if (result.FinishedEarly) Debug.LogWarning(lastGenerationSummary, this);
-                else Debug.Log(lastGenerationSummary, this);
-#if UNITY_EDITOR
-                UnityEditor.EditorUtility.SetDirty(this);
-                if (!Application.isPlaying && gameObject.scene.IsValid())
-                    UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
-                UnityEditor.SceneView.RepaintAll();
-#endif
+                ShowPlacement(CreatePlacement());
             }
             catch (ArgumentException exception)
             {
