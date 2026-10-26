@@ -35,6 +35,13 @@ namespace GravityRoguelike.World
         [SerializeField] private int maxRoomHeight = 14;
         [SerializeField] private int minimumGap = 2;
         [SerializeField] private int maxPlacementAttempts = 500;
+        [Header("Initial room noise")]
+        [Tooltip("Probability of Solid for each interior cell: 0.45 means a 45% chance, not an exact fill percentage. Applied by Generate and Render World.")]
+        [Range(0f, 1f)]
+        [SerializeField] private float initialSolidProbability = 0.45f;
+
+        public float InitialSolidProbability => initialSolidProbability;
+
         [TextArea(2, 4)]
         [SerializeField] private string lastGenerationSummary;
         [Header("Editable room layout")]

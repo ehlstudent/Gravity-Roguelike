@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GravityRoguelike.World.Development
 {
-    /// <summary>Explicit development pipeline; placement settings live only on WorldBoundsPreview.</summary>
+    /// <summary>Explicit development pipeline; placement and noise settings live on WorldBoundsPreview.</summary>
     public class RoomWorldPreview : MonoBehaviour
     {
         [SerializeField] private WorldBoundsPreview boundsPreview;
@@ -28,7 +28,8 @@ namespace GravityRoguelike.World.Development
             {
                 RoomPlacementResult result = boundsPreview.CreatePlacement();
                 foreach (RoomData room in result.World.Rooms)
-                    RoomBorderGenerator.Generate(room);
+                    // Noise initialization reuses border generation before filling the interior.
+                    RoomNoiseGenerator.Generate(room, boundsPreview.InitialSolidProbability);
 
                 roomRenderer.RenderWorld(result.World);
                 GeneratedWorld = result.World;
