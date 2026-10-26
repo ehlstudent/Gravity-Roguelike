@@ -3,17 +3,58 @@ using UnityEngine;
 
 namespace GravityRoguelike.World.Development
 {
-    /// <summary>Explicit development pipeline; placement and noise settings live on WorldBoundsPreview.</summary>
+    /// <summary>Explicit development pipeline; settings live on WorldBoundsPreview.</summary>
     public class RoomWorldPreview : MonoBehaviour
     {
         [SerializeField] private WorldBoundsPreview boundsPreview;
         [SerializeField] private RoomTilemapRenderer roomRenderer;
 
         /// <summary>
-        /// Last successfully rendered data, retained in memory until regeneration or domain reload.
-        /// Inspector edits do not change this snapshot; invoke Generate and Render World again.
+        /// Current data, retained in memory until regeneration or domain reload.
+        /// Apply One CA Step evolves it; Generate and Render World resets it to seeded noise.
         /// </summary>
         public WorldData GeneratedWorld { get; private set; }
+
+        [ContextMenu("Apply One CA Step")]
+        public void ApplyOneCAStep()
+        {
+            if (GeneratedWorld == null)
+            {
+                Debug.LogWarning("Generate a world first using Generate and Render World before applying a CA step.", this);
+                return;
+            }
+            if (boundsPreview == null || roomRenderer == null)
+            {
+                Debug.LogError("CA step requires bounds preview and room renderer references. World data was not changed.", this);
+                return;
+            }
+
+            try
+            {
+                // Preflight everything needed by the entire operation before modifying any room.
+                int threshold = boundsPreview.SolidNeighbourThreshold;
+                RoomCellularAutomata.ValidateThreshold(threshold);
+                roomRenderer.ValidateReferences();
+
+                foreach (RoomData room in GeneratedWorld.Rooms)
+                    RoomCellularAutomata.ApplyStep(room, threshold);
+                roomRenderer.RenderWorld(GeneratedWorld);
+                Debug.Log($"Applied one CA step to {GeneratedWorld.Rooms.Count} rooms (threshold {threshold}).", this);
+#if UNITY_EDITOR
+                if (!Application.isPlaying && gameObject.scene.IsValid())
+                    UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+                UnityEditor.SceneView.RepaintAll();
+#endif
+            }
+            catch (ArgumentException exception)
+            {
+                Debug.LogError($"CA step failed: {exception.Message}", this);
+            }
+            catch (InvalidOperationException exception)
+            {
+                Debug.LogError($"CA step failed: {exception.Message}", this);
+            }
+        }
 
         [ContextMenu("Generate and Render World")]
         public void GenerateAndRenderWorld()

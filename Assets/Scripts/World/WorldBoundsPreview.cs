@@ -42,6 +42,13 @@ namespace GravityRoguelike.World
 
         public float InitialSolidProbability => initialSolidProbability;
 
+        [Header("Cellular Automata starter rule")]
+        [Tooltip("An interior cell becomes Solid when at least this many of its eight surrounding neighbours are Solid. The centre cell is excluded. Applied only by Apply One CA Step.")]
+        [Range(0, 8)]
+        [SerializeField] private int solidNeighbourThreshold = 5;
+
+        public int SolidNeighbourThreshold => solidNeighbourThreshold;
+
         [TextArea(2, 4)]
         [SerializeField] private string lastGenerationSummary;
         [Header("Editable room layout")]
