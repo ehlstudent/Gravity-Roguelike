@@ -91,7 +91,7 @@ public class GravityRotator : MonoBehaviour
     {
         if (player == null) player = FindFirstObjectByType<PlayerController2D>();
         if (logRotations)
-            Debug.Log($"GravityRotator active (Q = left, E/R = right). Player found: {(player != null ? player.name : "none")}.", this);
+            Debug.Log($"GravityRotator active (Q = left, E = right). Player found: {(player != null ? player.name : "none")}.", this);
     }
 
     private void OnEnable()
