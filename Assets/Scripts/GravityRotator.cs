@@ -27,6 +27,8 @@ public class GravityRotator : MonoBehaviour
     [Tooltip("If enabled, the gravity can only be rotated while the player is standing on the ground.")]
     [SerializeField] private bool onlyWhenGrounded = false;
     [SerializeField] private PlayerController2D player;   // optional, found automatically
+    [Tooltip("Writes a Console message on start and on every rotation, to check that it works.")]
+    [SerializeField] private bool logRotations = true;
 
     /// <summary>0 = normal gravity (down). Positive values rotate the gravity counterclockwise in world space.</summary>
     public float GravityAngle { get; private set; }
@@ -54,19 +56,21 @@ public class GravityRotator : MonoBehaviour
         defaultGravity = Physics2D.gravity;
         gravityStrength = defaultGravity.magnitude;
 
-        // Q: room turns counterclockwise, R: room turns clockwise. Gamepad: shoulder buttons.
+        // Q: room turns counterclockwise, E: room turns clockwise. Gamepad: shoulder buttons.
         rotateLeftAction = new InputAction("RotateLeft", InputActionType.Button);
         rotateLeftAction.AddBinding("<Keyboard>/q");
         rotateLeftAction.AddBinding("<Gamepad>/leftShoulder");
 
         rotateRightAction = new InputAction("RotateRight", InputActionType.Button);
-        rotateRightAction.AddBinding("<Keyboard>/r");
+        rotateRightAction.AddBinding("<Keyboard>/e");
         rotateRightAction.AddBinding("<Gamepad>/rightShoulder");
     }
 
     private void Start()
     {
         if (player == null) player = FindFirstObjectByType<PlayerController2D>();
+        if (logRotations)
+            Debug.Log($"GravityRotator active (Q = left, E/R = right). Player found: {(player != null ? player.name : "none")}.", this);
     }
 
     private void OnEnable()
@@ -110,5 +114,6 @@ public class GravityRotator : MonoBehaviour
         Physics2D.gravity = down * gravityStrength;
 
         cooldownTimer = cooldown;
+        if (logRotations) Debug.Log($"Gravity rotated: angle {GravityAngle}, gravity {Physics2D.gravity}.", this);
     }
 }
