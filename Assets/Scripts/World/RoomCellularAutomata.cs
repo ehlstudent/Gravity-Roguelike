@@ -6,6 +6,27 @@ namespace GravityRoguelike.World
     /// <summary>Synchronous eight-neighbour starter rule, not a paper-specific implementation.</summary>
     public static class RoomCellularAutomata
     {
+        public static void ValidateIterationCount(int iterationCount)
+        {
+            if (iterationCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(iterationCount),
+                    "CA iteration count must be non-negative.");
+        }
+
+        /// <summary>
+        /// Evolves the current grid by exactly iterationCount synchronous steps.
+        /// Zero leaves every cell untouched, including the perimeter.
+        /// </summary>
+        public static void ApplyIterations(RoomData room, int solidNeighbourThreshold, int iterationCount)
+        {
+            if (room == null) throw new ArgumentNullException(nameof(room));
+            ValidateThreshold(solidNeighbourThreshold);
+            ValidateIterationCount(iterationCount);
+
+            for (int iteration = 0; iteration < iterationCount; iteration++)
+                ApplyStep(room, solidNeighbourThreshold);
+        }
+
         public static void ValidateThreshold(int solidNeighbourThreshold)
         {
             if (solidNeighbourThreshold < 0 || solidNeighbourThreshold > 8)

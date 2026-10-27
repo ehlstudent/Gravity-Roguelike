@@ -11,12 +11,24 @@ namespace GravityRoguelike.World.Development
 
         /// <summary>
         /// Current data, retained in memory until regeneration or domain reload.
-        /// Apply One CA Step evolves it; Generate and Render World resets it to seeded noise.
+        /// Either CA action evolves it; Generate and Render World resets it to seeded noise.
         /// </summary>
         public WorldData GeneratedWorld { get; private set; }
 
         [ContextMenu("Apply One CA Step")]
         public void ApplyOneCAStep()
+        {
+            ApplyCASteps(1);
+        }
+
+        [ContextMenu("Apply Configured CA Iterations")]
+        public void ApplyConfiguredCAIterations()
+        {
+            // The shared preflight handles missing configuration before any cells are changed.
+            ApplyCASteps(boundsPreview == null ? 0 : boundsPreview.CAIterations);
+        }
+
+        private void ApplyCASteps(int iterationCount)
         {
             if (GeneratedWorld == null)
             {
@@ -34,12 +46,13 @@ namespace GravityRoguelike.World.Development
                 // Preflight everything needed by the entire operation before modifying any room.
                 int threshold = boundsPreview.SolidNeighbourThreshold;
                 RoomCellularAutomata.ValidateThreshold(threshold);
+                RoomCellularAutomata.ValidateIterationCount(iterationCount);
                 roomRenderer.ValidateReferences();
 
                 foreach (RoomData room in GeneratedWorld.Rooms)
-                    RoomCellularAutomata.ApplyStep(room, threshold);
+                    RoomCellularAutomata.ApplyIterations(room, threshold, iterationCount);
                 roomRenderer.RenderWorld(GeneratedWorld);
-                Debug.Log($"Applied one CA step to {GeneratedWorld.Rooms.Count} rooms (threshold {threshold}).", this);
+                Debug.Log($"Applied {iterationCount} CA step(s) to {GeneratedWorld.Rooms.Count} rooms (threshold {threshold}).", this);
 #if UNITY_EDITOR
                 if (!Application.isPlaying && gameObject.scene.IsValid())
                     UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
