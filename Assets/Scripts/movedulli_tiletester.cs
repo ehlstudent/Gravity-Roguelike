@@ -26,6 +26,9 @@ public class PlayerController2D : MonoBehaviour
     private float jumpBufferTimer;
     private bool isGrounded;
 
+    /// <summary>True while the ground check touches the ground layer.</summary>
+    public bool IsGrounded => isGrounded;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,6 +63,9 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update()
     {
+        // Stand "upright" relative to the current gravity (see GravityRotator)
+        AlignToGravity();
+
         // Read input every frame
         horizontalInput = moveAction.ReadValue<float>();
 
@@ -71,19 +77,25 @@ public class PlayerController2D : MonoBehaviour
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         coyoteTimer = isGrounded ? coyoteTime : coyoteTimer - Time.deltaTime;
-        var hit = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius);
+
+        // "Up" and "right" follow the player's rotation, so they are relative to the gravity
+        Vector2 up = transform.up;
+        Vector2 right = transform.right;
+        float rightSpeed = Vector2.Dot(rb.linearVelocity, right);
+        float upSpeed = Vector2.Dot(rb.linearVelocity, up);
 
         // Jump
         if (jumpBufferTimer > 0f && coyoteTimer > 0f)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = right * rightSpeed + up * jumpForce;
+            upSpeed = jumpForce;
             jumpBufferTimer = 0f;
             coyoteTimer = 0f;
         }
 
         // Variable jump height: releasing early cuts the jump short
-        if (jumpAction.WasReleasedThisFrame() && rb.linearVelocity.y > 0f)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+        if (jumpAction.WasReleasedThisFrame() && upSpeed > 0f)
+            rb.linearVelocity = right * rightSpeed + up * (upSpeed * 0.5f);
 
         // Flip sprite to face movement direction
         if (Mathf.Abs(horizontalInput) > 0.01f)
@@ -96,8 +108,24 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Apply horizontal movement in the physics step
-        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
+        AlignToGravity();
+
+        // Apply sideways movement in the physics step, keeping the speed along gravity
+        Vector2 up = transform.up;
+        Vector2 right = transform.right;
+        float upSpeed = Vector2.Dot(rb.linearVelocity, up);
+        rb.linearVelocity = right * (horizontalInput * moveSpeed) + up * upSpeed;
+    }
+
+    private void AlignToGravity()
+    {
+        float targetAngle = GravityRotator.Instance != null ? GravityRotator.Instance.GravityAngle : 0f;
+        if (Mathf.Approximately(Mathf.DeltaAngle(rb.rotation, targetAngle), 0f)) return;
+
+        // Snap instantly; the camera rotates smoothly, so it still looks like a turn.
+        // Setting the rotation directly works even with "Freeze Rotation" enabled.
+        rb.rotation = targetAngle;
+        transform.rotation = Quaternion.Euler(0f, 0f, targetAngle);
     }
 
     private void OnDrawGizmosSelected()
