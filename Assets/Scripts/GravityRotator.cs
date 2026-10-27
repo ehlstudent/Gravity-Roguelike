@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Rotates the global 2D gravity in 90-degree steps (default: Q and R).
+/// Rotates the global 2D gravity in 90-degree steps (default: Q left, E right).
 /// The player aligns itself to the gravity, and CameraFollow2D rotates along,
 /// so on screen it looks as if the room itself is rotating.
-/// Put exactly one of these on an empty GameObject in each scene.
+/// Created automatically in every scene that contains a PlayerController2D;
+/// add one by hand only if you want to change its Inspector settings.
 /// </summary>
 public class GravityRotator : MonoBehaviour
 {
@@ -17,6 +19,25 @@ public class GravityRotator : MonoBehaviour
     private static void ResetStatics()
     {
         Instance = null;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Runs once after the first scene has loaded, then again for every scene change.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void AutoCreate()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        EnsureExists();
+    }
+
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode) => EnsureExists();
+
+    private static void EnsureExists()
+    {
+        if (FindFirstObjectByType<GravityRotator>() != null) return;
+        if (FindFirstObjectByType<PlayerController2D>() == null) return;   // only scenes with a player
+        new GameObject("Gravity Rotator (auto)").AddComponent<GravityRotator>();
     }
 
     [Header("Rotation")]
