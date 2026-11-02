@@ -52,6 +52,56 @@ namespace GravityRoguelike.World.Development
             }
         }
 
+        [ContextMenu("Repair Selected Room")]
+        public void RepairSelectedRoom()
+        {
+            if (GeneratedWorld == null)
+            {
+                Debug.LogWarning("Generate a world first using Generate and Render World before repairing a room.", this);
+                return;
+            }
+            if (boundsPreview == null || roomRenderer == null)
+            {
+                Debug.LogWarning("Room repair requires bounds preview and room renderer references. World data was not changed.", this);
+                return;
+            }
+
+            try
+            {
+                roomRenderer.ValidateReferences();
+                RoomData selectedRoom = null;
+                foreach (RoomData room in GeneratedWorld.Rooms)
+                    if (room.Id == boundsPreview.ReachabilityRoomId) selectedRoom = room;
+                if (selectedRoom == null)
+                    throw new ArgumentException($"Room ID {boundsPreview.ReachabilityRoomId} is not in the current generated world.");
+
+                GravityRoomRepairResult result = GravityRoomRepair.Repair(selectedRoom,
+                    boundsPreview.ReachabilityStart, boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget,
+                    boundsPreview.MaxRepairAttempts, boundsPreview.MaxCarvedCells);
+                if (result.RepairSucceeded)
+                {
+                    roomRenderer.RenderWorld(GeneratedWorld);
+#if UNITY_EDITOR
+                    if (!Application.isPlaying && gameObject.scene.IsValid())
+                        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+                    UnityEditor.SceneView.RepaintAll();
+#endif
+                }
+                Debug.Log($"Gravity-Aware Repair | Room: {selectedRoom.Id} | Initially Reachable: {result.InitiallyReachable}"
+                    + $" | Repair Attempted: {result.RepairAttempted} | Repair Successful: {result.RepairSucceeded}"
+                    + $" | Attempts: {result.Attempts} | Cells Modified: {result.CellsModified}"
+                    + $" | Final Reachability: {result.FinallyReachable} | Reason: {result.Reason}", this);
+            }
+            catch (ArgumentException exception)
+            {
+                Debug.LogWarning($"Room repair failed: {exception.Message}", this);
+            }
+            catch (InvalidOperationException exception)
+            {
+                Debug.LogWarning($"Room repair failed: {exception.Message}", this);
+            }
+        }
+
         [ContextMenu("Apply One CA Step")]
         public void ApplyOneCAStep()
         {

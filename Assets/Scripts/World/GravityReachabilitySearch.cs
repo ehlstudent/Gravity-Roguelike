@@ -23,11 +23,13 @@ namespace GravityRoguelike.World
             var parents = new Dictionary<PlayerState, PlayerState>();
             queue.Enqueue(initial);
             int explored = 0;
+            var reachedStates = new List<PlayerState>();
 
             while (queue.Count > 0)
             {
                 PlayerState current = queue.Dequeue();
                 explored++;
+                reachedStates.Add(current);
                 if (current.Position == target)
                 {
                     var path = new List<PlayerState> { current };
@@ -37,7 +39,7 @@ namespace GravityRoguelike.World
                         current = parent;
                     }
                     path.Reverse();
-                    return new GravityReachabilityResult(true, explored, path);
+                    return new GravityReachabilityResult(true, explored, path, reachedStates);
                 }
 
                 PlayerState settled = GravityMovementSimulator.SimulateGravity(room, current);
@@ -57,7 +59,7 @@ namespace GravityRoguelike.World
                 }
             }
 
-            return new GravityReachabilityResult(false, explored, new List<PlayerState>());
+            return new GravityReachabilityResult(false, explored, new List<PlayerState>(), reachedStates);
         }
 
         private static void Enqueue(PlayerState next, PlayerState previous, Queue<PlayerState> queue,
