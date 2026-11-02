@@ -102,6 +102,26 @@ namespace GravityRoguelike.Tests
                     Assert.That(tilemap.HasTile(new Vector3Int(global.x, global.y, 0)),
                         Is.EqualTo(room.GetCell(local) == CellType.Solid));
                 }
+                string beforeSearch = Snapshot(world);
+                var configSettings = new SerializedObject(config);
+                RoomData selected = null;
+                Vector2Int emptyCell = default;
+                foreach (var room in world.Rooms)
+                for (int y = 0; y < room.Height; y++)
+                for (int x = 0; x < room.Width; x++)
+                    if (room.GetCell(new Vector2Int(x, y)) == CellType.Empty)
+                    {
+                        selected = room;
+                        emptyCell = new Vector2Int(x, y);
+                    }
+                Assert.That(selected, Is.Not.Null);
+                configSettings.FindProperty("reachabilityRoomId").intValue = selected.Id;
+                configSettings.FindProperty("reachabilityStart").vector2IntValue = emptyCell;
+                configSettings.FindProperty("reachabilityTarget").vector2IntValue = emptyCell;
+                configSettings.ApplyModifiedPropertiesWithoutUndo();
+                AssertLog(preview.CheckGravityReachability, LogType.Log, "Reachable: True | Explored States: 1");
+                Assert.That(preview.GeneratedWorld, Is.SameAs(world));
+                Assert.That(Snapshot(world), Is.EqualTo(beforeSearch));
                 preview.GenerateAndRenderWorld();
                 Assert.That(Snapshot(preview.GeneratedWorld), Is.EqualTo(initial));
             }
@@ -110,6 +130,42 @@ namespace GravityRoguelike.Tests
                 EditorSceneManager.ClosePreviewScene(scene);
             }
             Assert.That(Physics2D.gravity, Is.EqualTo(gravityBefore));
+        }
+
+        [Test]
+        public void ReachabilityWithoutGeneratedWorldReportsWarning()
+        {
+            var instance = new GameObject("Reachability test");
+            try
+            {
+                var preview = instance.AddComponent<RoomWorldPreview>();
+                AssertLog(preview.CheckGravityReachability, LogType.Warning,
+                    "Generate a world first using Generate and Render World before checking gravity reachability.");
+                Assert.That(preview.GeneratedWorld, Is.Null);
+            }
+            finally
+            {
+                Object.DestroyImmediate(instance);
+            }
+        }
+
+        private static void AssertLog(System.Action action, LogType expectedType, string expectedText)
+        {
+            bool matched = false;
+            Application.LogCallback capture = (message, stack, type) =>
+            {
+                if (type == expectedType && message.Contains(expectedText)) matched = true;
+            };
+            Application.logMessageReceived += capture;
+            try
+            {
+                action();
+                Assert.That(matched, Is.True);
+            }
+            finally
+            {
+                Application.logMessageReceived -= capture;
+            }
         }
 #endif
 

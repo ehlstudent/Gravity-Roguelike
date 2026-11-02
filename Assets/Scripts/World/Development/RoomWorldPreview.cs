@@ -15,6 +15,43 @@ namespace GravityRoguelike.World.Development
         /// </summary>
         public WorldData GeneratedWorld { get; private set; }
 
+        [ContextMenu("Check Gravity Reachability")]
+        public void CheckGravityReachability()
+        {
+            if (GeneratedWorld == null)
+            {
+                Debug.LogWarning("Generate a world first using Generate and Render World before checking gravity reachability.", this);
+                return;
+            }
+            if (boundsPreview == null)
+            {
+                Debug.LogError("Gravity reachability requires bounds preview settings.", this);
+                return;
+            }
+
+            RoomData selectedRoom = null;
+            foreach (RoomData room in GeneratedWorld.Rooms)
+                if (room.Id == boundsPreview.ReachabilityRoomId) selectedRoom = room;
+            if (selectedRoom == null)
+            {
+                Debug.LogWarning($"Gravity reachability: room ID {boundsPreview.ReachabilityRoomId} is not in the current generated world.", this);
+                return;
+            }
+
+            try
+            {
+                GravityReachabilityResult result = GravityReachabilitySearch.Search(selectedRoom,
+                    boundsPreview.ReachabilityStart, boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget);
+                Debug.Log($"Gravity Reachability Check | Room: {selectedRoom.Id} | Start: {boundsPreview.ReachabilityStart}"
+                    + $" | Goal: {boundsPreview.ReachabilityTarget} | Initial Gravity: {boundsPreview.ReachabilityGravity}"
+                    + $" | Reachable: {result.Reachable} | Explored States: {result.ExploredStates}", this);
+            }
+            catch (ArgumentException exception)
+            {
+                Debug.LogWarning($"Gravity reachability check failed: {exception.Message}", this);
+            }
+        }
+
         [ContextMenu("Apply One CA Step")]
         public void ApplyOneCAStep()
         {
