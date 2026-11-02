@@ -21,6 +21,10 @@ public class Portal : MonoBehaviour
     [SerializeField] private string targetSpawnId;     // ID of a SpawnPoint in the target scene
 
     private bool isLoading;
+    private Vector2? sameSceneArrival;
+
+    // The demo supplies a physics-validated arrival after generating its static cave.
+    public void SetSameSceneArrival(Vector2 position) => sameSceneArrival = position;
 
     private void Reset()
     {
@@ -32,7 +36,21 @@ public class Portal : MonoBehaviour
     {
         // Identify the player by its component instead of a tag string.
         // GetComponentInParent also works if the collider sits on a child object.
-        if (isLoading || other.GetComponentInParent<PlayerController2D>() == null) return;
+        var player = other.GetComponentInParent<PlayerController2D>();
+        if (isLoading || player == null) return;
+
+        if (sameSceneArrival.HasValue)
+        {
+            isLoading = true; // One-way showcase portal.
+            var body = player.GetComponent<Rigidbody2D>();
+            var gravity = GravityRotator.Instance;
+            gravity.Rotate(-gravity.GravityAngle);
+            body.rotation = 0f;
+            body.position = sameSceneArrival.Value;
+            body.linearVelocity = Vector2.zero;
+            body.angularVelocity = 0f;
+            return;
+        }
 
         if (!Application.CanStreamedLevelBeLoaded(targetSceneName))
         {
