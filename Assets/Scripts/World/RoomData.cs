@@ -18,6 +18,13 @@ namespace GravityRoguelike.World
         public int Width => Bounds.width;
         public int Height => Bounds.height;
 
+        internal RoomData Copy()
+        {
+            var copy = new RoomData(Id, Bounds, Seed);
+            Array.Copy(cells, copy.cells, cells.Length);
+            return copy;
+        }
+
         /// <summary>Creates an empty grid. The caller supplies the room's unique ID.</summary>
         public RoomData(int id, RectInt bounds, int seed)
         {

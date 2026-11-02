@@ -77,6 +77,56 @@ namespace GravityRoguelike.World.Development
             }
         }
 
+        [ContextMenu("Clean Selected Room Regions")]
+        public void CleanSelectedRoomRegions()
+        {
+            if (GeneratedWorld == null)
+            {
+                Debug.LogWarning("Generate a world first using Generate and Render World before cleaning regions.", this);
+                return;
+            }
+            if (boundsPreview == null || roomRenderer == null)
+            {
+                Debug.LogWarning("Region cleanup requires bounds preview and renderer references.", this);
+                return;
+            }
+
+            try
+            {
+                roomRenderer.ValidateReferences();
+                foreach (RoomData room in GeneratedWorld.Rooms)
+                {
+                    if (room.Id != boundsPreview.ReachabilityRoomId) continue;
+                    var result = boundsPreview.ProtectRegionEndpoints
+                        ? RoomRegionCleanup.Clean(room, boundsPreview.ReachabilityStart,
+                            boundsPreview.ReachabilityTarget, boundsPreview.ReachabilityGravity)
+                        : RoomRegionCleanup.Clean(room);
+                    if (result.Performed)
+                    {
+                        roomRenderer.RenderWorld(GeneratedWorld);
+#if UNITY_EDITOR
+                        if (!Application.isPlaying && gameObject.scene.IsValid())
+                            UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+                        UnityEditor.SceneView.RepaintAll();
+#endif
+                    }
+                    string gravity = result.ReachabilityChecked
+                        ? $"reachable before {result.InitiallyReachable}, candidate {result.FinallyReachable}"
+                        : "not checked";
+                    string message = $"Room {room.Id} region cleanup | Detected {result.RegionsDetected}, "
+                        + $"removed {result.RegionsRemoved}, filled {result.CellsFilled} cells | Gravity: {gravity}. {result.Reason}";
+                    if (result.Succeeded) Debug.Log(message, this);
+                    else Debug.LogWarning(message, this);
+                    return;
+                }
+                Debug.LogWarning($"Region cleanup: room ID {boundsPreview.ReachabilityRoomId} is not in the generated world.", this);
+            }
+            catch (Exception exception) when (exception is ArgumentException || exception is InvalidOperationException)
+            {
+                Debug.LogWarning($"Region cleanup failed: {exception.Message}", this);
+            }
+        }
+
         [ContextMenu("Repair Selected Room")]
         public void RepairSelectedRoom()
         {

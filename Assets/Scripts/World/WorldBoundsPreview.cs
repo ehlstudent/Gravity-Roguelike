@@ -66,6 +66,10 @@ namespace GravityRoguelike.World
         public Vector2Int ReachabilityTarget => reachabilityTarget;
         public GravityDirection ReachabilityGravity => reachabilityGravity;
 
+        [Tooltip("Keep the region containing the selected start and target and check gravity reachability. When disabled, keep the largest region.")]
+        [SerializeField] private bool protectRegionEndpoints;
+        public bool ProtectRegionEndpoints => protectRegionEndpoints;
+
         [Header("Gravity rotation requirements")]
         [Tooltip("The cheapest route must require at least this many gravity rotations.")]
         [Min(0), SerializeField] private int minRequiredGravityRotations = 2;
