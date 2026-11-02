@@ -14,20 +14,51 @@ namespace GravityRoguelike.World
         public static GravityReachabilityResult Search(RoomData room, Vector2Int start,
             GravityDirection initialGravity, Vector2Int target)
         {
+            return Search(room, start, initialGravity, target, false);
+        }
+
+        public static GravityRotationEvaluation Evaluate(RoomData room, Vector2Int start,
+            GravityDirection initialGravity, Vector2Int target, int minimum, int maximum)
+        {
+            if (minimum < 0) throw new ArgumentOutOfRangeException(nameof(minimum));
+            if (maximum < minimum)
+                throw new ArgumentOutOfRangeException(nameof(maximum), "Maximum must be at least the minimum.");
+
+            var route = Search(room, start, initialGravity, target, true);
+            return new GravityRotationEvaluation(route, minimum, maximum);
+        }
+
+        private static GravityReachabilityResult Search(RoomData room, Vector2Int start,
+            GravityDirection initialGravity, Vector2Int target, bool minimizeRotations)
+        {
             if (room == null) throw new ArgumentNullException(nameof(room));
             ValidatePosition(room, start, nameof(start));
             ValidatePosition(room, target, nameof(target));
             var initial = new PlayerState(start, initialGravity);
-            var queue = new Queue<PlayerState>();
-            var visited = new HashSet<PlayerState> { initial };
+            var queue = new LinkedList<(PlayerState state, int cost)>();
+            var best = new Dictionary<PlayerState, int> { [initial] = 0 };
             var parents = new Dictionary<PlayerState, PlayerState>();
-            queue.Enqueue(initial);
+            queue.AddLast((initial, 0));
+
+            void Relax(PlayerState next, PlayerState previous, int cost, int edgeCost)
+            {
+                int candidate = cost + edgeCost;
+                if (best.TryGetValue(next, out int known) && known <= candidate) return;
+                best[next] = candidate;
+                parents[next] = previous;
+                // Zero-cost falls precede pending rotations. Unit-cost search remains FIFO.
+                if (edgeCost == 0) queue.AddFirst((next, candidate));
+                else queue.AddLast((next, candidate));
+            }
+
             int explored = 0;
             var reachedStates = new List<PlayerState>();
 
             while (queue.Count > 0)
             {
-                PlayerState current = queue.Dequeue();
+                var (current, cost) = queue.First.Value;
+                queue.RemoveFirst();
+                if (cost != best[current]) continue;
                 explored++;
                 reachedStates.Add(current);
                 if (current.Position == target)
@@ -45,7 +76,7 @@ namespace GravityRoguelike.World
                 PlayerState settled = GravityMovementSimulator.SimulateGravity(room, current);
                 if (settled != current)
                 {
-                    Enqueue(settled, current, queue, visited, parents);
+                    Relax(settled, current, cost, minimizeRotations ? 0 : 1);
                     continue;
                 }
 
@@ -55,19 +86,11 @@ namespace GravityRoguelike.World
                     GravityDirection direction = RotationOrder[(directionIndex + rotation + 4) % 4];
                     var rotated = new PlayerState(current.Position, direction);
                     PlayerState successor = GravityMovementSimulator.SimulateGravity(room, rotated);
-                    Enqueue(successor, current, queue, visited, parents);
+                    Relax(successor, current, cost, 1);
                 }
             }
 
             return new GravityReachabilityResult(false, explored, new List<PlayerState>(), reachedStates);
-        }
-
-        private static void Enqueue(PlayerState next, PlayerState previous, Queue<PlayerState> queue,
-            HashSet<PlayerState> visited, Dictionary<PlayerState, PlayerState> parents)
-        {
-            if (!visited.Add(next)) return;
-            parents.Add(next, previous);
-            queue.Enqueue(next);
         }
 
         private static void ValidatePosition(RoomData room, Vector2Int position, string parameterName)
