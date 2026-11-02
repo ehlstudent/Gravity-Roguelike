@@ -66,6 +66,15 @@ namespace GravityRoguelike.World
         public Vector2Int ReachabilityTarget => reachabilityTarget;
         public GravityDirection ReachabilityGravity => reachabilityGravity;
 
+        [Header("Gravity rotation requirements")]
+        [Tooltip("The cheapest route must require at least this many gravity rotations.")]
+        [Min(0), SerializeField] private int minRequiredGravityRotations = 2;
+        [Tooltip("The cheapest route may require at most this many gravity rotations.")]
+        [Min(0), SerializeField] private int maxRequiredGravityRotations = 8;
+
+        public int MinRequiredGravityRotations => minRequiredGravityRotations;
+        public int MaxRequiredGravityRotations => maxRequiredGravityRotations;
+
         [Header("Gravity-aware room repair")]
         [Tooltip("Maximum number of distinct candidate wall configurations checked. 0 disables repair.")]
         [Min(0)]

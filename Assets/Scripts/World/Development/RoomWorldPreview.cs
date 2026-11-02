@@ -18,6 +18,17 @@ namespace GravityRoguelike.World.Development
         [ContextMenu("Check Gravity Reachability")]
         public void CheckGravityReachability()
         {
+            AnalyseSelectedRoom(false);
+        }
+
+        [ContextMenu("Evaluate Gravity Requirements")]
+        public void EvaluateGravityRequirements()
+        {
+            AnalyseSelectedRoom(true);
+        }
+
+        private void AnalyseSelectedRoom(bool evaluateRotations)
+        {
             if (GeneratedWorld == null)
             {
                 Debug.LogWarning("Generate a world first using Generate and Render World before checking gravity reachability.", this);
@@ -40,6 +51,20 @@ namespace GravityRoguelike.World.Development
 
             try
             {
+                if (evaluateRotations)
+                {
+                    int minimum = boundsPreview.MinRequiredGravityRotations;
+                    int maximum = boundsPreview.MaxRequiredGravityRotations;
+                    var evaluation = GravityReachabilitySearch.Evaluate(selectedRoom, boundsPreview.ReachabilityStart,
+                        boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget, minimum, maximum);
+                    string rotations = evaluation.MinimumRequiredGravityRotations?.ToString() ?? "N/A";
+                    Debug.Log($"Gravity Rotation Evaluation | Room: {selectedRoom.Id} | Start: {boundsPreview.ReachabilityStart}"
+                        + $" | Goal: {boundsPreview.ReachabilityTarget} | Initial Gravity: {boundsPreview.ReachabilityGravity}"
+                        + $" | Reachable: {evaluation.Reachable} | Minimum required rotations: {rotations}"
+                        + $" | Required range: {minimum}–{maximum} | Meets requirements: {evaluation.MeetsRequirements}"
+                        + $" | Explored states: {evaluation.ExploredStates}", this);
+                    return;
+                }
                 GravityReachabilityResult result = GravityReachabilitySearch.Search(selectedRoom,
                     boundsPreview.ReachabilityStart, boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget);
                 Debug.Log($"Gravity Reachability Check | Room: {selectedRoom.Id} | Start: {boundsPreview.ReachabilityStart}"
