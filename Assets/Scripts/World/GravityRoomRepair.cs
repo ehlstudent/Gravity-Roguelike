@@ -29,7 +29,7 @@ namespace GravityRoguelike.World
             while (pending.Count > 0 && attempts < maxRepairAttempts)
             {
                 List<Vector2Int> carved = pending.Dequeue();
-                RoomData working = Copy(room);
+                RoomData working = room.Copy();
                 foreach (Vector2Int cell in carved) working.SetCell(cell, CellType.Empty);
                 attempts++;
                 GravityReachabilityResult check = GravityReachabilitySearch.Search(working, start, initialGravity, target);
@@ -83,18 +83,6 @@ namespace GravityRoguelike.World
         {
             int comparison = a.y.CompareTo(b.y);
             return comparison != 0 ? comparison : a.x.CompareTo(b.x);
-        }
-
-        private static RoomData Copy(RoomData room)
-        {
-            var copy = new RoomData(room.Id, room.Bounds, room.Seed);
-            for (int y = 0; y < room.Height; y++)
-            for (int x = 0; x < room.Width; x++)
-            {
-                var cell = new Vector2Int(x, y);
-                copy.SetCell(cell, room.GetCell(cell));
-            }
-            return copy;
         }
     }
 }
