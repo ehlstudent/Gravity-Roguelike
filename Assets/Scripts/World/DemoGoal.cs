@@ -6,6 +6,12 @@ namespace GravityRoguelike.World
     {
         public bool Complete { get; private set; }
 
+        public void ResetGoal()
+        {
+            Complete = false;
+            GetComponent<Collider2D>().enabled = true;
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (Complete || other.GetComponentInParent<PlayerController2D>() == null) return;

@@ -24,7 +24,12 @@ public class Portal : MonoBehaviour
     private Vector2? sameSceneArrival;
 
     // The demo supplies a physics-validated arrival after generating its static cave.
-    public void SetSameSceneArrival(Vector2 position) => sameSceneArrival = position;
+    public bool Used => isLoading;
+    public void SetSameSceneArrival(Vector2 position)
+    {
+        sameSceneArrival = position;
+        isLoading = false;
+    }
 
     private void Reset()
     {

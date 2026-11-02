@@ -23,7 +23,7 @@ namespace GravityRoguelike.World
 
     /// <summary>Draws absolute world-grid bounds at one Unity unit per cell.</summary>
     [ExecuteAlways]
-    public class WorldBoundsPreview : MonoBehaviour
+    public class WorldBoundsPreview : GravityPlacementSettings
     {
         [SerializeField] private RectInt worldBounds = new RectInt(0, 0, 60, 36);
         [SerializeField] private int worldSeed = 123;
@@ -69,24 +69,6 @@ namespace GravityRoguelike.World
         [Tooltip("Keep the region containing the selected start and target and check gravity reachability. When disabled, keep the largest region.")]
         [SerializeField] private bool protectRegionEndpoints;
         public bool ProtectRegionEndpoints => protectRegionEndpoints;
-
-        [Header("Gravity rotation requirements")]
-        [Tooltip("The cheapest route must require at least this many gravity rotations.")]
-        [Min(0), SerializeField] private int minRequiredGravityRotations = 2;
-        [Tooltip("The cheapest route may require at most this many gravity rotations.")]
-        [Min(0), SerializeField] private int maxRequiredGravityRotations = 8;
-
-        public int MinRequiredGravityRotations => minRequiredGravityRotations;
-        public int MaxRequiredGravityRotations => maxRequiredGravityRotations;
-
-        [Header("Gravity-aware start and goal placement")]
-        [Tooltip("Minimum Manhattan distance between the local start and goal cells.")]
-        [Min(0), SerializeField] private int minStartGoalDistance = 8;
-        [Tooltip("Maximum number of candidate pairs checked by gravity search per placement action.")]
-        [Min(0), SerializeField] private int maxPlacementEvaluations = 200;
-
-        public int MinStartGoalDistance => minStartGoalDistance;
-        public int MaxPlacementEvaluations => maxPlacementEvaluations;
 
         [Header("Gravity-aware room repair")]
         [Tooltip("Maximum number of distinct candidate wall configurations checked. 0 disables repair.")]
