@@ -79,6 +79,15 @@ namespace GravityRoguelike.World
         public int MinRequiredGravityRotations => minRequiredGravityRotations;
         public int MaxRequiredGravityRotations => maxRequiredGravityRotations;
 
+        [Header("Gravity-aware start and goal placement")]
+        [Tooltip("Minimum Manhattan distance between the local start and goal cells.")]
+        [Min(0), SerializeField] private int minStartGoalDistance = 8;
+        [Tooltip("Maximum number of candidate pairs checked by gravity search per placement action.")]
+        [Min(0), SerializeField] private int maxPlacementEvaluations = 200;
+
+        public int MinStartGoalDistance => minStartGoalDistance;
+        public int MaxPlacementEvaluations => maxPlacementEvaluations;
+
         [Header("Gravity-aware room repair")]
         [Tooltip("Maximum number of distinct candidate wall configurations checked. 0 disables repair.")]
         [Min(0)]

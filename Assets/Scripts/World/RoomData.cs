@@ -17,6 +17,7 @@ namespace GravityRoguelike.World
         public int Seed { get; }
         public int Width => Bounds.width;
         public int Height => Bounds.height;
+        internal long CellRevision { get; private set; }
 
         internal RoomData Copy()
         {
@@ -57,7 +58,9 @@ namespace GravityRoguelike.World
         public void SetCell(Vector2Int localCell, CellType value)
         {
             ValidateLocalCell(localCell);
+            if (cells[localCell.x, localCell.y] == value) return;
             cells[localCell.x, localCell.y] = value;
+            CellRevision++;
         }
 
         /// <summary>Translates to world-grid coordinates without clamping or bounds checks.</summary>

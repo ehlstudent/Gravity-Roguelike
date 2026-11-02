@@ -15,6 +15,59 @@ namespace GravityRoguelike.World.Development
         /// </summary>
         public WorldData GeneratedWorld { get; private set; }
 
+        private GravityEndpointPlacementResult automaticPair;
+        private RoomData placementRoom;
+        private long placementRevision;
+        private (int min, int max, int distance, int budget) placementSettings;
+        private (int min, int max, int distance, int budget) CurrentPlacementSettings =>
+            (boundsPreview.MinRequiredGravityRotations, boundsPreview.MaxRequiredGravityRotations,
+                boundsPreview.MinStartGoalDistance, boundsPreview.MaxPlacementEvaluations);
+
+        [ContextMenu("Find Valid Start and Goal")]
+        public void FindValidStartAndGoal()
+        {
+            if (GeneratedWorld == null || boundsPreview == null)
+            {
+                Debug.LogWarning("Assign bounds preview settings and generate a world first using Generate and Render World.", this);
+                return;
+            }
+            foreach (var room in GeneratedWorld.Rooms)
+            {
+                if (room.Id != boundsPreview.ReachabilityRoomId) continue;
+                var settings = CurrentPlacementSettings;
+                automaticPair = GravityEndpointPlacement.Find(room, boundsPreview.ReachabilityGravity,
+                    settings.min, settings.max, settings.distance, settings.budget);
+                if (!automaticPair.Succeeded)
+                {
+                    Debug.LogWarning($"Room {room.Id}: placement failed after {automaticPair.EvaluatedPairs} evaluations. {automaticPair.FailureReason}", this);
+                    return;
+                }
+                placementRoom = room;
+                placementRevision = room.CellRevision;
+                placementSettings = settings;
+                Debug.Log($"Room {room.Id}: start {automaticPair.Start}, goal {automaticPair.Goal}, gravity {automaticPair.InitialGravity}, "
+                    + $"distance {automaticPair.Distance}, minimum rotations {automaticPair.MinimumRotations}, evaluated {automaticPair.EvaluatedPairs} pairs.", this);
+                return;
+            }
+            Debug.LogWarning($"Placement: room ID {boundsPreview.ReachabilityRoomId} is not in the current world.", this);
+        }
+
+        [ContextMenu("Use Manual Start and Goal")]
+        public void UseManualStartAndGoal()
+        {
+            automaticPair = null;
+            placementRoom = null;
+        }
+
+        private (Vector2Int start, Vector2Int goal) GetEndpoints(RoomData room)
+        {
+            if (automaticPair == null) return (boundsPreview.ReachabilityStart, boundsPreview.ReachabilityTarget);
+            if (!automaticPair.Succeeded || placementRoom != room || placementRevision != room.CellRevision
+                || placementSettings != CurrentPlacementSettings || automaticPair.InitialGravity != boundsPreview.ReachabilityGravity)
+                throw new InvalidOperationException("Run Find Valid Start and Goal again or choose Use Manual Start and Goal.");
+            return (automaticPair.Start.Value, automaticPair.Goal.Value);
+        }
+
         [ContextMenu("Check Gravity Reachability")]
         public void CheckGravityReachability()
         {
@@ -51,27 +104,28 @@ namespace GravityRoguelike.World.Development
 
             try
             {
+                var endpoints = GetEndpoints(selectedRoom);
                 if (evaluateRotations)
                 {
                     int minimum = boundsPreview.MinRequiredGravityRotations;
                     int maximum = boundsPreview.MaxRequiredGravityRotations;
-                    var evaluation = GravityReachabilitySearch.Evaluate(selectedRoom, boundsPreview.ReachabilityStart,
-                        boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget, minimum, maximum);
+                    var evaluation = GravityReachabilitySearch.Evaluate(selectedRoom, endpoints.start,
+                        boundsPreview.ReachabilityGravity, endpoints.goal, minimum, maximum);
                     string rotations = evaluation.MinimumRequiredGravityRotations?.ToString() ?? "N/A";
-                    Debug.Log($"Gravity Rotation Evaluation | Room: {selectedRoom.Id} | Start: {boundsPreview.ReachabilityStart}"
-                        + $" | Goal: {boundsPreview.ReachabilityTarget} | Initial Gravity: {boundsPreview.ReachabilityGravity}"
+                    Debug.Log($"Gravity Rotation Evaluation | Room: {selectedRoom.Id} | Start: {endpoints.start}"
+                        + $" | Goal: {endpoints.goal} | Initial Gravity: {boundsPreview.ReachabilityGravity}"
                         + $" | Reachable: {evaluation.Reachable} | Minimum required rotations: {rotations}"
                         + $" | Required range: {minimum}–{maximum} | Meets requirements: {evaluation.MeetsRequirements}"
                         + $" | Explored states: {evaluation.ExploredStates}", this);
                     return;
                 }
                 GravityReachabilityResult result = GravityReachabilitySearch.Search(selectedRoom,
-                    boundsPreview.ReachabilityStart, boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget);
-                Debug.Log($"Gravity Reachability Check | Room: {selectedRoom.Id} | Start: {boundsPreview.ReachabilityStart}"
-                    + $" | Goal: {boundsPreview.ReachabilityTarget} | Initial Gravity: {boundsPreview.ReachabilityGravity}"
+                    endpoints.start, boundsPreview.ReachabilityGravity, endpoints.goal);
+                Debug.Log($"Gravity Reachability Check | Room: {selectedRoom.Id} | Start: {endpoints.start}"
+                    + $" | Goal: {endpoints.goal} | Initial Gravity: {boundsPreview.ReachabilityGravity}"
                     + $" | Reachable: {result.Reachable} | Explored States: {result.ExploredStates}", this);
             }
-            catch (ArgumentException exception)
+            catch (Exception exception) when (exception is ArgumentException || exception is InvalidOperationException)
             {
                 Debug.LogWarning($"Gravity reachability check failed: {exception.Message}", this);
             }
@@ -97,9 +151,10 @@ namespace GravityRoguelike.World.Development
                 foreach (RoomData room in GeneratedWorld.Rooms)
                 {
                     if (room.Id != boundsPreview.ReachabilityRoomId) continue;
+                    var endpoints = boundsPreview.ProtectRegionEndpoints ? GetEndpoints(room) : default;
                     var result = boundsPreview.ProtectRegionEndpoints
-                        ? RoomRegionCleanup.Clean(room, boundsPreview.ReachabilityStart,
-                            boundsPreview.ReachabilityTarget, boundsPreview.ReachabilityGravity)
+                        ? RoomRegionCleanup.Clean(room, endpoints.start,
+                            endpoints.goal, boundsPreview.ReachabilityGravity)
                         : RoomRegionCleanup.Clean(room);
                     if (result.Performed)
                     {
@@ -150,8 +205,9 @@ namespace GravityRoguelike.World.Development
                 if (selectedRoom == null)
                     throw new ArgumentException($"Room ID {boundsPreview.ReachabilityRoomId} is not in the current generated world.");
 
+                var endpoints = GetEndpoints(selectedRoom);
                 GravityRoomRepairResult result = GravityRoomRepair.Repair(selectedRoom,
-                    boundsPreview.ReachabilityStart, boundsPreview.ReachabilityGravity, boundsPreview.ReachabilityTarget,
+                    endpoints.start, boundsPreview.ReachabilityGravity, endpoints.goal,
                     boundsPreview.MaxRepairAttempts, boundsPreview.MaxCarvedCells);
                 if (result.RepairSucceeded)
                 {
