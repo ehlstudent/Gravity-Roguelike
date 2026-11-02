@@ -13,13 +13,15 @@ namespace GravityRoguelike.World
         public int? Distance { get; internal set; }
         public int? MinimumRotations { get; internal set; }
         public int EvaluatedPairs { get; internal set; }
+        public IReadOnlyList<PlayerState> Path { get; internal set; }
         public string FailureReason { get; internal set; }
     }
 
     public static class GravityEndpointPlacement
     {
         public static GravityEndpointPlacementResult Find(RoomData room, GravityDirection gravity,
-            int minRotations, int maxRotations, int minDistance, int maxEvaluations)
+            int minRotations, int maxRotations, int minDistance, int maxEvaluations,
+            Func<GravityRotationEvaluation, bool> acceptRoute = null, System.Random order = null)
         {
             var result = new GravityEndpointPlacementResult { InitialGravity = gravity };
             GravityEndpointPlacementResult Fail(string reason)
@@ -43,6 +45,15 @@ namespace GravityRoguelike.World
             }
             if (cells.Count < 2) return Fail("At least two distinct Empty cells are required.");
 
+            if (order != null)
+            {
+                for (int i = cells.Count - 1; i > 0; i--)
+                {
+                    int j = order.Next(i + 1);
+                    (cells[i], cells[j]) = (cells[j], cells[i]);
+                }
+            }
+
             // Stream ordered pairs. Row-major start, then goal, breaks equal-distance ties.
             foreach (var start in cells)
             foreach (var goal in cells)
@@ -54,10 +65,12 @@ namespace GravityRoguelike.World
                 result.EvaluatedPairs++;
                 var route = GravityReachabilitySearch.Evaluate(room, start, gravity, goal, minRotations, maxRotations);
                 if (!route.MeetsRequirements || (result.Succeeded && distance <= result.Distance.Value)) continue;
+                if (acceptRoute != null && !acceptRoute(route)) continue;
                 result.Start = start;
                 result.Goal = goal;
                 result.Distance = distance;
                 result.MinimumRotations = route.MinimumRequiredGravityRotations;
+                result.Path = route.Path;
             }
             if (result.Succeeded) return result;
             return Fail(result.EvaluatedPairs == 0 ? "No distinct pair meets the minimum distance."

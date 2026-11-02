@@ -163,12 +163,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda3b08f4916471e8d220fbcd128f709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minRequiredGravityRotations: 2
+  maxRequiredGravityRotations: 8
+  minStartGoalDistance: 8
+  maxPlacementEvaluations: 200
   worldBounds:
     x: 0
     y: 0
     width: 80
     height: 80
-  worldSeed: 2028033625
+  worldSeed: 1641466297
   requestedRoomCount: 8
   minRoomWidth: 8
   maxRoomWidth: 20
@@ -176,64 +180,74 @@ MonoBehaviour:
   maxRoomHeight: 14
   minimumGap: 2
   maxPlacementAttempts: 500
-  lastGenerationSummary: 'Last generation: placed 8/8 rooms in 17 attempts. Request completed.'
+  initialSolidProbability: 0.45
+  solidNeighbourThreshold: 5
+  caIterations: 5
+  reachabilityRoomId: 1
+  reachabilityStart: {x: 1, y: 1}
+  reachabilityTarget: {x: 2, y: 1}
+  reachabilityGravity: 0
+  protectRegionEndpoints: 0
+  maxRepairAttempts: 50
+  maxCarvedCells: 8
+  lastGenerationSummary: 'Last generation: placed 8/8 rooms in 13 attempts. Request completed.'
   rooms:
   - Id: 1
     Bounds:
-      x: 63
-      y: 57
-      width: 13
+      x: 9
+      y: 31
+      width: 16
       height: 10
-    Seed: 1413825837
+    Seed: 1303803625
   - Id: 2
     Bounds:
-      x: 33
-      y: 27
-      width: 12
-      height: 10
-    Seed: 1176424460
+      x: 27
+      y: 6
+      width: 11
+      height: 7
+    Seed: 75568726
   - Id: 3
     Bounds:
       x: 35
-      y: 7
-      width: 14
+      y: 54
+      width: 19
       height: 13
-    Seed: 477106923
+    Seed: 890121981
   - Id: 4
     Bounds:
-      x: 52
-      y: 29
-      width: 10
-      height: 12
-    Seed: 1273437239
+      x: 37
+      y: 38
+      width: 8
+      height: 7
+    Seed: 1747468834
   - Id: 5
     Bounds:
-      x: 56
-      y: 4
-      width: 9
-      height: 14
-    Seed: 148680538
+      x: 47
+      y: 26
+      width: 11
+      height: 7
+    Seed: 916827510
   - Id: 6
     Bounds:
-      x: 71
-      y: 30
-      width: 8
-      height: 10
-    Seed: 2017930243
+      x: 29
+      y: 16
+      width: 14
+      height: 13
+    Seed: 1059167720
   - Id: 7
     Bounds:
-      x: 46
-      y: 61
-      width: 15
-      height: 10
-    Seed: 1577864688
+      x: 64
+      y: 25
+      width: 10
+      height: 8
+    Seed: 1540547518
   - Id: 8
     Bounds:
-      x: 50
-      y: 46
-      width: 9
-      height: 12
-    Seed: 1934887515
+      x: 13
+      y: 11
+      width: 12
+      height: 14
+    Seed: 1290508971
   worldColor: {r: 0, g: 0.85, b: 1, a: 1}
   roomColor: {r: 0.3, g: 1, b: 0.35, a: 1}
   validationSummary: 'Valid preview: 8 rooms. Cyan: world; green: valid rooms; red: invalid rooms.'
