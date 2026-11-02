@@ -55,6 +55,17 @@ namespace GravityRoguelike.World
 
         public int CAIterations => caIterations;
 
+        [Header("Gravity reachability (local room cells)")]
+        [SerializeField] private int reachabilityRoomId = 1;
+        [SerializeField] private Vector2Int reachabilityStart = new Vector2Int(1, 1);
+        [SerializeField] private Vector2Int reachabilityTarget = new Vector2Int(2, 1);
+        [SerializeField] private GravityDirection reachabilityGravity = GravityDirection.Down;
+
+        public int ReachabilityRoomId => reachabilityRoomId;
+        public Vector2Int ReachabilityStart => reachabilityStart;
+        public Vector2Int ReachabilityTarget => reachabilityTarget;
+        public GravityDirection ReachabilityGravity => reachabilityGravity;
+
         [TextArea(2, 4)]
         [SerializeField] private string lastGenerationSummary;
         [Header("Editable room layout")]
