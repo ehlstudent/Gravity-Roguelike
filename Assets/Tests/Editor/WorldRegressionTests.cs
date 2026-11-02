@@ -122,6 +122,59 @@ namespace GravityRoguelike.Tests
                 AssertLog(preview.CheckGravityReachability, LogType.Log, "Reachable: True | Explored States: 1");
                 Assert.That(preview.GeneratedWorld, Is.SameAs(world));
                 Assert.That(Snapshot(world), Is.EqualTo(beforeSearch));
+                for (int y = 0; y < selected.Height; y++)
+                for (int x = 0; x < selected.Width; x++)
+                    selected.SetCell(new Vector2Int(x, y), CellType.Solid);
+                selected.SetCell(new Vector2Int(1, 1), CellType.Empty);
+                selected.SetCell(new Vector2Int(4, 1), CellType.Empty);
+                renderer.RenderWorld(world);
+                configSettings.FindProperty("reachabilityStart").vector2IntValue = new Vector2Int(1, 1);
+                configSettings.FindProperty("reachabilityTarget").vector2IntValue = new Vector2Int(4, 1);
+                configSettings.FindProperty("maxRepairAttempts").intValue = 50;
+                configSettings.FindProperty("maxCarvedCells").intValue = 1;
+                configSettings.ApplyModifiedPropertiesWithoutUndo();
+                string blockedWorld = Snapshot(world);
+                AssertLog(preview.CheckGravityReachability, LogType.Log, "Reachable: False");
+                AssertLog(preview.RepairSelectedRoom, LogType.Log, "Repair Successful: False");
+                Assert.That(Snapshot(world), Is.EqualTo(blockedWorld));
+                configSettings.FindProperty("maxCarvedCells").intValue = 2;
+                configSettings.ApplyModifiedPropertiesWithoutUndo();
+                settings.FindProperty("roomRenderer").objectReferenceValue = null;
+                settings.ApplyModifiedPropertiesWithoutUndo();
+                AssertLog(preview.RepairSelectedRoom, LogType.Warning, "Room repair requires bounds preview and room renderer references.");
+                Assert.That(Snapshot(world), Is.EqualTo(blockedWorld));
+                settings.FindProperty("roomRenderer").objectReferenceValue = renderer;
+                settings.ApplyModifiedPropertiesWithoutUndo();
+                var otherRoomsBefore = new Dictionary<int, string>();
+                foreach (var room in world.Rooms)
+                    if (room != selected)
+                    {
+                        var single = new WorldData(world.Bounds, world.Seed);
+                        single.AddRoom(room);
+                        otherRoomsBefore.Add(room.Id, Snapshot(single));
+                    }
+                AssertLog(preview.RepairSelectedRoom, LogType.Log, "Repair Successful: True");
+                Assert.That(preview.GeneratedWorld, Is.SameAs(world));
+                Assert.That(GravityReachabilitySearch.Search(selected, new Vector2Int(1, 1),
+                    config.ReachabilityGravity, new Vector2Int(4, 1)).Reachable, Is.True);
+                foreach (var room in world.Rooms)
+                    if (room != selected)
+                    {
+                        var single = new WorldData(world.Bounds, world.Seed);
+                        single.AddRoom(room);
+                        Assert.That(Snapshot(single), Is.EqualTo(otherRoomsBefore[room.Id]));
+                    }
+                for (int y = 0; y < selected.Height; y++)
+                for (int x = 0; x < selected.Width; x++)
+                {
+                    var cell = new Vector2Int(x, y);
+                    var global = selected.LocalToWorld(cell);
+                    Assert.That(tilemap.HasTile(new Vector3Int(global.x, global.y, 0)),
+                        Is.EqualTo(selected.GetCell(cell) == CellType.Solid));
+                }
+                string repairedWorld = Snapshot(world);
+                AssertLog(preview.RepairSelectedRoom, LogType.Log, "Initially Reachable: True | Repair Attempted: False");
+                Assert.That(Snapshot(world), Is.EqualTo(repairedWorld));
                 preview.GenerateAndRenderWorld();
                 Assert.That(Snapshot(preview.GeneratedWorld), Is.EqualTo(initial));
             }
@@ -141,6 +194,9 @@ namespace GravityRoguelike.Tests
                 var preview = instance.AddComponent<RoomWorldPreview>();
                 AssertLog(preview.CheckGravityReachability, LogType.Warning,
                     "Generate a world first using Generate and Render World before checking gravity reachability.");
+                Assert.That(preview.GeneratedWorld, Is.Null);
+                AssertLog(preview.RepairSelectedRoom, LogType.Warning,
+                    "Generate a world first using Generate and Render World before repairing a room.");
                 Assert.That(preview.GeneratedWorld, Is.Null);
             }
             finally

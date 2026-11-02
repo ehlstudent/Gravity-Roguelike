@@ -66,6 +66,17 @@ namespace GravityRoguelike.World
         public Vector2Int ReachabilityTarget => reachabilityTarget;
         public GravityDirection ReachabilityGravity => reachabilityGravity;
 
+        [Header("Gravity-aware room repair")]
+        [Tooltip("Maximum number of distinct candidate wall configurations checked. 0 disables repair.")]
+        [Min(0)]
+        [SerializeField] private int maxRepairAttempts = 50;
+        [Tooltip("Maximum interior Solid cells removed by one accepted repair. Borders are always preserved. 0 disables repair.")]
+        [Min(0)]
+        [SerializeField] private int maxCarvedCells = 8;
+
+        public int MaxRepairAttempts => maxRepairAttempts;
+        public int MaxCarvedCells => maxCarvedCells;
+
         [TextArea(2, 4)]
         [SerializeField] private string lastGenerationSummary;
         [Header("Editable room layout")]
