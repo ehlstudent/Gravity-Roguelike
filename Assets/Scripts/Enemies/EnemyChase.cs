@@ -6,7 +6,7 @@ public class EnemyChase : MonoBehaviour
     public RoomGrid grid;
     public Transform player;
     public float speed = 2.5f;
-    public float repathInterval = 0.4f;
+    private float repathInterval = 0.4f;
     public float bodyRadius = 0.3f;   // should roughly match half the collider size
 
     Rigidbody2D rb;
@@ -18,6 +18,7 @@ public class EnemyChase : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        repathTimer = Random.Range(repathInterval - 0.1f, repathInterval + 0.1f);
     }
 
     // Runs every physics tick; re-plans on a timer and moves along the current path.

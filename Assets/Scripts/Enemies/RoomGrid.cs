@@ -6,7 +6,11 @@ using System.Collections.Generic;
 public class RoomGrid : MonoBehaviour
 {
     public Tilemap solid;                          // all blocking tiles, ground included
-    public Vector2Int gravity = Vector2Int.down;   // change this when gravity flips
+    // Current gravity direction as a unit vector, read live from the GravityRotator.
+    public Vector2Int gravity =>
+        GravityRotator.Instance != null
+            ? Vector2Int.RoundToInt(GravityRotator.Instance.GravityRotation * Vector2.down)
+            : Vector2Int.down;
 
     static readonly Vector2Int[] Dirs =
     { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };

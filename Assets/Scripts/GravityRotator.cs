@@ -13,12 +13,17 @@ public class GravityRotator : MonoBehaviour
 {
     public static GravityRotator Instance { get; private set; }
 
+    // Raised after every gravity rotation; passes the new gravity direction as a unit
+    // vector (e.g. (0,-1)). Used by enemies (bat)
+    public static event System.Action<Vector2Int> GravityChanged;
+
     // Static values can survive between Play sessions in the editor (when "Reload Domain"
     // is turned off), same as in Portal.
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ResetStatics()
     {
         Instance = null;
+        GravityChanged = null; // reset event used by enemies (bat)
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -135,6 +140,7 @@ public class GravityRotator : MonoBehaviour
         Physics2D.gravity = down * gravityStrength;
 
         cooldownTimer = cooldown;
+        GravityChanged?.Invoke(Vector2Int.RoundToInt(down));   // tell listeners (bats, etc.)
         if (logRotations) Debug.Log($"Gravity rotated: angle {GravityAngle}, gravity {Physics2D.gravity}.", this);
     }
 }

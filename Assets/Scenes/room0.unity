@@ -428,7 +428,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &1210946748
 Rigidbody2D:
@@ -548,7 +548,7 @@ MonoBehaviour:
   player: {fileID: 156261675}
   speed: 2.5
   repathInterval: 0.4
-  bodyRadius: 0.3
+  bodyRadius: 0.74
 --- !u!1 &1472065812
 GameObject:
   m_ObjectHideFlags: 0
