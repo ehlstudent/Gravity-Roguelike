@@ -15,6 +15,28 @@ public class RoomGrid : MonoBehaviour
     static readonly Vector2Int[] Dirs =
     { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
 
+    static readonly Vector2Int[] Dirs8 =
+{
+    Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right,
+    new Vector2Int(1, 1), new Vector2Int(1, -1), new Vector2Int(-1, 1), new Vector2Int(-1, -1)
+};
+
+    // Yields free neighbours in 8 directions; a diagonal is only allowed if both
+    // adjacent straight cells are free, so the enemy never cuts through a wall corner.
+    public IEnumerable<Vector2Int> FlyingNeighbors8(Vector2Int c)
+    {
+        foreach (var d in Dirs8)
+        {
+            if (IsSolid(c + d)) continue;
+
+            bool diagonal = d.x != 0 && d.y != 0;
+            if (diagonal && (IsSolid(c + new Vector2Int(d.x, 0)) || IsSolid(c + new Vector2Int(0, d.y))))
+                continue;
+
+            yield return c + d;
+        }
+    }
+
     public bool IsSolid(Vector2Int c) =>
         solid.HasTile(new Vector3Int(c.x, c.y, 0));
 

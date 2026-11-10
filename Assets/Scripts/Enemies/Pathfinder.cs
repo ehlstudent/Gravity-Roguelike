@@ -5,8 +5,13 @@ using UnityEngine;
 // implements A* for enemy pathfinding
 public static class Pathfinder
 {
-    static int Heuristic(Vector2Int a, Vector2Int b) =>
-        Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);   // Manhattan distance
+    // Estimated cost from a to b when diagonal moves are allowed (octile distance).
+    static int Heuristic(Vector2Int a, Vector2Int b)
+    {
+        int dx = Mathf.Abs(a.x - b.x);
+        int dy = Mathf.Abs(a.y - b.y);
+        return 10 * (dx + dy) - 6 * Mathf.Min(dx, dy);   // 14*min + 10*(max-min), simplified
+    }
 
     public static List<Vector2Int> FindPath(
         Vector2Int start, Vector2Int goal,
@@ -36,7 +41,7 @@ public static class Pathfinder
             {
                 if (closed.Contains(next)) continue;
 
-                int tentative = g[current] + 1;               // each step costs 1
+                int tentative = g[current] + StepCost(current, next);
                 if (g.TryGetValue(next, out int old) && tentative >= old) continue;
 
                 cameFrom[next] = current;
@@ -56,6 +61,9 @@ public static class Pathfinder
         path.Reverse();
         return path;   // excludes the start cell, includes the goal
     }
+    // Cost of moving between two adjacent cells: 10 for straight, 14 for diagonal.
+    static int StepCost(Vector2Int a, Vector2Int b) =>
+        (a.x != b.x && a.y != b.y) ? 14 : 10;
 
     // Removes unnecessary waypoints: from each anchor, jumps to the farthest cell
     // that has a clear straight line to it, according to the supplied check.

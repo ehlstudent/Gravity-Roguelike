@@ -18,6 +18,7 @@ public class EnemyChase : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        // random repathTimer so a swarm of bats doesn't cause CPU spikes   
         repathTimer = Random.Range(repathInterval - 0.1f, repathInterval + 0.1f);
     }
 
@@ -48,7 +49,7 @@ public class EnemyChase : MonoBehaviour
     void Repath()
     {
         Vector2Int start = grid.WorldToCell(transform.position);
-        path = Pathfinder.FindPath(start, grid.WorldToCell(player.position), grid.FlyingNeighbors);
+        path = Pathfinder.FindPath(start, grid.WorldToCell(player.position), grid.FlyingNeighbors8);
 
         if (path != null)
             path = Pathfinder.Smooth(path, start, (a, b) => grid.HasClearLine(a, b, bodyRadius));
