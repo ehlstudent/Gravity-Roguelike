@@ -37,6 +37,38 @@ public class RoomGrid : MonoBehaviour
         }
     }
 
+    static readonly int[] Sides = { 1, -1 };
+
+    // Yields the cells a walker can reach in one step: along the ground, up onto a one-cell
+    // step (a "jump"), or straight along gravity when in the air.
+    public IEnumerable<Vector2Int> WalkingNeighbors(Vector2Int c)
+    {
+        Vector2Int tangent = new Vector2Int(-gravity.y, gravity.x);
+
+        if (!IsStandable(c))
+        {
+            // In the air: only fall one cell along gravity.
+            if (!IsSolid(c + gravity)) yield return c + gravity;
+            yield break;
+        }
+
+        foreach (int s in Sides)
+        {
+            Vector2Int side = c + tangent * s;
+
+            if (!IsSolid(side))
+            {
+                yield return side;   // free cell: walk (or step off a ledge)
+                continue;
+            }
+
+            // Solid cell in the way: climb it if there is headroom and space on top.
+            Vector2Int headroom = c - gravity;
+            Vector2Int landing = side - gravity;   // standable, since 'side' is solid
+            if (!IsSolid(headroom) && !IsSolid(landing)) yield return landing;
+        }
+    }
+
     public bool IsSolid(Vector2Int c) =>
         solid.HasTile(new Vector3Int(c.x, c.y, 0));
 
@@ -79,6 +111,20 @@ public class RoomGrid : MonoBehaviour
             if (IsSolid(WorldToCell(p + Vector2.down * radius))) return false;
         }
         return true;
+    }
+
+    // Follows gravity from a cell until it finds a standable cell (ground below it).
+    // Returns false if nothing is found within maxSteps, e.g. when the player is above a pit.
+    public bool TryFindGround(Vector2Int c, out Vector2Int ground, int maxSteps = 30)
+    {
+        for (int i = 0; i < maxSteps; i++)
+        {
+            if (IsStandable(c)) { ground = c; return true; }
+            if (IsSolid(c)) break;     // started inside a wall: no valid ground
+            c += gravity;
+        }
+        ground = c;
+        return false;
     }
 }
 
