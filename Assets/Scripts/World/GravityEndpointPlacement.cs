@@ -14,6 +14,7 @@ namespace GravityRoguelike.World
         public int? MinimumRotations { get; internal set; }
         public int EvaluatedPairs { get; internal set; }
         public IReadOnlyList<PlayerState> Path { get; internal set; }
+        internal IReadOnlyDictionary<Vector2Int, int> RestingCosts { get; set; }
         public string FailureReason { get; internal set; }
     }
 
@@ -21,7 +22,8 @@ namespace GravityRoguelike.World
     {
         public static GravityEndpointPlacementResult Find(RoomData room, GravityDirection gravity,
             int minRotations, int maxRotations, int minDistance, int maxEvaluations,
-            Func<GravityRotationEvaluation, bool> acceptRoute = null, System.Random order = null)
+            Func<GravityRotationEvaluation, bool> acceptRoute = null, System.Random order = null,
+            Func<Vector2Int, bool> acceptStart = null)
         {
             var result = new GravityEndpointPlacementResult { InitialGravity = gravity };
             GravityEndpointPlacementResult Fail(string reason)
@@ -56,21 +58,31 @@ namespace GravityRoguelike.World
 
             // Stream ordered pairs. Row-major start, then goal, breaks equal-distance ties.
             foreach (var start in cells)
-            foreach (var goal in cells)
             {
-                int distance = Math.Abs(start.x - goal.x) + Math.Abs(start.y - goal.y);
-                if (distance == 0 || distance < minDistance) continue;
-                if (result.EvaluatedPairs == maxEvaluations)
-                    return result.Succeeded ? result : Fail("No qualifying pair found within the evaluation budget.");
-                result.EvaluatedPairs++;
-                var route = GravityReachabilitySearch.Evaluate(room, start, gravity, goal, minRotations, maxRotations);
-                if (!route.MeetsRequirements || (result.Succeeded && distance <= result.Distance.Value)) continue;
-                if (acceptRoute != null && !acceptRoute(route)) continue;
-                result.Start = start;
-                result.Goal = goal;
-                result.Distance = distance;
-                result.MinimumRotations = route.MinimumRequiredGravityRotations;
-                result.Path = route.Path;
+                if (acceptStart != null && !acceptStart(start)) continue;
+                GravityReachabilitySearch.StartRoutes routes = null;
+                foreach (var goal in cells)
+                {
+                    int distance = Math.Abs(start.x - goal.x) + Math.Abs(start.y - goal.y);
+                    if (distance == 0 || distance < minDistance) continue;
+                    if (result.EvaluatedPairs == maxEvaluations)
+                        return result.Succeeded ? result : Fail("No qualifying pair found within the evaluation budget.");
+                    result.EvaluatedPairs++;
+                    if (result.Succeeded && distance <= result.Distance.Value) continue;
+                    if (routes == null) routes = GravityReachabilitySearch.Explore(room, start, gravity);
+                    if (!routes.RestingCosts.TryGetValue(goal, out int rotations) ||
+                        rotations < minRotations || rotations > maxRotations) continue;
+                    var arrival = routes.FirstArrival[goal];
+                    var path = GravityReachabilitySearch.BuildPath(arrival.state, routes.Parents);
+                    var route = new GravityRotationEvaluation(path, arrival.explored, rotations, minRotations, maxRotations);
+                    if (acceptRoute != null && !acceptRoute(route)) continue;
+                    result.Start = start;
+                    result.Goal = goal;
+                    result.Distance = distance;
+                    result.MinimumRotations = route.MinimumRequiredGravityRotations;
+                    result.Path = route.Path;
+                    result.RestingCosts = routes.RestingCosts;
+                }
             }
             if (result.Succeeded) return result;
             return Fail(result.EvaluatedPairs == 0 ? "No distinct pair meets the minimum distance."

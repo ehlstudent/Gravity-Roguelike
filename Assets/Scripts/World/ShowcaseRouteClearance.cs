@@ -31,6 +31,22 @@ namespace GravityRoguelike.World
         private static Vector2 Offset(BoxCollider2D box, float angle) =>
             Quaternion.Euler(0, 0, angle) * Vector2.Scale(box.offset, box.transform.lossyScale);
 
+        public bool TryGroundedSpawn(RoomData room, Vector2Int cell, BoxCollider2D player, out Vector2 spawn)
+        {
+            spawn = Center(room, cell);
+            var below = cell + Vector2Int.down;
+            if (!room.ContainsLocal(below) || room.GetCell(below) != CellType.Solid) return false;
+
+            Vector2 size = Size(player);
+            Vector2 boxCenter = spawn + Offset(player, 0);
+            if (Physics2D.OverlapBox(boxCenter, size, 0, ground, overlaps) != 0) return false;
+            float distance = Vector2.Distance(spawn, Center(room, below));
+            if (Physics2D.BoxCast(boxCenter, size, 0, Vector2.down, ground, hits, distance) == 0 ||
+                hits[0].normal.y < 0.9f) return false;
+            spawn += Vector2.down * Mathf.Max(0, hits[0].distance - Physics2D.defaultContactOffset);
+            return true;
+        }
+
         internal static float Angle(GravityDirection gravity)
         {
             switch (gravity)

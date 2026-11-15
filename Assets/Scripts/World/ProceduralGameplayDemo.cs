@@ -26,6 +26,7 @@ namespace GravityRoguelike.World
         private bool generating;
         private string status;
         private ShowcaseRouteClearance clearance;
+        private SpriteRenderer arrivalMarker;
         private GravityEndpointPlacementResult legA, legB;
         private string roomALabel, roomBLabel;
         private string roomATurns, roomBTurns;
@@ -46,6 +47,7 @@ namespace GravityRoguelike.World
             player.gameObject.SetActive(false);
             portal.gameObject.SetActive(false);
             goal.gameObject.SetActive(false);
+            if (arrivalMarker != null) arrivalMarker.enabled = false;
             goal.ResetGoal();
             var gravity = GravityRotator.Instance;
             gravity.Rotate(-gravity.GravityAngle);
@@ -106,7 +108,7 @@ namespace GravityRoguelike.World
             foreach (var room in world.Rooms)
             {
                 RoomNoiseGenerator.Generate(room, 0.45f);
-                RoomCellularAutomata.ApplyIterations(room, 5, 5);
+                RoomCellularAutomata.ApplyIterations(room, 5, 2);
                 if (RoomRegionCleanup.Clean(room).Succeeded) rooms.Add(room);
             }
             roomRenderer.RenderWorld(world);
@@ -133,11 +135,16 @@ namespace GravityRoguelike.World
                 var end = FindLeg(b, goal.GetComponent<BoxCollider2D>(), goals);
                 if (!end.Succeeded) continue;
 
+                var playerBox = player.GetComponent<BoxCollider2D>();
+                if (!clearance.TryGroundedSpawn(a, exit.Start.Value, playerBox, out var spawn) ||
+                    !clearance.TryGroundedSpawn(b, end.Start.Value, playerBox, out var arrival)) continue;
+
                 portal.transform.position = clearance.Center(a, exit.Goal.Value);
                 goal.transform.position = clearance.Center(b, end.Goal.Value);
-                portal.SetSameSceneArrival(clearance.Center(b, end.Start.Value));
+                portal.SetSameSceneArrival(arrival);
+                ShowArrivalMarker(arrival);
                 var body = player.GetComponent<Rigidbody2D>();
-                player.transform.SetPositionAndRotation(clearance.Center(a, exit.Start.Value), Quaternion.identity);
+                player.transform.SetPositionAndRotation(spawn, Quaternion.identity);
                 player.gameObject.SetActive(true);
                 body.position = player.transform.position;
                 body.rotation = 0;
@@ -153,9 +160,9 @@ namespace GravityRoguelike.World
                 {
                     RoomData roomA = a, roomB = b;
                     itemSpawner.SpawnInRoom(roomA, exit.Start.Value, exit.Goal.Value,
-                        unchecked(candidate * 31 + roomA.Seed), cell => clearance.Center(roomA, cell));
+                        unchecked(candidate * 31 + roomA.Seed), cell => clearance.Center(roomA, cell), exit.RestingCosts);
                     itemSpawner.SpawnInRoom(roomB, end.Start.Value, end.Goal.Value,
-                        unchecked(candidate * 31 + roomB.Seed), cell => clearance.Center(roomB, cell));
+                        unchecked(candidate * 31 + roomB.Seed), cell => clearance.Center(roomB, cell), end.RestingCosts);
                 }
                 roomALabel = $"Room {a.Id}: {exit.Start} → {exit.Goal}, {exit.MinimumRotations} turns";
                 roomBLabel = $"Room {b.Id}: {end.Start} → {end.Goal}, {end.MinimumRotations} turns";
@@ -173,9 +180,30 @@ namespace GravityRoguelike.World
             var box = player.GetComponent<BoxCollider2D>();
             result = GravityEndpointPlacement.Find(room, GravityDirection.Down, MinRequiredGravityRotations,
                 MaxRequiredGravityRotations, MinStartGoalDistance, MaxPlacementEvaluations,
-                route => clearance.Accept(room, route.Path, box, marker), new System.Random(room.Seed));
+                route => clearance.Accept(room, route.Path, box, marker), new System.Random(room.Seed),
+                cell => clearance.TryGroundedSpawn(room, cell, box, out _));
             cache.Add(room.Id, result);
             return result;
+        }
+
+        private void ShowArrivalMarker(Vector2 arrival)
+        {
+            if (arrivalMarker == null)
+            {
+                var entrance = portal.GetComponent<SpriteRenderer>();
+                arrivalMarker = new GameObject("Portal Exit").AddComponent<SpriteRenderer>();
+                arrivalMarker.transform.SetParent(transform, true);
+                arrivalMarker.sprite = entrance.sprite;
+                arrivalMarker.sharedMaterial = entrance.sharedMaterial;
+                arrivalMarker.drawMode = entrance.drawMode;
+                arrivalMarker.size = entrance.size;
+                arrivalMarker.sortingLayerID = player.GetComponent<SpriteRenderer>().sortingLayerID;
+                arrivalMarker.sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder - 1;
+                arrivalMarker.color = new Color(entrance.color.r, entrance.color.g, entrance.color.b, 0.6f);
+                arrivalMarker.transform.localScale = portal.transform.lossyScale * 0.6f;
+            }
+            arrivalMarker.transform.SetPositionAndRotation(arrival, portal.transform.rotation);
+            arrivalMarker.enabled = true;
         }
 
         private void OnGUI()

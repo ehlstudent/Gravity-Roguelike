@@ -44,10 +44,10 @@ namespace GravityRoguelike.Items
 
         /// <param name="cellToWorld">Turns a local room cell into a world position (cell center).</param>
         public List<PlacedItem> SpawnInRoom(RoomData room, Vector2Int start, Vector2Int goal, int seed,
-            Func<Vector2Int, Vector2> cellToWorld)
+            Func<Vector2Int, Vector2> cellToWorld, IReadOnlyDictionary<Vector2Int, int> restingCells = null)
         {
             if (cellToWorld == null) throw new ArgumentNullException(nameof(cellToWorld));
-            var placed = ItemPlacement.Place(room, start, GravityDirection.Down, new[] { start, goal },
+            var placed = ItemPlacement.Place(restingCells ?? ItemPlacement.FindRestingCells(room, start, GravityDirection.Down), new[] { start, goal },
                 itemsPerRoom, keepClearAroundEndpoints, minItemSpacing, new System.Random(seed));
 
             foreach (PlacedItem item in placed)
