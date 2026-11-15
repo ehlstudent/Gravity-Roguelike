@@ -24,6 +24,7 @@ namespace GravityRoguelike.Combat
         [SerializeField] private LayerMask targetLayers = 1;
         [Tooltip("Solid level geometry blocks damage. Uses the existing Ground layer.")]
         [SerializeField] private LayerMask blockingLayers = 8;
+        [SerializeField, Min(0f)] private float knockback = 6f;
 
         private static readonly int AttackParameter = Animator.StringToHash("Attack");
         private static readonly int SwingUpParameter = Animator.StringToHash("SwingUp");
@@ -174,7 +175,12 @@ namespace GravityRoguelike.Combat
                 Vector2 targetPoint = candidate.ClosestPoint(hitPoint.position);
                 if (Physics2D.Linecast(slashAnimSpawnPoint.position, targetPoint, blockingLayers)) continue;
                 hitTargets.Add(health);
-                health.TakeDamage(damage);
+                health.TakeDamage(new DamageInfo
+                {
+                    amount = damage,
+                    sourcePosition = wielder.position,
+                    knockbackForce = knockback
+                });
             }
         }
 

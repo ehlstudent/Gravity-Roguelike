@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class WalkerEnemy : MonoBehaviour
+public class WalkerEnemy : Enemy
 {
     // The two behaviours of the walker.
     private enum State { Patrolling, Chasing }

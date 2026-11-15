@@ -1,12 +1,14 @@
 using UnityEngine;
+using GravityRoguelike.Combat;   // for DamageInfo
 
-public class BatBehaviour : MonoBehaviour
+public class BatBehaviour : Enemy
 {
     EnemyChase chase;
 
-    // Caches the chase component and keeps it switched off while hanging.
-    void Awake()
+    // Extends the Enemy setup: base sets health and rigidbody, then we cache the chase component
+    protected override void Awake()
     {
+        base.Awake();   // must come first: runs the Enemy setup (health, rb)
         chase = GetComponent<EnemyChase>();
         chase.enabled = false;
     }
@@ -23,10 +25,22 @@ public class BatBehaviour : MonoBehaviour
         GravityRotator.GravityChanged -= Wake;
     }
 
-    // Called by the gravity event; switches the bat from hanging to chasing.
+    // Gravity event handler: just forwards to WakeUp (the parameter is required by the event signature)
     void Wake(Vector2Int newGravity)
     {
-        Debug.Log("Bat woken by gravity event\n" + System.Environment.StackTrace);
+        WakeUp();
+    }
+
+    // Switches the bat from hanging to chasing. Safe to call more than once
+    void WakeUp()
+    {
+        if (chase.enabled) return;   // already awake, nothing to do
         chase.enabled = true;
+    }
+
+    // Called by Enemy.TakeDamage: a hit wakes the sleeping bat
+    protected override void OnDamaged(DamageInfo info)
+    {
+        WakeUp();
     }
 }
