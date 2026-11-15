@@ -192,6 +192,7 @@ MonoBehaviour:
   blockingLayers:
     serializedVersion: 2
     m_Bits: 8
+  knockback: 6
 --- !u!1 &2980576310652820644
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +298,7 @@ GameObject:
   - component: {fileID: 5699677447114144064}
   - component: {fileID: 7168554476198370029}
   - component: {fileID: 5176986821114014359}
+  - component: {fileID: -4367817774863936498}
   m_Layer: 0
   m_Name: Dulli_roomtester
   m_TagString: Untagged
@@ -475,6 +477,21 @@ MonoBehaviour:
     m_Bits: 8
   coyoteTime: 0.1
   jumpBufferTime: 0.1
+--- !u!114 &-4367817774863936498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696939339559477083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b34191c9c16c43408723e44142e9080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Combat.Health
+  maxHealth: 3
+  invincibilityDuration: 1
+  deactivateOnDeath: 1
 --- !u!1 &8092290782084368852
 GameObject:
   m_ObjectHideFlags: 0

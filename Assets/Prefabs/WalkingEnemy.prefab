@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 67149705706658339}
   - component: {fileID: 4396646813977449455}
   - component: {fileID: 6088938077838605121}
-  - component: {fileID: 89587999207783578}
   m_Layer: 0
   m_Name: WalkingEnemy
   m_TagString: Untagged
@@ -198,21 +197,6 @@ MonoBehaviour:
   chaseSpeed: 4
   chaseAcceleration: 4
 --- !u!114 &6088938077838605121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2316928034236453230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b34191c9c16c43408723e44142e9080, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Combat.Health
-  maxHealth: 3
-  invincibilityDuration: 0
-  deactivateOnDeath: 1
---- !u!114 &89587999207783578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
