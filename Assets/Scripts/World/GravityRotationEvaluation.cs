@@ -12,6 +12,15 @@ namespace GravityRoguelike.World
         public int ExploredStates { get; }
         public IReadOnlyList<PlayerState> Path { get; }
 
+        internal GravityRotationEvaluation(List<PlayerState> path, int explored, int rotations, int minimum, int maximum)
+        {
+            Path = path.AsReadOnly();
+            ExploredStates = explored;
+            MinimumRequiredGravityRotations = rotations;
+            MeetsMinimum = rotations >= minimum;
+            MeetsMaximum = rotations <= maximum;
+        }
+
         internal GravityRotationEvaluation(GravityReachabilityResult route, int minimum, int maximum)
         {
             Path = route.Path;

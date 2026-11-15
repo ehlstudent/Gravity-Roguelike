@@ -27,11 +27,6 @@ namespace GravityRoguelike.Items
     /// </summary>
     public static class ItemPlacement
     {
-        private static readonly GravityDirection[] RotationOrder =
-        {
-            GravityDirection.Down, GravityDirection.Left, GravityDirection.Up, GravityDirection.Right
-        };
-
         /// <summary>Every resting cell reachable from start, with its minimum rotation count.</summary>
         public static Dictionary<Vector2Int, int> FindRestingCells(RoomData room, Vector2Int start,
             GravityDirection gravity)
@@ -40,52 +35,7 @@ namespace GravityRoguelike.Items
             if (!room.ContainsLocal(start) || room.GetCell(start) != CellType.Empty)
                 throw new ArgumentException("Start must be an Empty cell inside the room.", nameof(start));
 
-            var initial = new PlayerState(start, gravity);
-            var best = new Dictionary<PlayerState, int> { [initial] = 0 };
-            var queue = new LinkedList<PlayerState>();
-            var resting = new Dictionary<Vector2Int, int>();
-            queue.AddLast(initial);
-
-            void Relax(PlayerState next, int cost)
-            {
-                if (best.TryGetValue(next, out int known) && known <= cost) return;
-                best[next] = cost;
-                queue.AddLast(next);
-            }
-
-            void RelaxFree(PlayerState next, int cost)
-            {
-                if (best.TryGetValue(next, out int known) && known <= cost) return;
-                best[next] = cost;
-                queue.AddFirst(next); // Falling costs nothing (0-1 BFS).
-            }
-
-            while (queue.Count > 0)
-            {
-                PlayerState current = queue.First.Value;
-                queue.RemoveFirst();
-                int cost = best[current];
-
-                PlayerState settled = GravityMovementSimulator.SimulateGravity(room, current);
-                if (settled != current)
-                {
-                    RelaxFree(settled, cost);
-                    continue;
-                }
-
-                if (!resting.TryGetValue(current.Position, out int knownCell) || cost < knownCell)
-                    resting[current.Position] = cost;
-
-                int index = Array.IndexOf(RotationOrder, current.Gravity);
-                for (int rotation = 1; rotation >= -1; rotation -= 2)
-                {
-                    GravityDirection direction = RotationOrder[(index + rotation + 4) % 4];
-                    PlayerState rotated = new PlayerState(current.Position, direction);
-                    Relax(GravityMovementSimulator.SimulateGravity(room, rotated), cost + 1);
-                }
-            }
-
-            return resting;
+            return GravityReachabilitySearch.Explore(room, start, gravity).RestingCosts;
         }
 
         /// <param name="excluded">Cells to keep clear, e.g. start and goal.</param>
@@ -98,9 +48,15 @@ namespace GravityRoguelike.Items
             if (count < 0 || excludeRadius < 0 || minSpacing < 0)
                 throw new ArgumentOutOfRangeException(nameof(count), "Counts and distances must be non-negative.");
 
+            return Place(FindRestingCells(room, start, gravity), excluded, count, excludeRadius, minSpacing, rng);
+        }
+
+        internal static List<PlacedItem> Place(IReadOnlyDictionary<Vector2Int, int> restingCells,
+            IEnumerable<Vector2Int> excluded, int count, int excludeRadius, int minSpacing, System.Random rng)
+        {
             var blocked = new List<Vector2Int>(excluded ?? Array.Empty<Vector2Int>());
             var candidates = new List<KeyValuePair<Vector2Int, int>>();
-            foreach (var entry in FindRestingCells(room, start, gravity))
+            foreach (var entry in restingCells)
             {
                 bool free = true;
                 foreach (Vector2Int cell in blocked)
