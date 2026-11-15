@@ -39,9 +39,26 @@ namespace GravityRoguelike.Combat
         private float nextAttackAt;
 
         public bool IsAttacking { get; private set; }
+        public int Damage => damage;
+
+        private int baseDamage;
+
+        /// <summary>Item bonus (Schadens-Splitter).</summary>
+        public void AddDamage(int amount)
+        {
+            if (amount <= 0) throw new System.ArgumentOutOfRangeException(nameof(amount));
+            damage += amount;
+        }
+
+        /// <summary>Removes item bonuses, e.g. for a new run.</summary>
+        public void ResetDamage()
+        {
+            if (baseDamage > 0) damage = baseDamage; // 0 means Awake has not run yet.
+        }
 
         private void Awake()
         {
+            baseDamage = damage;
             animator = GetComponent<Animator>();
             ActiveWeapon holder = GetComponentInParent<ActiveWeapon>();
             wielder = holder != null ? holder.transform.parent : transform.root;

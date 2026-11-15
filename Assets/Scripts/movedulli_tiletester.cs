@@ -26,12 +26,27 @@ public class PlayerController2D : MonoBehaviour
     private float jumpBufferTimer;
     private bool isGrounded;
 
+    private float baseMoveSpeed;
+
     /// <summary>True while the ground check touches the ground layer.</summary>
     public bool IsGrounded => isGrounded;
+
+    public float MoveSpeed => moveSpeed;
+    public float BaseMoveSpeed => baseMoveSpeed;
+
+    /// <summary>Item bonus (Schnelle Stiefel).</summary>
+    public void SetMoveSpeed(float speed) => moveSpeed = Mathf.Max(0f, speed);
+
+    /// <summary>Removes item bonuses, e.g. for a new run.</summary>
+    public void ResetMoveSpeed()
+    {
+        if (baseMoveSpeed > 0f) moveSpeed = baseMoveSpeed; // 0 means Awake has not run yet.
+    }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        baseMoveSpeed = moveSpeed;
 
         // Move: A/D, arrow keys, gamepad left stick
         moveAction = new InputAction("Move", InputActionType.Value);

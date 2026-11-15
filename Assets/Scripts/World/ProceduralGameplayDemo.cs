@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GravityRoguelike.Items;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -19,6 +20,8 @@ namespace GravityRoguelike.World
         [SerializeField] private PlayerController2D player;
         [SerializeField] private Portal portal;
         [SerializeField] private DemoGoal goal;
+        [Tooltip("Optional. Spawns random items in both rooms.")]
+        [SerializeField] private ItemSpawner itemSpawner;
 
         private bool generating;
         private string status;
@@ -52,6 +55,8 @@ namespace GravityRoguelike.World
             body.linearVelocity = Vector2.zero;
             body.angularVelocity = 0;
             roomRenderer.Clear();
+            if (itemSpawner != null) itemSpawner.Clear();
+            ItemEffects.ResetUpgrades(player);
             clearance = new ShowcaseRouteClearance(map);
 
             int initial = manualSeed ? seed : BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
@@ -86,6 +91,7 @@ namespace GravityRoguelike.World
                 Debug.Log(status + ": " + reason, this);
             }
             roomRenderer.Clear();
+            if (itemSpawner != null) itemSpawner.Clear();
             legA = legB = null;
             status = $"LEVEL GENERATION FAILED — input seed {initial}\n{reason}";
             Debug.LogWarning(status, this);
@@ -143,6 +149,14 @@ namespace GravityRoguelike.World
                 Physics2D.SyncTransforms();
                 legA = exit;
                 legB = end;
+                if (itemSpawner != null)
+                {
+                    RoomData roomA = a, roomB = b;
+                    itemSpawner.SpawnInRoom(roomA, exit.Start.Value, exit.Goal.Value,
+                        unchecked(candidate * 31 + roomA.Seed), cell => clearance.Center(roomA, cell));
+                    itemSpawner.SpawnInRoom(roomB, end.Start.Value, end.Goal.Value,
+                        unchecked(candidate * 31 + roomB.Seed), cell => clearance.Center(roomB, cell));
+                }
                 roomALabel = $"Room {a.Id}: {exit.Start} → {exit.Goal}, {exit.MinimumRotations} turns";
                 roomBLabel = $"Room {b.Id}: {end.Start} → {end.Goal}, {end.MinimumRotations} turns";
                 roomATurns = TurnKeys(exit);
