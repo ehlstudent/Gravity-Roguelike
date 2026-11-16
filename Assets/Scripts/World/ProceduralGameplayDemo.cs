@@ -20,17 +20,16 @@ namespace GravityRoguelike.World
         [SerializeField] private PlayerController2D player;
         [SerializeField] private Portal portal;
         [SerializeField] private DemoGoal goal;
-        [Tooltip("Optional. Spawns random items in both rooms.")]
+        [Tooltip("Optional. Spawns random items in each playable room.")]
         [SerializeField] private ItemSpawner itemSpawner;
 
         private bool generating;
         private string status;
         private ShowcaseRouteClearance clearance;
-        private SpriteRenderer arrivalMarker;
-        private GravityEndpointPlacementResult legA, legB;
-        private string roomALabel, roomBLabel;
-        private string roomATurns, roomBTurns;
-        private bool playing => legA != null && legB != null;
+        private Portal middlePortal;
+        private readonly SpriteRenderer[] arrivalMarkers = new SpriteRenderer[2];
+        private readonly string[] roomTurns = new string[3];
+        private bool playing;
 
         private void Start() => StartCoroutine(NewRun());
 
@@ -43,11 +42,15 @@ namespace GravityRoguelike.World
         private IEnumerator NewRun()
         {
             generating = true;
-            legA = legB = null;
+            playing = false;
             player.gameObject.SetActive(false);
             portal.gameObject.SetActive(false);
             goal.gameObject.SetActive(false);
-            if (arrivalMarker != null) arrivalMarker.enabled = false;
+            if (middlePortal == null)
+                middlePortal = Instantiate(portal, portal.transform.parent);
+            middlePortal.gameObject.SetActive(false);
+            foreach (var marker in arrivalMarkers)
+                if (marker != null) marker.enabled = false;
             goal.ResetGoal();
             var gravity = GravityRotator.Instance;
             gravity.Rotate(-gravity.GravityAngle);
@@ -76,9 +79,9 @@ namespace GravityRoguelike.World
                         throw new InvalidOperationException("Check the placement budgets, rotation range, distance and Ground layer.");
                     if (TryWorld(candidate, out reason))
                     {
-                        status = $"Seed {candidate}  |  Two gravity routes checked";
+                        status = $"Seed {candidate}  |  Three gravity routes checked";
                         Debug.Log($"Showcase accepted: input {initial}, seed {candidate}, attempt {attempt + 1}. "
-                            + $"{roomALabel}; {roomBLabel}. Limits: rotations {MinRequiredGravityRotations}-{MaxRequiredGravityRotations}, "
+                            + $"Limits: rotations {MinRequiredGravityRotations}-{MaxRequiredGravityRotations}, "
                             + $"distance {MinStartGoalDistance}, evaluations {MaxPlacementEvaluations}.", this);
                         generating = false;
                         yield break;
@@ -94,7 +97,7 @@ namespace GravityRoguelike.World
             }
             roomRenderer.Clear();
             if (itemSpawner != null) itemSpawner.Clear();
-            legA = legB = null;
+            playing = false;
             status = $"LEVEL GENERATION FAILED — input seed {initial}\n{reason}";
             Debug.LogWarning(status, this);
             generating = false;
@@ -124,27 +127,43 @@ namespace GravityRoguelike.World
             var exits = new Dictionary<int, GravityEndpointPlacementResult>();
             var goals = new Dictionary<int, GravityEndpointPlacementResult>();
             int pairs = 0;
-            reason = "No two distinct rooms qualified within the room-pair and endpoint budgets.";
-            foreach (var a in rooms)
-            foreach (var b in rooms)
+            reason = "No three distinct rooms qualified within the room-pair and endpoint budgets.";
+            var selected = new RoomData[3];
+            var legs = new GravityEndpointPlacementResult[3];
+            var spawns = new Vector2[3];
+            var playerBox = player.GetComponent<BoxCollider2D>();
+            foreach (var last in rooms)
             {
-                if (a == b) continue;
-                if (pairs++ >= maxRoomPairEvaluations) return false;
-                var exit = FindLeg(a, portal.GetComponent<BoxCollider2D>(), exits);
-                if (!exit.Succeeded) continue;
-                var end = FindLeg(b, goal.GetComponent<BoxCollider2D>(), goals);
-                if (!end.Succeeded) continue;
+                var end = FindLeg(last, goal.GetComponent<BoxCollider2D>(), goals);
+                if (!end.Succeeded || !clearance.TryGroundedSpawn(last, end.Start.Value, playerBox, out spawns[2]))
+                    continue;
+                selected[2] = last;
+                legs[2] = end;
 
-                var playerBox = player.GetComponent<BoxCollider2D>();
-                if (!clearance.TryGroundedSpawn(a, exit.Start.Value, playerBox, out var spawn) ||
-                    !clearance.TryGroundedSpawn(b, end.Start.Value, playerBox, out var arrival)) continue;
+                int count = 0;
+                foreach (var room in rooms)
+                {
+                    if (room == last) continue;
+                    if (pairs++ >= maxRoomPairEvaluations) return false;
+                    var exit = FindLeg(room, portal.GetComponent<BoxCollider2D>(), exits);
+                    if (!exit.Succeeded || !clearance.TryGroundedSpawn(room, exit.Start.Value, playerBox, out spawns[count]))
+                        continue;
+                    selected[count] = room;
+                    legs[count] = exit;
+                    count++;
+                    if (count == 2) break;
+                }
+                if (count < 2) continue;
 
-                portal.transform.position = clearance.Center(a, exit.Goal.Value);
-                goal.transform.position = clearance.Center(b, end.Goal.Value);
-                portal.SetSameSceneArrival(arrival);
-                ShowArrivalMarker(arrival);
+                portal.transform.position = clearance.Center(selected[0], legs[0].Goal.Value);
+                portal.SetSameSceneArrival(spawns[1]);
+                middlePortal.transform.position = clearance.Center(selected[1], legs[1].Goal.Value);
+                middlePortal.SetSameSceneArrival(spawns[2]);
+                goal.transform.position = clearance.Center(last, end.Goal.Value);
+                ShowArrivalMarker(0, spawns[1]);
+                ShowArrivalMarker(1, spawns[2]);
                 var body = player.GetComponent<Rigidbody2D>();
-                player.transform.SetPositionAndRotation(spawn, Quaternion.identity);
+                player.transform.SetPositionAndRotation(spawns[0], Quaternion.identity);
                 player.gameObject.SetActive(true);
                 body.position = player.transform.position;
                 body.rotation = 0;
@@ -152,22 +171,19 @@ namespace GravityRoguelike.World
                 body.angularVelocity = 0;
                 GravityRotator.Instance.enabled = true;
                 portal.gameObject.SetActive(true);
+                middlePortal.gameObject.SetActive(true);
                 goal.gameObject.SetActive(true);
                 Physics2D.SyncTransforms();
-                legA = exit;
-                legB = end;
-                if (itemSpawner != null)
+                for (int i = 0; i < selected.Length; i++)
                 {
-                    RoomData roomA = a, roomB = b;
-                    itemSpawner.SpawnInRoom(roomA, exit.Start.Value, exit.Goal.Value,
-                        unchecked(candidate * 31 + roomA.Seed), cell => clearance.Center(roomA, cell), exit.RestingCosts);
-                    itemSpawner.SpawnInRoom(roomB, end.Start.Value, end.Goal.Value,
-                        unchecked(candidate * 31 + roomB.Seed), cell => clearance.Center(roomB, cell), end.RestingCosts);
+                    var room = selected[i];
+                    var leg = legs[i];
+                    roomTurns[i] = TurnKeys(leg);
+                    if (itemSpawner != null)
+                        itemSpawner.SpawnInRoom(room, leg.Start.Value, leg.Goal.Value,
+                            unchecked(candidate * 31 + room.Seed), cell => clearance.Center(room, cell), leg.RestingCosts);
                 }
-                roomALabel = $"Room {a.Id}: {exit.Start} → {exit.Goal}, {exit.MinimumRotations} turns";
-                roomBLabel = $"Room {b.Id}: {end.Start} → {end.Goal}, {end.MinimumRotations} turns";
-                roomATurns = TurnKeys(exit);
-                roomBTurns = TurnKeys(end);
+                playing = true;
                 return true;
             }
             return false;
@@ -186,12 +202,14 @@ namespace GravityRoguelike.World
             return result;
         }
 
-        private void ShowArrivalMarker(Vector2 arrival)
+        private void ShowArrivalMarker(int index, Vector2 arrival)
         {
+            var arrivalMarker = arrivalMarkers[index];
             if (arrivalMarker == null)
             {
                 var entrance = portal.GetComponent<SpriteRenderer>();
                 arrivalMarker = new GameObject("Portal Exit").AddComponent<SpriteRenderer>();
+                arrivalMarkers[index] = arrivalMarker;
                 arrivalMarker.transform.SetParent(transform, true);
                 arrivalMarker.sprite = entrance.sprite;
                 arrivalMarker.sharedMaterial = entrance.sharedMaterial;
@@ -210,9 +228,12 @@ namespace GravityRoguelike.World
         {
             string stage = "";
             if (playing)
-                stage = goal.Complete ? "LEVEL COMPLETE" : portal.Used ? "Room B: reach the green goal" : "Room A: reach the purple portal";
-            if (playing && !goal.Complete)
-                stage += "\nRoute from entry: " + (portal.Used ? roomBTurns : roomATurns);
+            {
+                int index = middlePortal.Used ? 2 : portal.Used ? 1 : 0;
+                stage = goal.Complete ? "LEVEL COMPLETE" : index == 2 ? "Room 3: reach the green goal"
+                    : $"Room {index + 1}: reach the purple portal";
+                if (!goal.Complete) stage += "\nRoute from entry: " + roomTurns[index];
+            }
             GUI.Box(new Rect(12, 12, 430, 86), $"{status}\n{stage}\nA/D: Move    Space: Jump    Q/E: Rotate gravity    R: New run");
         }
 
