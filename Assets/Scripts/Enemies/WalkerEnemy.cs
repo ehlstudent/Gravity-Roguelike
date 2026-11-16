@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using GravityRoguelike.Combat;   // for DamageInfo
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class WalkerEnemy : Enemy
@@ -19,7 +20,6 @@ public class WalkerEnemy : Enemy
     [SerializeField] private float jumpHeightInCells = 1.5f;   // a little more than one cell, so it clears the edge
     private bool jumpRequested;                                // set by the chase logic, used once in ComputeVelocity
 
-    private Rigidbody2D rb;
     private State state = State.Patrolling;
     private int patrolSign = 1;                // +1 or -1: patrol direction along the ground
     private List<Vector2Int> path;             // remaining waypoints while chasing
@@ -29,16 +29,17 @@ public class WalkerEnemy : Enemy
     [SerializeField] private float chaseAcceleration = 4f;   // speed gained per second (2 -> 4 takes ~0.5 s)
     private float currentSpeed;                              // the speed we are really using right now
 
-    // Caches the Rigidbody and stops it from tumbling. Gravity comes from the Gravity Scale.
-    private void Awake()
+    // Extends the Enemy setup (Health subscription, rb), then stops the body from tumbling.
+    protected override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;
+        base.Awake();                 // must come first: caches rb and subscribes to Health
+        rb.freezeRotation = true;     // rb now comes from Enemy
     }
 
     // Each physics tick: decide how fast to walk along the ground, then build the velocity.
     private void FixedUpdate()
     {
+        if (IsStunned) return;
         Vector2Int g = roomGrid.gravity;
         Vector2 gravityDir = new Vector2(g.x, g.y);
         Vector2 tangent = new Vector2(-g.y, g.x);   // along the ground, works for all four gravities
@@ -72,12 +73,7 @@ public class WalkerEnemy : Enemy
     {
         if (CanNoticePlayer(cell))
         {
-            state = State.Chasing;
-            currentSpeed = walkSpeed;   // new: start the ramp-up from the patrol speed
-
-            state = State.Chasing;
-            path = null;
-            nextRepathTime = 0f;     // plan immediately
+            StartChasing();
             return 0f;
         }
 
@@ -180,13 +176,15 @@ public class WalkerEnemy : Enemy
         path = Pathfinder.FindPath(cell, goal, roomGrid.WalkingNeighbors);
     }
 
-    // Returns to patrolling and ignores the player for a short while, so it doesn't flicker.
-    private void StopChasing()
+    // Switches from patrolling to chasing and resets the chase bookkeeping.
+    private void StartChasing()
     {
-        state = State.Patrolling;
+        state = State.Chasing;
+        currentSpeed = walkSpeed;   // the ramp-up starts from the patrol speed
         path = null;
-        noAggroUntil = Time.time + giveUpCooldown;
+        nextRepathTime = 0f;        // plan immediately
     }
+
     // Keeps loseRadius larger than aggroRadius, whatever is typed in the Inspector.
     private void OnValidate()
     {
@@ -226,5 +224,19 @@ public class WalkerEnemy : Enemy
         Vector2Int d = target - cell;
         Vector2Int tangent = new Vector2Int(-g.y, g.x);
         return d == tangent - g || d == -tangent - g;
+    }
+
+    // Called by Enemy when Health reports a hit: start chasing and drop momentum.
+    protected override void OnDamaged(DamageInfo info)
+    {
+        jumpRequested = false;   // a jump queued before the hit must not fire after the stun
+
+        if (state == State.Patrolling)
+            StartChasing();
+        else
+        {
+            currentSpeed = walkSpeed;   // already chasing: lose the built-up speed
+            nextRepathTime = 0f;        // re-plan from the new position once we can
+        }
     }
 }
