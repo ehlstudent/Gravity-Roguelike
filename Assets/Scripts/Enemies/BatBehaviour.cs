@@ -34,6 +34,8 @@ public class BatBehaviour : Enemy
     // Switches the bat from hanging to chasing. Safe to call more than once
     void WakeUp()
     {
+        // In BatBehaviour.WakeUp(), first line:
+        Debug.Log($"[4] WakeUp, chase already enabled: {chase.enabled}", this);
         if (chase.enabled) return;   // already awake, nothing to do
         chase.enabled = true;
     }
@@ -41,6 +43,8 @@ public class BatBehaviour : Enemy
     // Called by Enemy.TakeDamage: a hit wakes the sleeping bat
     protected override void OnDamaged(DamageInfo info)
     {
+        // In BatBehaviour.OnDamaged(DamageInfo info), first line:
+        Debug.Log("[3] Bat.OnDamaged", this);
         WakeUp();
     }
 }

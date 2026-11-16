@@ -153,7 +153,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   player: {fileID: 0}
   speed: 2.5
-  bodyRadius: 0.6
+  bodyRadius: 0.5
 --- !u!114 &4402974477133960678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d12496e345de6d4c85b1f75c944c367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BatBehaviour
-  maxHealth: 3
   contactDamage: 1
   contactKnockback: 6
   stunDuration: 0.25
@@ -219,3 +218,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Combat.Health
   maxHealth: 3
+  invincibilityDuration: 0
+  deactivateOnDeath: 1
