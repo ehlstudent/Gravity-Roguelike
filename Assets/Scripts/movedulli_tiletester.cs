@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using GravityRoguelike.Combat;   // for DamageInfo
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
@@ -7,6 +8,9 @@ public class PlayerController2D : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private float knockbackLockDuration = 0.2f;   // seconds the input is ignored
+    private float knockbackLockedUntil;                            // Time.time until which input is ignored
+
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;      // empty child object at the character's feet
@@ -18,6 +22,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.1f; // jump press remembered shortly before landing
 
     private Rigidbody2D rb;
+    private Health health;
     private InputAction moveAction;
     private InputAction jumpAction;
 
@@ -47,6 +52,8 @@ public class PlayerController2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         baseMoveSpeed = moveSpeed;
+        health = GetComponent<Health>();
+        health.Damaged += OnHit;
 
         // Move: A/D, arrow keys, gamepad left stick
         moveAction = new InputAction("Move", InputActionType.Value);
@@ -92,6 +99,7 @@ public class PlayerController2D : MonoBehaviour
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         coyoteTimer = isGrounded ? coyoteTime : coyoteTimer - Time.deltaTime;
+        bool knockbackLocked = Time.time < knockbackLockedUntil;
 
         // "Up" and "right" follow the player's rotation, so they are relative to the gravity
         Vector2 up = transform.up;
@@ -100,7 +108,7 @@ public class PlayerController2D : MonoBehaviour
         float upSpeed = Vector2.Dot(rb.linearVelocity, up);
 
         // Jump
-        if (jumpBufferTimer > 0f && coyoteTimer > 0f)
+        if (!knockbackLocked && jumpBufferTimer > 0f && coyoteTimer > 0f)
         {
             rb.linearVelocity = right * rightSpeed + up * jumpForce;
             upSpeed = jumpForce;
@@ -109,7 +117,7 @@ public class PlayerController2D : MonoBehaviour
         }
 
         // Variable jump height: releasing early cuts the jump short
-        if (jumpAction.WasReleasedThisFrame() && upSpeed > 0f)
+        if (!knockbackLocked && jumpAction.WasReleasedThisFrame() && upSpeed > 0f)
             rb.linearVelocity = right * rightSpeed + up * (upSpeed * 0.5f);
 
         // Flip sprite to face movement direction
@@ -124,6 +132,7 @@ public class PlayerController2D : MonoBehaviour
     private void FixedUpdate()
     {
         AlignToGravity();
+        if (Time.time < knockbackLockedUntil) return;
 
         // Apply sideways movement in the physics step, keeping the speed along gravity
         Vector2 up = transform.up;
@@ -141,6 +150,23 @@ public class PlayerController2D : MonoBehaviour
         // Setting the rotation directly works even with "Freeze Rotation" enabled.
         rb.rotation = targetAngle;
         transform.rotation = Quaternion.Euler(0f, 0f, targetAngle);
+    }
+
+    // Unsubscribes so the event doesn't point at a destroyed object.
+    private void OnDestroy()
+    {
+        if (health != null) health.Damaged -= OnHit;
+    }
+
+    // Pushes away from the hit source and locks movement input briefly.
+    private void OnHit(DamageInfo info)
+    {
+        if (info.knockbackForce <= 0f) return;
+
+        Vector2 direction = ((Vector2)transform.position - info.sourcePosition).normalized;
+        rb.linearVelocity = Vector2.zero;   // cancel current motion so the push is consistent
+        rb.AddForce(direction * info.knockbackForce, ForceMode2D.Impulse);
+        knockbackLockedUntil = Time.time + knockbackLockDuration;
     }
 
     private void OnDrawGizmosSelected()

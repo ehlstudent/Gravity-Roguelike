@@ -393,7 +393,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e0e9974aef7e4224ab66c81e4aac1bc5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -470,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveSpeed: 7
   jumpForce: 12
+  knockbackLockDuration: 0.2
   groundCheck: {fileID: 9025778041141438947}
   groundCheckRadius: 0.15
   groundLayer:
