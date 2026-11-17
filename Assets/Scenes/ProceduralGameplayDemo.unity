@@ -150,12 +150,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdd283ca227b004397dd209e6246471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.World.ProceduralGameplayDemo
+  minRequiredGravityRotations: 2
+  maxRequiredGravityRotations: 8
+  minStartGoalDistance: 8
+  maxPlacementEvaluations: 200
+  manualSeed: 0
   seed: 123
+  maxWorldGenerationAttempts: 20
+  maxRoomPairEvaluations: 30
   roomRenderer: {fileID: 780976669}
   map: {fileID: 2113198093}
   player: {fileID: 1294239387}
   portal: {fileID: 1564183637}
   goal: {fileID: 906798323}
+  itemSpawner: {fileID: 795023039}
 --- !u!114 &780976669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +204,60 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2113198096}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &795023038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795023040}
+  - component: {fileID: 795023039}
+  m_Layer: 0
+  m_Name: ItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &795023039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795023038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ca0a10a0dc493459d9df8348d34a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Items.ItemSpawner
+  heartSprite: {fileID: -3224682052510888474, guid: f46a7ed5f81451740b02b1db65c85345, type: 3}
+  maxHealthCrystalSprite: {fileID: -6375932032478222398, guid: 5578fb7ad557fa84aab1d571f2c78fc5, type: 3}
+  damageShardSprite: {fileID: -4930466443283878255, guid: d1b319cefc42a9f4b843e6570c074170, type: 3}
+  speedBootsSprite: {fileID: 6158556718056138069, guid: dfce8e142332e3144a8459d4067332e0, type: 3}
+  itemsPerRoom: 3
+  keepClearAroundEndpoints: 2
+  minItemSpacing: 4
+  pickupRadius: 0.35
+  itemScale: 0.7
+  sortingOrder: 5
+--- !u!4 &795023040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795023038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.90625, y: 33.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906798322
@@ -664,14 +726,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4696939339559477083, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1294239390}
   m_SourcePrefab: {fileID: 100100000, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
 --- !u!114 &1294239387 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5176986821114014359, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
   m_PrefabInstance: {fileID: 1294239386}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1294239389}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d3f116600d1caa41b35cbdabcdc39bb, type: 3}
@@ -682,6 +747,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 828011848938452685, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
   m_PrefabInstance: {fileID: 1294239386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1294239389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4696939339559477083, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+  m_PrefabInstance: {fileID: 1294239386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1294239390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294239389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b34191c9c16c43408723e44142e9080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Combat.Health
+  maxHealth: 3
 --- !u!1001 &1564183636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,3 +1009,4 @@ SceneRoots:
   - {fileID: 1294239386}
   - {fileID: 1564183636}
   - {fileID: 906798326}
+  - {fileID: 795023040}
