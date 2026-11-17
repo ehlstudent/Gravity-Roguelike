@@ -3,16 +3,35 @@ using UnityEngine;
 
 namespace GravityRoguelike.Combat
 {
+    /// <summary>Everything a single hit carries. A struct: copied cheaply, no garbage.</summary>
+    public struct DamageInfo
+    {
+        public int amount;              // how much health to remove
+        public Vector2 sourcePosition;  // where the hit came from (for knockback direction)
+        public float knockbackForce;    // push strength, 0 = no knockback
+    }
+
     /// <summary>One receiver per target; child colliders share this health pool.</summary>
     public class Health : MonoBehaviour
     {
         [SerializeField, Min(1)] private int maxHealth = 3;
+        [Tooltip("Seconds of immunity after a hit. 0 for enemies, ~1 for the player.")]
+        [SerializeField, Min(0f)] private float invincibilityDuration = 0f;
+        [Tooltip("Untick if the owner handles its own death (animation, drops).")]
+        [SerializeField] private bool deactivateOnDeath = true;
 
         public int MaxHealth => maxHealth;
         public int CurrentHealth { get; private set; }
         public bool IsDead => CurrentHealth == 0;
 
+
+        // Fired after damage was applied (also for the killing hit)
+        public event Action<DamageInfo> Damaged;
+        // Fired once when health reaches 0, before the object is deactivated
+        public event Action Died;
+
         private int baseMaxHealth;
+        private float invincibleUntil;   // Time.time until which hits are ignored
 
         private void Awake()
         {
@@ -22,16 +41,31 @@ namespace GravityRoguelike.Combat
         private void OnEnable()
         {
             CurrentHealth = Mathf.Max(1, maxHealth);
+            invincibleUntil = 0f;         // fresh start after re-enabling
         }
 
-        /// <summary>Returns false for inactive/dead targets. Re-enabling resets health.</summary>
+        /// <summary>Old entry point: plain damage with no direction. Still used where no source is known.</summary>
         public bool TakeDamage(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
-            if (!isActiveAndEnabled || IsDead) return false;
+            return TakeDamage(new DamageInfo { amount = amount });
+        }
 
-            CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
-            if (IsDead) gameObject.SetActive(false);
+        /// <summary>Full hit with source and knockback. Returns false if ignored (dead, inactive, invincible).</summary>
+        public bool TakeDamage(DamageInfo info)
+        {
+            if (info.amount <= 0) throw new ArgumentOutOfRangeException(nameof(info.amount));
+            if (!isActiveAndEnabled || IsDead) return false;
+            if (Time.time < invincibleUntil) return false;
+
+            invincibleUntil = Time.time + invincibilityDuration;
+            CurrentHealth = Mathf.Max(0, CurrentHealth - info.amount);
+            Damaged?.Invoke(info);
+
+            if (IsDead)
+            {
+                Died?.Invoke();
+                if (deactivateOnDeath) gameObject.SetActive(false);
+            }
             return true;
         }
 

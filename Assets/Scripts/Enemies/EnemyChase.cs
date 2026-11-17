@@ -13,18 +13,25 @@ public class EnemyChase : MonoBehaviour
     List<Vector2Int> path;
     int waypointIndex;
     float repathTimer;
+    Enemy enemy;
 
-    // Runs once on creation; caches the Rigidbody2D so we don't look it up every tick.
+    // Runs once on creation; caches the components so we don't look them up every tick.
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // random repathTimer so a swarm of bats doesn't cause CPU spikes   
+        enemy = GetComponent<Enemy>();   // finds BatBehaviour (or any Enemy subclass)
         repathTimer = Random.Range(repathInterval - 0.1f, repathInterval + 0.1f);
     }
 
     // Runs every physics tick; re-plans on a timer and moves along the current path.
     void FixedUpdate()
     {
+        // While stunned, don't steer: let the knockback play out
+        if (enemy.IsStunned) return;
+
+        // knockback is over: drop leftover velocity so MovePosition fully controls the bat again
+        rb.linearVelocity = Vector2.zero;
+
         // TODO 2: count the timer down, re-plan when it reaches zero
         repathTimer -= Time.fixedDeltaTime;
         if (repathTimer <= 0f)
