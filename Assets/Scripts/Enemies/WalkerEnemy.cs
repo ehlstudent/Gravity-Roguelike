@@ -8,8 +8,6 @@ public class WalkerEnemy : Enemy
     // The two behaviours of the walker.
     private enum State { Patrolling, Chasing }
 
-    [SerializeField] private RoomGrid roomGrid;
-    [SerializeField] private Transform player;
     [SerializeField] private float walkSpeed = 2f;
     [SerializeField] private float maxFallSpeed = 12f;   // cap, prevents tunnelling through the ground
     [SerializeField] private float aggroRadius = 6f;     // start chasing inside this distance
@@ -28,6 +26,8 @@ public class WalkerEnemy : Enemy
     [SerializeField] private float chaseSpeed = 4f;   // speed while chasing (patrol keeps using walkSpeed)
     [SerializeField] private float chaseAcceleration = 4f;   // speed gained per second (2 -> 4 takes ~0.5 s)
     private float currentSpeed;                              // the speed we are really using right now
+    [SerializeField] private float yieldCooldown = 0.1f;   // pause between yield decisions, stops tick-by-tick flipping
+    private float noYieldUntil;                          // Time.time until which this walker won't flip again
 
     // Extends the Enemy setup (Health subscription, rb), then stops the body from tumbling.
     protected override void Awake()
@@ -204,7 +204,6 @@ public class WalkerEnemy : Enemy
     // going out of range doesn't block the walker from noticing the player again.
     private void StopChasing(string reason, bool useCooldown)
     {
-        Debug.Log($"{name} stopped chasing: {reason}");
         state = State.Patrolling;
         path = null;
         if (useCooldown) noAggroUntil = Time.time + giveUpCooldown;
@@ -238,5 +237,38 @@ public class WalkerEnemy : Enemy
             currentSpeed = walkSpeed;   // already chasing: lose the built-up speed
             nextRepathTime = 0f;        // re-plan from the new position once we can
         }
+    }
+
+    // Walker: needs solid ground under its feet.
+    public override bool CanSpawnAt(RoomGrid grid, Vector2Int cell) => 
+        grid.IsStandable(cell);
+
+    // Keeps the contact damage from Enemy, then lets this walker yield to another walker.
+    protected override void OnCollisionStay2D(Collision2D col)
+    {
+        base.OnCollisionStay2D(col);   // Enemy's logic: hurt the player on contact
+        YieldToOtherWalker(col);
+    }
+
+    // If we bump into a patrolling walker coming the other way, we flip a coin to turn around.
+    // Whoever flips first resolves it; if both flip in the same tick, they retry after the cooldown.
+    private void YieldToOtherWalker(Collision2D col)
+    {
+        WalkerEnemy other = col.collider.GetComponentInParent<WalkerEnemy>();
+        if (other == null || other == this) return;
+
+        // Only patrolling walkers resolve this; a chasing walker keeps steering to the player.
+        if (state != State.Patrolling || other.state != State.Patrolling) return;
+
+        // Same direction: they are already walking together, nothing to fix.
+        if (patrolSign == other.patrolSign) return;
+
+        // Still in the pause after our last decision: wait before deciding again.
+        if (Time.time < noYieldUntil) return;
+        noYieldUntil = Time.time + yieldCooldown;
+
+        // 50 % chance to be the one who turns around.
+        if (Random.value < 0.5f)
+            patrolSign = -patrolSign;
     }
 }

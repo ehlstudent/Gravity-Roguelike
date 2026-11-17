@@ -43,4 +43,14 @@ public class BatBehaviour : Enemy
     {
         WakeUp();
     }
+
+    // Passes the injected references on to the chase component.
+    protected override void OnInitialized()
+    {
+        chase.Init(roomGrid, player);
+    }
+
+    // Bat: needs a solid cell on the "up" side (opposite of gravity) to hang from.
+    public override bool CanSpawnAt(RoomGrid grid, Vector2Int cell) => 
+        grid.IsSolid(cell - grid.gravity);
 }

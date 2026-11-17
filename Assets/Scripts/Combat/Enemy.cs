@@ -16,12 +16,29 @@ public abstract class Enemy : MonoBehaviour
     protected Health health;       // the shared health pool (also read by the sword)
     protected Rigidbody2D rb;      // cached for knockback
     private float stunnedUntil;    // Time.time until which this enemy is stunned
+    protected RoomGrid roomGrid;   // the level grid, injected by whoever spawns us
+    protected Transform player;    // the player, injected by whoever spawns us
+
 
     // True while stunned: movement scripts check this before steering
     public bool IsStunned => Time.time < stunnedUntil;
 
     // Room, loot or UI can subscribe to learn about deaths
     public event Action<Enemy> Died;
+    
+    // Receives the scene references right after spawning, then lets the subclass react.
+    public void Init(RoomGrid grid, Transform playerTransform)
+    {
+        roomGrid = grid;
+        player = playerTransform;
+        OnInitialized();
+    }
+
+    // Hook for subclasses that need to pass the references on (e.g. to helper components).
+    protected virtual void OnInitialized() { }
+
+    // Spawner asks this on the prefab before placing it. Default: any free cell is fine.
+    public virtual bool CanSpawnAt(RoomGrid grid, Vector2Int cell) => true;
 
     // Caches components and subscribes to Health. Subclasses must call base.Awake()
     protected virtual void Awake()
