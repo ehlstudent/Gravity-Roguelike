@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 780976670}
   - component: {fileID: 780976669}
   - component: {fileID: 780976668}
+  - component: {fileID: 780976672}
+  - component: {fileID: 780976673}
   m_Layer: 0
   m_Name: Generated World Grid
   m_TagString: Untagged
@@ -164,6 +166,35 @@ MonoBehaviour:
   portal: {fileID: 1564183637}
   goal: {fileID: 906798323}
   itemSpawner: {fileID: 795023039}
+  enemySpawner: {fileID: 780976673}
+--- !u!114 &780976672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780976667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fe711130ae76241a5fb0f4e147608c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  solid: {fileID: 2113198093}
+--- !u!114 &780976673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780976667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4180d145415a41afad1ad2aa6def1194, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  grid: {fileID: 780976672}
+  bat: {fileID: 4402974477133960678, guid: cc3caf291e84e1349be37a1e7e880724, type: 3}
+  walker: {fileID: 4396646813977449455, guid: c26c4806d97117f4284061ae426c64e0, type: 3}
 --- !u!114 &780976669
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,6 +22,10 @@ namespace GravityRoguelike.World
         [SerializeField] private DemoGoal goal;
         [Tooltip("Optional. Spawns random items in each playable room.")]
         [SerializeField] private ItemSpawner itemSpawner;
+        [SerializeField] private DemoEnemySpawner enemySpawner;
+        private RoomData[] activeRooms;
+        private GravityEndpointPlacementResult[] activeLegs;
+        private int enemyRoom = -1;
 
         private bool generating;
         private string status;
@@ -35,6 +39,7 @@ namespace GravityRoguelike.World
 
         private void Update()
         {
+            if (playing) PopulateCurrentRoom();
             if (!generating && Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
                 StartCoroutine(NewRun());
         }
@@ -43,6 +48,8 @@ namespace GravityRoguelike.World
         {
             generating = true;
             playing = false;
+            if (enemySpawner != null) enemySpawner.Clear();
+            enemyRoom = -1;
             player.gameObject.SetActive(false);
             portal.gameObject.SetActive(false);
             goal.gameObject.SetActive(false);
@@ -174,6 +181,8 @@ namespace GravityRoguelike.World
                 middlePortal.gameObject.SetActive(true);
                 goal.gameObject.SetActive(true);
                 Physics2D.SyncTransforms();
+                var showcaseItems = new Queue<ItemType>(new[] { ItemType.Heart, ItemType.DamageShard,
+                    ItemType.SpeedBoots, ItemType.MaxHealthCrystal });
                 for (int i = 0; i < selected.Length; i++)
                 {
                     var room = selected[i];
@@ -181,12 +190,24 @@ namespace GravityRoguelike.World
                     roomTurns[i] = TurnKeys(leg);
                     if (itemSpawner != null)
                         itemSpawner.SpawnInRoom(room, leg.Start.Value, leg.Goal.Value,
-                            unchecked(candidate * 31 + room.Seed), cell => clearance.Center(room, cell), leg.RestingCosts);
+                            unchecked(candidate * 31 + room.Seed), cell => clearance.Center(room, cell), leg.RestingCosts, showcaseItems);
                 }
+                activeRooms = selected;
+                activeLegs = legs;
                 playing = true;
+                PopulateCurrentRoom();
                 return true;
             }
             return false;
+        }
+
+        private int CurrentRoom => middlePortal.Used ? 2 : portal.Used ? 1 : 0;
+
+        private void PopulateCurrentRoom()
+        {
+            if (enemySpawner == null || CurrentRoom == enemyRoom) return;
+            enemyRoom = CurrentRoom;
+            enemySpawner.Populate(activeRooms[enemyRoom], activeLegs[enemyRoom], player.transform);
         }
 
         private GravityEndpointPlacementResult FindLeg(RoomData room, BoxCollider2D marker,
@@ -229,7 +250,7 @@ namespace GravityRoguelike.World
             string stage = "";
             if (playing)
             {
-                int index = middlePortal.Used ? 2 : portal.Used ? 1 : 0;
+                int index = CurrentRoom;
                 stage = goal.Complete ? "LEVEL COMPLETE" : index == 2 ? "Room 3: reach the green goal"
                     : $"Room {index + 1}: reach the purple portal";
                 if (!goal.Complete) stage += "\nRoute from entry: " + roomTurns[index];

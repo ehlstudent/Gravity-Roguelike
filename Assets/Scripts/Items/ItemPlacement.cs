@@ -52,7 +52,8 @@ namespace GravityRoguelike.Items
         }
 
         internal static List<PlacedItem> Place(IReadOnlyDictionary<Vector2Int, int> restingCells,
-            IEnumerable<Vector2Int> excluded, int count, int excludeRadius, int minSpacing, System.Random rng)
+            IEnumerable<Vector2Int> excluded, int count, int excludeRadius, int minSpacing, System.Random rng,
+            Queue<ItemType> showcaseItems = null)
         {
             var blocked = new List<Vector2Int>(excluded ?? Array.Empty<Vector2Int>());
             var candidates = new List<KeyValuePair<Vector2Int, int>>();
@@ -80,13 +81,15 @@ namespace GravityRoguelike.Items
             var placed = new List<PlacedItem>();
             for (int i = 0; i < count; i++)
             {
-                ItemType type = ItemLootTable.Roll(rng);
+                bool showcasing = showcaseItems != null && showcaseItems.Count > 0;
+                ItemType type = showcasing ? showcaseItems.Peek() : ItemLootTable.Roll(rng);
                 bool rare = ItemLootTable.GetRarity(type) == ItemRarity.Rare;
                 if (!TryPick(candidates, placed, minSpacing, rare ? rareThreshold : 0, out var pick) &&
                     !(rare && TryPick(candidates, placed, minSpacing, 0, out pick)))
                     break; // Room is full.
 
                 placed.Add(new PlacedItem(pick.Key, type, pick.Value));
+                if (showcasing) showcaseItems.Dequeue();
             }
             return placed;
         }

@@ -9,6 +9,11 @@ public class WalkerEnemy : MonoBehaviour
 
     [SerializeField] private RoomGrid roomGrid;
     [SerializeField] private Transform player;
+    public void Initialize(RoomGrid grid, Transform target)
+    {
+        roomGrid = grid;
+        player = target;
+    }
     [SerializeField] private float walkSpeed = 2f;
     [SerializeField] private float maxFallSpeed = 12f;   // cap, prevents tunnelling through the ground
     [SerializeField] private float aggroRadius = 6f;     // start chasing inside this distance
