@@ -148,11 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04781a87442246646baf92ad8260fdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefabs:
-  - {fileID: 4402974477133960678, guid: cc3caf291e84e1349be37a1e7e880724, type: 3}
-  - {fileID: 4396646813977449455, guid: c26c4806d97117f4284061ae426c64e0, type: 3}
-  enemyCount: 5
+  enemies:
+  - prefab: {fileID: 4402974477133960678, guid: cc3caf291e84e1349be37a1e7e880724, type: 3}
+    count: 5
+  - prefab: {fileID: 4396646813977449455, guid: c26c4806d97117f4284061ae426c64e0, type: 3}
+    count: 3
   minDistanceFromPlayer: 5
+  useFixedSeed: 1
+  seed: 1
 --- !u!4 &312454466
 Transform:
   m_ObjectHideFlags: 0
