@@ -150,12 +150,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdd283ca227b004397dd209e6246471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.World.ProceduralGameplayDemo
+  minRequiredGravityRotations: 2
+  maxRequiredGravityRotations: 8
+  minStartGoalDistance: 8
+  maxPlacementEvaluations: 200
+  manualSeed: 0
   seed: 123
+  maxWorldGenerationAttempts: 20
+  maxRoomPairEvaluations: 30
   roomRenderer: {fileID: 780976669}
   map: {fileID: 2113198093}
   player: {fileID: 1294239387}
   portal: {fileID: 1564183637}
   goal: {fileID: 906798323}
+  itemSpawner: {fileID: 0}
 --- !u!114 &780976669
 MonoBehaviour:
   m_ObjectHideFlags: 0

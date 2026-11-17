@@ -1,0 +1,1406 @@
+fileFormatVersion: 2
+guid: 1819a4b8114bd0745bedcb03c3125101
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4945086545240289529
+    second: Void Knight-Sheet_0
+  - first:
+      213: 7404414072655975443
+    second: Void Knight-Sheet_1
+  - first:
+      213: 6900670894097411064
+    second: Void Knight-Sheet_2
+  - first:
+      213: -142079104379124855
+    second: Void Knight-Sheet_3
+  - first:
+      213: 6403242244480161966
+    second: Void Knight-Sheet_4
+  - first:
+      213: 2962626976940158198
+    second: Void Knight-Sheet_5
+  - first:
+      213: 7356458512252391487
+    second: Void Knight-Sheet_6
+  - first:
+      213: -4145796115482783402
+    second: Void Knight-Sheet_7
+  - first:
+      213: -874206367907031236
+    second: Void Knight-Sheet_8
+  - first:
+      213: 8166836369546493315
+    second: Void Knight-Sheet_9
+  - first:
+      213: 7757032779175281507
+    second: Void Knight-Sheet_10
+  - first:
+      213: -5749089474371642410
+    second: Void Knight-Sheet_11
+  - first:
+      213: -2031734534879914567
+    second: Void Knight-Sheet_12
+  - first:
+      213: -7757898418271516722
+    second: Void Knight-Sheet_13
+  - first:
+      213: 3261551178085256544
+    second: Void Knight-Sheet_14
+  - first:
+      213: 3503905335338497803
+    second: Void Knight-Sheet_15
+  - first:
+      213: 1445158781569232901
+    second: Void Knight-Sheet_16
+  - first:
+      213: -5219579552477247793
+    second: Void Knight-Sheet_17
+  - first:
+      213: 7723735194137077561
+    second: Void Knight-Sheet_18
+  - first:
+      213: -5523554759582454928
+    second: Void Knight-Sheet_19
+  - first:
+      213: -2998085863134927675
+    second: Void Knight-Sheet_20
+  - first:
+      213: 5599551817586131455
+    second: Void Knight-Sheet_21
+  - first:
+      213: -4225025077087966743
+    second: Void Knight-Sheet_22
+  - first:
+      213: -9100317709428240141
+    second: Void Knight-Sheet_23
+  - first:
+      213: 6497895214670843763
+    second: Void Knight-Sheet_24
+  - first:
+      213: 3349694572312828144
+    second: Void Knight-Sheet_25
+  - first:
+      213: -129533440035189845
+    second: Void Knight-Sheet_26
+  - first:
+      213: 8040750379755272053
+    second: Void Knight-Sheet_27
+  - first:
+      213: 6672973978316354924
+    second: Void Knight-Sheet_28
+  - first:
+      213: 3432957139197820497
+    second: Void Knight-Sheet_29
+  - first:
+      213: 4105572537887544612
+    second: Void Knight-Sheet_30
+  - first:
+      213: -3261428954801711981
+    second: Void Knight-Sheet_31
+  - first:
+      213: 1001306759244207144
+    second: Void Knight-Sheet_32
+  - first:
+      213: 7546862666156465342
+    second: Void Knight-Sheet_33
+  - first:
+      213: 6829748289953935180
+    second: Void Knight-Sheet_34
+  - first:
+      213: 2916622049663195231
+    second: Void Knight-Sheet_35
+  - first:
+      213: 1789457446808477535
+    second: Void Knight-Sheet_36
+  - first:
+      213: 7653106490082653718
+    second: Void Knight-Sheet_37
+  - first:
+      213: -4709683089327458948
+    second: Void Knight-Sheet_38
+  - first:
+      213: 840040085975573795
+    second: Void Knight-Sheet_39
+  - first:
+      213: 7809632193871767040
+    second: Void Knight-Sheet_40
+  - first:
+      213: -3911978827314452874
+    second: Void Knight-Sheet_41
+  - first:
+      213: -5754834170603435835
+    second: Void Knight-Sheet_42
+  - first:
+      213: -5604321211181914602
+    second: Void Knight-Sheet_43
+  - first:
+      213: 8172294042368401190
+    second: Void Knight-Sheet_44
+  - first:
+      213: -4065889053460978834
+    second: Void Knight-Sheet_45
+  - first:
+      213: -5502889795760248673
+    second: Void Knight-Sheet_46
+  - first:
+      213: -9197320845388025037
+    second: Void Knight-Sheet_47
+  - first:
+      213: -7229143446385346431
+    second: Void Knight-Sheet_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Void Knight-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 607
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f07c90430a70a440800000000000000
+      internalID: 4945086545240289529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 606
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314109a6e53c1c660800000000000000
+      internalID: 7404414072655975443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 607
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbad8aed9b14cf50800000000000000
+      internalID: 6900670894097411064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 607
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9830a7daecb370ef0800000000000000
+      internalID: -142079104379124855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 607
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8d30145e2ecd850800000000000000
+      internalID: 6403242244480161966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 607
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fce182f98d5d1920800000000000000
+      internalID: 2962626976940158198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 607
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f30d3bb6a04671660800000000000000
+      internalID: 7356458512252391487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 511
+        width: 61
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6515479f56c2776c0800000000000000
+      internalID: -4145796115482783402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 511
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37548ca0f13ed3f0800000000000000
+      internalID: -874206367907031236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 511
+        width: 61
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d3f89886e665170800000000000000
+      internalID: 8166836369546493315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 511
+        width: 58
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363cdc1d63486ab60800000000000000
+      internalID: 7757032779175281507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 511
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db142245912730b0800000000000000
+      internalID: -5749089474371642410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 511
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5d6928434ddc3e0800000000000000
+      internalID: -2031734534879914567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 511
+        width: 54
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec78c5fdd78665490800000000000000
+      internalID: -7757898418271516722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 415
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d478a148b534d20800000000000000
+      internalID: 3261551178085256544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 415
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b077277865f50a030800000000000000
+      internalID: 3503905335338497803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 415
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500787b414c3e0410800000000000000
+      internalID: 1445158781569232901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 415
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc683b13d045097b0800000000000000
+      internalID: -5219579552477247793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 415
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93729b9ac38303b60800000000000000
+      internalID: 7723735194137077561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 415
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b6ba116346853b0800000000000000
+      internalID: -5523554759582454928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 415
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4e8b1cac8a466d0800000000000000
+      internalID: -2998085863134927675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 320
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff14d9cd5ba95bd40800000000000000
+      internalID: 5599551817586131455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 320
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9ed09d312bd55c0800000000000000
+      internalID: -4225025077087966743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 319
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f05552424d25b180800000000000000
+      internalID: -9100317709428240141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 319
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f8a2a35492d2a50800000000000000
+      internalID: 6497895214670843763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 320
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f892c057718c7e20800000000000000
+      internalID: 3349694572312828144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 320
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab0b28c50ec33ef0800000000000000
+      internalID: -129533440035189845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 319
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57776e06edb769f60800000000000000
+      internalID: 8040750379755272053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 223
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65b8f47a7a2b9c50800000000000000
+      internalID: 6672973978316354924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 228
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ef60b545054af20800000000000000
+      internalID: 3432957139197820497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 230
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425d260987ce9f830800000000000000
+      internalID: 4105572537887544612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 234
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394ded835a31db2d0800000000000000
+      internalID: -3261428954801711981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 222
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824d2ff313b55ed00800000000000000
+      internalID: 1001306759244207144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 193
+        width: 93
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcd9e02c97dbb860800000000000000
+      internalID: 7546862666156465342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 193
+        width: 92
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f290852e328ce50800000000000000
+      internalID: 6829748289953935180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 106
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f581f3e1d4ce97820800000000000000
+      internalID: 2916622049663195231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 127
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f52b1211e65d810800000000000000
+      internalID: 1789457446808477535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 124
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616fc990ecb453a60800000000000000
+      internalID: 7653106490082653718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 160
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75f8f7ee28d3aeb0800000000000000
+      internalID: -4709683089327458948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 122
+        width: 16
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325a9a9e10c68ab00800000000000000
+      internalID: 840040085975573795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 121
+        width: 72
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0066e266a13616c60800000000000000
+      internalID: 7809632193871767040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 127
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676a21dabfbd5b9c0800000000000000
+      internalID: -3911978827314452874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 127
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c807efefc8b220b0800000000000000
+      internalID: -5754834170603435835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 123
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616a0582d837932b0800000000000000
+      internalID: -5604321211181914602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 27
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fd8630222d96170800000000000000
+      internalID: 8172294042368401190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 27
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e632f48a27f0397c0800000000000000
+      internalID: -4065889053460978834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 27
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98a695e2eec1a3b0800000000000000
+      internalID: -5502889795760248673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 27
+        width: 51
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333f95dab6d8c5080800000000000000
+      internalID: -9197320845388025037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Knight-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 27
+        width: 51
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188bbdf465cecab90800000000000000
+      internalID: -7229143446385346431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Void Knight-Sheet_0: 4945086545240289529
+      Void Knight-Sheet_1: 7404414072655975443
+      Void Knight-Sheet_10: 7757032779175281507
+      Void Knight-Sheet_11: -5749089474371642410
+      Void Knight-Sheet_12: -2031734534879914567
+      Void Knight-Sheet_13: -7757898418271516722
+      Void Knight-Sheet_14: 3261551178085256544
+      Void Knight-Sheet_15: 3503905335338497803
+      Void Knight-Sheet_16: 1445158781569232901
+      Void Knight-Sheet_17: -5219579552477247793
+      Void Knight-Sheet_18: 7723735194137077561
+      Void Knight-Sheet_19: -5523554759582454928
+      Void Knight-Sheet_2: 6900670894097411064
+      Void Knight-Sheet_20: -2998085863134927675
+      Void Knight-Sheet_21: 5599551817586131455
+      Void Knight-Sheet_22: -4225025077087966743
+      Void Knight-Sheet_23: -9100317709428240141
+      Void Knight-Sheet_24: 6497895214670843763
+      Void Knight-Sheet_25: 3349694572312828144
+      Void Knight-Sheet_26: -129533440035189845
+      Void Knight-Sheet_27: 8040750379755272053
+      Void Knight-Sheet_28: 6672973978316354924
+      Void Knight-Sheet_29: 3432957139197820497
+      Void Knight-Sheet_3: -142079104379124855
+      Void Knight-Sheet_30: 4105572537887544612
+      Void Knight-Sheet_31: -3261428954801711981
+      Void Knight-Sheet_32: 1001306759244207144
+      Void Knight-Sheet_33: 7546862666156465342
+      Void Knight-Sheet_34: 6829748289953935180
+      Void Knight-Sheet_35: 2916622049663195231
+      Void Knight-Sheet_36: 1789457446808477535
+      Void Knight-Sheet_37: 7653106490082653718
+      Void Knight-Sheet_38: -4709683089327458948
+      Void Knight-Sheet_39: 840040085975573795
+      Void Knight-Sheet_4: 6403242244480161966
+      Void Knight-Sheet_40: 7809632193871767040
+      Void Knight-Sheet_41: -3911978827314452874
+      Void Knight-Sheet_42: -5754834170603435835
+      Void Knight-Sheet_43: -5604321211181914602
+      Void Knight-Sheet_44: 8172294042368401190
+      Void Knight-Sheet_45: -4065889053460978834
+      Void Knight-Sheet_46: -5502889795760248673
+      Void Knight-Sheet_47: -9197320845388025037
+      Void Knight-Sheet_48: -7229143446385346431
+      Void Knight-Sheet_5: 2962626976940158198
+      Void Knight-Sheet_6: 7356458512252391487
+      Void Knight-Sheet_7: -4145796115482783402
+      Void Knight-Sheet_8: -874206367907031236
+      Void Knight-Sheet_9: 8166836369546493315
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
