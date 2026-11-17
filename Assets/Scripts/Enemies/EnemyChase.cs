@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemyChase : MonoBehaviour
 {
-    public RoomGrid grid;
-    public Transform player;
+    private RoomGrid grid;       // injected by BatBehaviour via Init
+    private Transform player;    // injected by BatBehaviour via Init
     public float speed = 2.5f;
     private float repathInterval = 0.4f;
     public float bodyRadius = 0.3f;   // should roughly match half the collider size
@@ -14,6 +14,13 @@ public class EnemyChase : MonoBehaviour
     int waypointIndex;
     float repathTimer;
     Enemy enemy;
+
+    // Receives the scene references from BatBehaviour (which gets them from the spawner).
+    public void Init(RoomGrid roomGrid, Transform playerTransform)
+    {
+        grid = roomGrid;
+        player = playerTransform;
+    }
 
     // Runs once on creation; caches the components so we don't look them up every tick.
     void Awake()

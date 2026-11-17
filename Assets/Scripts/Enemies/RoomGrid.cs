@@ -126,5 +126,25 @@ public class RoomGrid : MonoBehaviour
         ground = c;
         return false;
     }
+
+    // Collects every empty cell connected to 'start' (flood fill / BFS), so we never
+    // pick cells that are sealed off from the player, e.g. outside the room walls.
+    public List<Vector2Int> GetReachableCells(Vector2Int start)
+    {
+        var result = new List<Vector2Int>();
+        var visited = new HashSet<Vector2Int> { start };
+        var queue = new Queue<Vector2Int>();
+        queue.Enqueue(start);
+
+        while (queue.Count > 0)
+        {
+            Vector2Int c = queue.Dequeue();
+            result.Add(c);
+
+            foreach (Vector2Int n in FlyingNeighbors(c))
+                if (visited.Add(n)) queue.Enqueue(n);   // Add returns false if already seen
+        }
+        return result;
+    }
 }
 

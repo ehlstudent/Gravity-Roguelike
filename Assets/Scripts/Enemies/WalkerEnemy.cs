@@ -8,8 +8,6 @@ public class WalkerEnemy : Enemy
     // The two behaviours of the walker.
     private enum State { Patrolling, Chasing }
 
-    [SerializeField] private RoomGrid roomGrid;
-    [SerializeField] private Transform player;
     [SerializeField] private float walkSpeed = 2f;
     [SerializeField] private float maxFallSpeed = 12f;   // cap, prevents tunnelling through the ground
     [SerializeField] private float aggroRadius = 6f;     // start chasing inside this distance
@@ -239,4 +237,8 @@ public class WalkerEnemy : Enemy
             nextRepathTime = 0f;        // re-plan from the new position once we can
         }
     }
+
+    // Walker: needs solid ground under its feet.
+    public override bool CanSpawnAt(RoomGrid grid, Vector2Int cell) => 
+        grid.IsStandable(cell);
 }
