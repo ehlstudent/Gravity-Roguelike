@@ -22,7 +22,9 @@ namespace GravityRoguelike.Items
                 case ItemType.Heart:
                 {
                     Health health = FindHealth(player);
-                    return health != null && health.Heal(HeartHeal); // Stays on the floor at full HP.
+                    if (health == null) return false;
+                    health.Heal(HeartHeal);
+                    return true;
                 }
                 case ItemType.MaxHealthCrystal:
                 {
