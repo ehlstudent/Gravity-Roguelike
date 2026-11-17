@@ -21,7 +21,19 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.1f;     // grace period after leaving a ledge
     [SerializeField] private float jumpBufferTime = 0.1f; // jump press remembered shortly before landing
 
+    [Header("Wall Handling")]
+    [Tooltip("Distance in front of the player in which a wall stops sideways movement (avoids pressing into walls).")]
+    [SerializeField] private float wallCheckDistance = 0.05f;
+    [Tooltip("Rounds the corners of the BoxCollider2D so it does not snag on the seams between wall tiles.")]
+    [SerializeField] private float colliderEdgeRadius = 0.05f;
+    [Tooltip("Pushes the player out of walls after a gravity rotation (the collider is not exactly square).")]
+    [SerializeField] private bool resolveOverlapAfterRotation = true;
+
     private Rigidbody2D rb;
+    private Collider2D bodyCollider;
+    private readonly RaycastHit2D[] castHits = new RaycastHit2D[4];
+    private readonly Collider2D[] overlapHits = new Collider2D[8];
+    private ContactFilter2D wallFilter;
     private Health health;
     private InputAction moveAction;
     private InputAction jumpAction;
@@ -51,7 +63,25 @@ public class PlayerController2D : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        bodyCollider = GetComponent<Collider2D>();
         baseMoveSpeed = moveSpeed;
+
+        // Fast falls (gravity can point anywhere) must not tunnel into walls,
+        // and interpolation removes the visible jitter along walls.
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        // Rounded corners slide over the seams between tiles instead of catching on them.
+        // The box is shrunk by the radius so the outer size stays the same.
+        if (bodyCollider is BoxCollider2D box && colliderEdgeRadius > 0f && box.edgeRadius <= 0f)
+        {
+            box.size -= Vector2.one * (2f * colliderEdgeRadius);
+            box.edgeRadius = colliderEdgeRadius;
+        }
+
+        // Walls = the same layers as the ground; ignore triggers (items, portals, ...).
+        wallFilter = new ContactFilter2D { useTriggers = false };
+        wallFilter.SetLayerMask(groundLayer);
         health = GetComponent<Health>();
         health.Damaged += OnHit;
 
@@ -138,7 +168,27 @@ public class PlayerController2D : MonoBehaviour
         Vector2 up = transform.up;
         Vector2 right = transform.right;
         float upSpeed = Vector2.Dot(rb.linearVelocity, up);
-        rb.linearVelocity = right * (horizontalInput * moveSpeed) + up * upSpeed;
+        float sideSpeed = horizontalInput * moveSpeed;
+
+        // Don't keep pushing into a wall: that makes the player jitter, stick to the
+        // wall while falling, or get caught on tile edges.
+        if (Mathf.Abs(sideSpeed) > 0.01f && IsWallAhead(right * Mathf.Sign(sideSpeed)))
+            sideSpeed = 0f;
+
+        rb.linearVelocity = right * sideSpeed + up * upSpeed;
+    }
+
+    /// <summary>True if a solid collider is directly in front of the player in the given direction.</summary>
+    private bool IsWallAhead(Vector2 direction)
+    {
+        if (bodyCollider == null) return false;
+        int count = bodyCollider.Cast(direction, wallFilter, castHits, wallCheckDistance);
+        for (int i = 0; i < count; i++)
+        {
+            // Only count surfaces that actually face us (walls), not floor/ceiling we graze.
+            if (Vector2.Dot(castHits[i].normal, -direction) > 0.7f) return true;
+        }
+        return false;
     }
 
     private void AlignToGravity()
@@ -150,6 +200,45 @@ public class PlayerController2D : MonoBehaviour
         // Setting the rotation directly works even with "Freeze Rotation" enabled.
         rb.rotation = targetAngle;
         transform.rotation = Quaternion.Euler(0f, 0f, targetAngle);
+
+        if (resolveOverlapAfterRotation) ResolveWallOverlap();
+    }
+
+    /// <summary>
+    /// After the snap rotation the collider can stick a little into a wall (it is not square),
+    /// which makes the physics shove the player out sideways. Push it out cleanly instead.
+    /// </summary>
+    private void ResolveWallOverlap()
+    {
+        if (bodyCollider == null) return;
+        Physics2D.SyncTransforms();   // the collider must use the new rotation for the queries below
+
+        Vector2 totalPush = Vector2.zero;
+        for (int iteration = 0; iteration < 3; iteration++)
+        {
+            int count = bodyCollider.Overlap(wallFilter, overlapHits);
+            bool moved = false;
+            for (int i = 0; i < count; i++)
+            {
+                ColliderDistance2D distance = bodyCollider.Distance(overlapHits[i]);
+                if (!distance.isValid || !distance.isOverlapped) continue;
+                // Moving our closest point (A) onto the wall's point (B) separates the two.
+                Vector2 push = distance.pointB - distance.pointA;
+                rb.position += push;
+                totalPush += push;
+                Physics2D.SyncTransforms();
+                moved = true;
+            }
+            if (!moved) break;
+        }
+
+        // Remove only the velocity that points back into the wall we were pushed out of.
+        if (totalPush.sqrMagnitude > 0.0001f)
+        {
+            Vector2 outward = totalPush.normalized;
+            float into = Vector2.Dot(rb.linearVelocity, outward);
+            if (into < 0f) rb.linearVelocity -= outward * into;
+        }
     }
 
     // Unsubscribes so the event doesn't point at a destroyed object.

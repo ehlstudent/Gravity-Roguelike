@@ -49,7 +49,7 @@ public class GravityRotator : MonoBehaviour
     [Tooltip("Degrees per key press. With the camera rotating along, a positive step turns the room clockwise on screen.")]
     [SerializeField] private float stepAngle = 90f;
     [Tooltip("Minimum time between two rotations, in seconds.")]
-    [SerializeField] private float cooldown = 0.25f;
+    [SerializeField] private float cooldown = 1f;
     [Tooltip("If enabled, the gravity can only be rotated while the player is standing on the ground.")]
     [SerializeField] private bool onlyWhenGrounded = false;
     [SerializeField] private PlayerController2D player;   // optional, found automatically
@@ -67,6 +67,12 @@ public class GravityRotator : MonoBehaviour
     private Vector2 defaultGravity;
     private float gravityStrength;
     private float cooldownTimer;
+
+    /// <summary>Seconds until the next rotation is allowed (0 = ready). Useful for UI.</summary>
+    public float CooldownRemaining => Mathf.Max(0f, cooldownTimer);
+
+    /// <summary>0..1, 1 = ready. Useful for a cooldown bar.</summary>
+    public float CooldownProgress => cooldown > 0f ? 1f - CooldownRemaining / cooldown : 1f;
 
     private void Awake()
     {
@@ -121,8 +127,8 @@ public class GravityRotator : MonoBehaviour
 
     private void Update()
     {
-        cooldownTimer -= Time.deltaTime;
-        if (cooldownTimer > 0f) return;
+        if (cooldownTimer > 0f) cooldownTimer -= Time.deltaTime;
+        if (cooldownTimer > 0f) return;   // presses during the cooldown are ignored
         if (onlyWhenGrounded && player != null && !player.IsGrounded) return;
 
         if (rotateLeftAction.WasPressedThisFrame()) Rotate(-stepAngle);
