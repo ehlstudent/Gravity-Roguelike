@@ -17,6 +17,9 @@ namespace GravityRoguelike.Tests
         [TestCase("Run", "Void Knight-Run.png", 8)]
         [TestCase("Attack A", "Void Knight-Attack-A-withoutSword.png", 8)]
         [TestCase("Slash", "Void Knight_Slash_Body_Animation.png", 5)]
+        [TestCase("Jump Up", "Void Knight-Sheet-Jump.png", 4)]
+        [TestCase("Fall", "Void Knight-Sheet-Jump.png", 1)]
+        [TestCase("Land", "Void Knight-Sheet-Jump.png", 4)]
         public void BodyUsesOnlyTheSelectedSwordlessSheet(string animation, string sheet, int count)
         {
             var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(Animations + animation + ".anim");
@@ -34,7 +37,7 @@ namespace GravityRoguelike.Tests
             var importer = (TextureImporter)AssetImporter.GetAtPath(Sprites + sheet);
             Assert.That(importer.filterMode, Is.EqualTo(FilterMode.Point));
             Assert.That(importer.textureCompression, Is.EqualTo(TextureImporterCompression.Uncompressed));
-            Assert.That(clip.isLooping, Is.EqualTo(animation == "Idle" || animation == "Run"));
+            Assert.That(clip.isLooping, Is.EqualTo(animation == "Idle" || animation == "Run" || animation == "Fall"));
         }
 
         [Test]
@@ -68,10 +71,61 @@ namespace GravityRoguelike.Tests
             {
                 Assert.That(t.hasExitTime, Is.False, "Sword completion/cancellation controls the return.");
                 Assert.That(t.conditions.Any(c => c.parameter == active && c.mode == AnimatorConditionMode.IfNot), Is.True);
-                var expected = t.destinationState.name == "Run" ? AnimatorConditionMode.If : AnimatorConditionMode.IfNot;
-                Assert.That(t.conditions.Any(c => c.parameter == "Running" && c.mode == expected), Is.True);
+                string destination = t.destinationState.name;
+                bool grounded = destination == "Idle" || destination == "Run";
+                Assert.That(t.conditions.Any(c => c.parameter == "IsGrounded" &&
+                    c.mode == (grounded ? AnimatorConditionMode.If : AnimatorConditionMode.IfNot)), Is.True);
+                string condition = grounded ? "Running" : "IsRising";
+                bool positive = destination == "Run" || destination == "Jump Up";
+                Assert.That(t.conditions.Any(c => c.parameter == condition &&
+                    c.mode == (positive ? AnimatorConditionMode.If : AnimatorConditionMode.IfNot)), Is.True);
+                if (destination == "Jump Up") Assert.That(t.offset, Is.EqualTo(1f), "Resume the held pose, not the jump intro.");
             }
-            Assert.That(attack.transitions.Select(t => t.destinationState.name), Is.EquivalentTo(new[] { "Idle", "Run" }));
+            Assert.That(attack.transitions.Select(t => t.destinationState.name),
+                Is.EquivalentTo(new[] { "Idle", "Run", "Jump Up", "Fall" }));
+        }
+
+        [TestCase("Slash", "Slashing", "Jump Up", false, true, "Jump Up")]
+        [TestCase("Slash", "Slashing", "Fall", false, false, "Fall")]
+        [TestCase("Slash", "Slashing", "Land", true, false, "Idle")]
+        [TestCase("Attack A", "Stabbing", "Jump Up", false, true, "Jump Up")]
+        [TestCase("Attack A", "Stabbing", "Fall", false, false, "Fall")]
+        [TestCase("Attack A", "Stabbing", "Land", true, false, "Idle")]
+        [TestCase("Slash", "Slashing", "Jump Up", true, false, "Idle")]
+        [TestCase("Attack A", "Stabbing", "Jump Up", false, false, "Fall")]
+        public void AirAttacksInterruptAndReturnUsingCurrentPhysics(string attack, string active,
+            string start, bool groundedAfter, bool risingAfter, string expected)
+        {
+            var root = new GameObject("Air animation test", typeof(SpriteRenderer), typeof(Animator));
+            try
+            {
+                var animator = root.GetComponent<Animator>();
+                animator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<AnimatorController>(Animations + "Body.controller");
+                animator.Rebind();
+                animator.SetFloat("StabSpeed", 1f);
+                animator.SetFloat("SlashSpeed", 1f);
+                animator.SetBool("IsGrounded", start == "Land");
+                animator.SetBool("IsRising", start == "Jump Up");
+                animator.Play("Base Layer." + start, 0, 0.4f);
+                animator.Update(0f);
+                animator.SetBool(active, true);
+                animator.SetTrigger(attack);
+                animator.Update(0.01f);
+                animator.Update(0f);
+                Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName(attack), Is.True, "Attack must interrupt without exit time.");
+                animator.SetBool("IsGrounded", groundedAfter);
+                animator.SetBool("IsRising", risingAfter);
+                animator.SetBool(active, false);
+                animator.Update(0.01f);
+                animator.Update(0f);
+                Assert.That(animator.GetCurrentAnimatorStateInfo(0).IsName(expected), Is.True);
+                if (expected == "Jump Up")
+                {
+                    Assert.That(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, Is.GreaterThanOrEqualTo(1f));
+                    Assert.That(root.GetComponent<SpriteRenderer>().sprite.name, Does.EndWith("_3"));
+                }
+            }
+            finally { Object.DestroyImmediate(root); }
         }
 
         [Test]
