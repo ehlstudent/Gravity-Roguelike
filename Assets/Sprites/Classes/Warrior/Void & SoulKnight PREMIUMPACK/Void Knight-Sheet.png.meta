@@ -181,7 +181,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -221,7 +221,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -262,12 +262,12 @@ TextureImporter:
       name: Void Knight-Sheet_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 607
-        width: 39
-        height: 37
+        x: 0
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,12 +284,12 @@ TextureImporter:
       name: Void Knight-Sheet_1
       rect:
         serializedVersion: 2
-        x: 127
-        y: 606
-        width: 39
-        height: 37
+        x: 96
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -306,12 +306,12 @@ TextureImporter:
       name: Void Knight-Sheet_2
       rect:
         serializedVersion: 2
-        x: 223
-        y: 607
-        width: 39
-        height: 37
+        x: 192
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: Void Knight-Sheet_3
       rect:
         serializedVersion: 2
-        x: 319
-        y: 607
-        width: 38
-        height: 36
+        x: 288
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,12 +350,12 @@ TextureImporter:
       name: Void Knight-Sheet_4
       rect:
         serializedVersion: 2
-        x: 415
-        y: 607
-        width: 39
-        height: 36
+        x: 384
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,12 +372,12 @@ TextureImporter:
       name: Void Knight-Sheet_5
       rect:
         serializedVersion: 2
-        x: 507
-        y: 607
-        width: 40
-        height: 36
+        x: 480
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -394,12 +394,12 @@ TextureImporter:
       name: Void Knight-Sheet_6
       rect:
         serializedVersion: 2
-        x: 603
-        y: 607
-        width: 68
-        height: 36
+        x: 576
+        y: 576
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -416,12 +416,12 @@ TextureImporter:
       name: Void Knight-Sheet_7
       rect:
         serializedVersion: 2
-        x: 31
-        y: 511
-        width: 61
-        height: 36
+        x: 0
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,12 +438,12 @@ TextureImporter:
       name: Void Knight-Sheet_8
       rect:
         serializedVersion: 2
-        x: 127
-        y: 511
-        width: 38
-        height: 36
+        x: 96
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -460,12 +460,12 @@ TextureImporter:
       name: Void Knight-Sheet_9
       rect:
         serializedVersion: 2
-        x: 223
-        y: 511
-        width: 61
-        height: 36
+        x: 192
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -482,12 +482,12 @@ TextureImporter:
       name: Void Knight-Sheet_10
       rect:
         serializedVersion: 2
-        x: 319
-        y: 511
-        width: 58
-        height: 36
+        x: 288
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -504,12 +504,12 @@ TextureImporter:
       name: Void Knight-Sheet_11
       rect:
         serializedVersion: 2
-        x: 416
-        y: 511
-        width: 30
-        height: 48
+        x: 384
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -526,12 +526,12 @@ TextureImporter:
       name: Void Knight-Sheet_12
       rect:
         serializedVersion: 2
-        x: 486
-        y: 511
-        width: 84
-        height: 48
+        x: 480
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -548,12 +548,12 @@ TextureImporter:
       name: Void Knight-Sheet_13
       rect:
         serializedVersion: 2
-        x: 581
-        y: 511
-        width: 54
-        height: 36
+        x: 576
+        y: 480
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -570,12 +570,12 @@ TextureImporter:
       name: Void Knight-Sheet_14
       rect:
         serializedVersion: 2
-        x: 11
-        y: 415
-        width: 47
-        height: 36
+        x: 0
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -592,12 +592,12 @@ TextureImporter:
       name: Void Knight-Sheet_15
       rect:
         serializedVersion: 2
-        x: 127
-        y: 415
-        width: 38
-        height: 37
+        x: 96
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -614,12 +614,12 @@ TextureImporter:
       name: Void Knight-Sheet_16
       rect:
         serializedVersion: 2
-        x: 224
-        y: 415
-        width: 37
-        height: 37
+        x: 192
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -636,12 +636,12 @@ TextureImporter:
       name: Void Knight-Sheet_17
       rect:
         serializedVersion: 2
-        x: 320
-        y: 415
-        width: 32
-        height: 37
+        x: 288
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -658,12 +658,12 @@ TextureImporter:
       name: Void Knight-Sheet_18
       rect:
         serializedVersion: 2
-        x: 415
-        y: 415
-        width: 34
-        height: 36
+        x: 384
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -680,12 +680,12 @@ TextureImporter:
       name: Void Knight-Sheet_19
       rect:
         serializedVersion: 2
-        x: 511
-        y: 415
-        width: 47
-        height: 37
+        x: 480
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -702,12 +702,12 @@ TextureImporter:
       name: Void Knight-Sheet_20
       rect:
         serializedVersion: 2
-        x: 605
-        y: 415
-        width: 41
-        height: 37
+        x: 576
+        y: 384
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -724,12 +724,12 @@ TextureImporter:
       name: Void Knight-Sheet_21
       rect:
         serializedVersion: 2
-        x: 29
-        y: 320
-        width: 48
-        height: 37
+        x: 0
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -746,12 +746,12 @@ TextureImporter:
       name: Void Knight-Sheet_22
       rect:
         serializedVersion: 2
-        x: 124
-        y: 320
-        width: 49
-        height: 37
+        x: 96
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -768,12 +768,12 @@ TextureImporter:
       name: Void Knight-Sheet_23
       rect:
         serializedVersion: 2
-        x: 220
-        y: 319
-        width: 49
-        height: 38
+        x: 192
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -790,12 +790,12 @@ TextureImporter:
       name: Void Knight-Sheet_24
       rect:
         serializedVersion: 2
-        x: 317
-        y: 319
-        width: 41
-        height: 37
+        x: 288
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -812,12 +812,12 @@ TextureImporter:
       name: Void Knight-Sheet_25
       rect:
         serializedVersion: 2
-        x: 413
-        y: 320
-        width: 41
-        height: 37
+        x: 384
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -834,12 +834,12 @@ TextureImporter:
       name: Void Knight-Sheet_26
       rect:
         serializedVersion: 2
-        x: 508
-        y: 320
-        width: 41
-        height: 38
+        x: 480
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -856,12 +856,12 @@ TextureImporter:
       name: Void Knight-Sheet_27
       rect:
         serializedVersion: 2
-        x: 604
-        y: 319
-        width: 41
-        height: 39
+        x: 576
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -878,12 +878,12 @@ TextureImporter:
       name: Void Knight-Sheet_28
       rect:
         serializedVersion: 2
-        x: 31
-        y: 223
-        width: 43
-        height: 35
+        x: 0
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -900,12 +900,12 @@ TextureImporter:
       name: Void Knight-Sheet_29
       rect:
         serializedVersion: 2
-        x: 115
-        y: 228
-        width: 45
-        height: 36
+        x: 96
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -922,12 +922,12 @@ TextureImporter:
       name: Void Knight-Sheet_30
       rect:
         serializedVersion: 2
-        x: 198
-        y: 230
-        width: 48
-        height: 45
+        x: 192
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -944,12 +944,12 @@ TextureImporter:
       name: Void Knight-Sheet_31
       rect:
         serializedVersion: 2
-        x: 291
-        y: 234
-        width: 62
-        height: 45
+        x: 288
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -966,12 +966,12 @@ TextureImporter:
       name: Void Knight-Sheet_32
       rect:
         serializedVersion: 2
-        x: 388
-        y: 222
-        width: 61
-        height: 57
+        x: 384
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -988,12 +988,12 @@ TextureImporter:
       name: Void Knight-Sheet_33
       rect:
         serializedVersion: 2
-        x: 484
-        y: 193
-        width: 93
-        height: 86
+        x: 480
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1010,12 +1010,12 @@ TextureImporter:
       name: Void Knight-Sheet_34
       rect:
         serializedVersion: 2
-        x: 580
-        y: 193
-        width: 92
-        height: 86
+        x: 576
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1032,12 +1032,12 @@ TextureImporter:
       name: Void Knight-Sheet_35
       rect:
         serializedVersion: 2
-        x: 4
-        y: 106
-        width: 77
-        height: 77
+        x: 0
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1054,12 +1054,12 @@ TextureImporter:
       name: Void Knight-Sheet_36
       rect:
         serializedVersion: 2
-        x: 100
-        y: 127
-        width: 61
-        height: 56
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1076,12 +1076,12 @@ TextureImporter:
       name: Void Knight-Sheet_37
       rect:
         serializedVersion: 2
-        x: 196
-        y: 124
-        width: 48
-        height: 44
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1098,12 +1098,12 @@ TextureImporter:
       name: Void Knight-Sheet_38
       rect:
         serializedVersion: 2
-        x: 226
-        y: 160
-        width: 16
-        height: 23
+        x: 288
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1120,12 +1120,12 @@ TextureImporter:
       name: Void Knight-Sheet_39
       rect:
         serializedVersion: 2
-        x: 241
-        y: 122
-        width: 16
-        height: 49
+        x: 384
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1142,12 +1142,12 @@ TextureImporter:
       name: Void Knight-Sheet_40
       rect:
         serializedVersion: 2
-        x: 281
-        y: 121
-        width: 72
-        height: 47
+        x: 480
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1164,12 +1164,12 @@ TextureImporter:
       name: Void Knight-Sheet_41
       rect:
         serializedVersion: 2
-        x: 396
-        y: 127
-        width: 64
-        height: 58
+        x: 576
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1186,12 +1186,12 @@ TextureImporter:
       name: Void Knight-Sheet_42
       rect:
         serializedVersion: 2
-        x: 501
-        y: 127
-        width: 39
-        height: 37
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1208,12 +1208,12 @@ TextureImporter:
       name: Void Knight-Sheet_43
       rect:
         serializedVersion: 2
-        x: 611
-        y: 123
-        width: 39
-        height: 37
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1230,12 +1230,12 @@ TextureImporter:
       name: Void Knight-Sheet_44
       rect:
         serializedVersion: 2
-        x: 35
-        y: 27
-        width: 38
-        height: 37
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1252,12 +1252,12 @@ TextureImporter:
       name: Void Knight-Sheet_45
       rect:
         serializedVersion: 2
-        x: 134
-        y: 27
-        width: 35
-        height: 38
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1274,12 +1274,12 @@ TextureImporter:
       name: Void Knight-Sheet_46
       rect:
         serializedVersion: 2
-        x: 226
-        y: 27
-        width: 45
-        height: 25
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1292,55 +1292,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Void Knight-Sheet_47
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 27
-        width: 51
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 333f95dab6d8c5080800000000000000
-      internalID: -9197320845388025037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Void Knight-Sheet_48
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 27
-        width: 51
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 188bbdf465cecab90800000000000000
-      internalID: -7229143446385346431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ba28ebbd3b9efd04abd871488931621f
     internalID: 0
     vertices: []
     indices: 
@@ -1348,7 +1304,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Void Knight-Sheet_0: 4945086545240289529
       Void Knight-Sheet_1: 7404414072655975443
@@ -1392,8 +1350,6 @@ TextureImporter:
       Void Knight-Sheet_44: 8172294042368401190
       Void Knight-Sheet_45: -4065889053460978834
       Void Knight-Sheet_46: -5502889795760248673
-      Void Knight-Sheet_47: -9197320845388025037
-      Void Knight-Sheet_48: -7229143446385346431
       Void Knight-Sheet_5: 2962626976940158198
       Void Knight-Sheet_6: 7356458512252391487
       Void Knight-Sheet_7: -4145796115482783402
