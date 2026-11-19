@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -89,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,19 +130,19 @@ TextureImporter:
       name: Void Bow Attack Animation_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 9
-        width: 9
-        height: 23
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f615aff24cdb0adf0800000000000000
+      spriteID: 38ab15d482a19764d8de9405e0d5b505
       internalID: -170928135523905169
       vertices: []
       indices: 
@@ -152,19 +152,19 @@ TextureImporter:
       name: Void Bow Attack Animation_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 11
-        width: 19
-        height: 23
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ebf7ed7adc85cac0800000000000000
+      spriteID: 80aed96b8415f774480c805d3ad7ba57
       internalID: -3835504637592994843
       vertices: []
       indices: 
@@ -174,19 +174,19 @@ TextureImporter:
       name: Void Bow Attack Animation_2
       rect:
         serializedVersion: 2
-        x: 111
-        y: 12
-        width: 21
-        height: 21
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65df06b24a2587770800000000000000
+      spriteID: c38dca6fb713cfc43ae37d06a1631646
       internalID: 8608721552774593878
       vertices: []
       indices: 
@@ -196,19 +196,19 @@ TextureImporter:
       name: Void Bow Attack Animation_3
       rect:
         serializedVersion: 2
-        x: 159
-        y: 10
-        width: 27
-        height: 23
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59d203ff4291da0f0800000000000000
+      spriteID: 405a290b18ea14a48a07e6293038dcd2
       internalID: -1104198686945038955
       vertices: []
       indices: 
@@ -218,19 +218,19 @@ TextureImporter:
       name: Void Bow Attack Animation_4
       rect:
         serializedVersion: 2
-        x: 212
-        y: 8
-        width: 23
-        height: 23
+        x: 192
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 36e8fbdc63e1b0760800000000000000
+      spriteID: 660511bc927f65f40a1ec779a6646277
       internalID: 7425061631379344995
       vertices: []
       indices: 
@@ -240,7 +240,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1df17348debca834e9a94cd15343ad25
     internalID: 0
     vertices: []
     indices: 
@@ -248,7 +248,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Void Bow Attack Animation_0: -170928135523905169
       Void Bow Attack Animation_1: -3835504637592994843
