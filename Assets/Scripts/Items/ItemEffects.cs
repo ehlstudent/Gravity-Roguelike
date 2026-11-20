@@ -53,6 +53,19 @@ namespace GravityRoguelike.Items
             }
         }
 
+        /// <summary>Short text shown when the item is picked up, e.g. "+1 Max HP".</summary>
+        public static string Describe(ItemType type)
+        {
+            switch (type)
+            {
+                case ItemType.Heart: return $"+{HeartHeal} HP";
+                case ItemType.MaxHealthCrystal: return $"+{MaxHealthBonus} Max HP";
+                case ItemType.DamageShard: return $"+{DamageBonus} Damage";
+                case ItemType.SpeedBoots: return $"+{Mathf.RoundToInt((SpeedMultiplier - 1f) * 100f)}% Speed";
+                default: return string.Empty;
+            }
+        }
+
         /// <summary>Removes all item bonuses, e.g. when a new run starts.</summary>
         public static void ResetUpgrades(PlayerController2D player)
         {
