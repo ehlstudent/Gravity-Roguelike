@@ -17,6 +17,10 @@ public class GravityRotator : MonoBehaviour
     // vector (e.g. (0,-1)). Used by enemies (bat)
     public static event System.Action<Vector2Int> GravityChanged;
 
+    // Raised when Q/E is pressed but the rotation is not allowed. Passes the remaining
+    // cooldown in seconds (0 = blocked because the player is not on the ground). Used by GameVfx.
+    public static event System.Action<float> RotationBlocked;
+
     // Static values can survive between Play sessions in the editor (when "Reload Domain"
     // is turned off), same as in Portal.
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -24,6 +28,7 @@ public class GravityRotator : MonoBehaviour
     {
         Instance = null;
         GravityChanged = null; // reset event used by enemies (bat)
+        RotationBlocked = null;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -128,11 +133,25 @@ public class GravityRotator : MonoBehaviour
     private void Update()
     {
         if (cooldownTimer > 0f) cooldownTimer -= Time.deltaTime;
-        if (cooldownTimer > 0f) return;   // presses during the cooldown are ignored
-        if (onlyWhenGrounded && player != null && !player.IsGrounded) return;
 
-        if (rotateLeftAction.WasPressedThisFrame()) Rotate(-stepAngle);
-        else if (rotateRightAction.WasPressedThisFrame()) Rotate(stepAngle);
+        bool leftPressed = rotateLeftAction.WasPressedThisFrame();
+        bool rightPressed = rotateRightAction.WasPressedThisFrame();
+        if (!leftPressed && !rightPressed) return;
+
+        // Presses during the cooldown (or in the air, if required) are ignored, but reported for feedback.
+        if (cooldownTimer > 0f)
+        {
+            RotationBlocked?.Invoke(cooldownTimer);
+            return;
+        }
+        if (onlyWhenGrounded && player != null && !player.IsGrounded)
+        {
+            RotationBlocked?.Invoke(0f);
+            return;
+        }
+
+        if (leftPressed) Rotate(-stepAngle);
+        else Rotate(stepAngle);
     }
 
     /// <summary>Rotates the gravity by the given angle in degrees.</summary>
