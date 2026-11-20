@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: b3edb0f63f0f2cc4eaf73b818d9b0b42
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2269719670607265576
+    second: Void Mage-Sheet_0
+  - first:
+      213: -1213083518371005255
+    second: Void Mage-Sheet_1
+  - first:
+      213: -6084907742173830051
+    second: Void Mage-Sheet_2
+  - first:
+      213: 7997319167274454663
+    second: Void Mage-Sheet_3
+  - first:
+      213: 7414276602307569587
+    second: Void Mage-Sheet_4
+  - first:
+      213: 3400899672909243452
+    second: Void Mage-Sheet_5
+  - first:
+      213: -9170802038738545108
+    second: Void Mage-Sheet_6
+  - first:
+      213: -5335071439671251372
+    second: Void Mage-Sheet_7
+  - first:
+      213: -4263277890755028759
+    second: Void Mage-Sheet_8
+  - first:
+      213: -9087840287581386954
+    second: Void Mage-Sheet_9
+  - first:
+      213: -3340321121013299142
+    second: Void Mage-Sheet_10
+  - first:
+      213: 4502805859870063382
+    second: Void Mage-Sheet_11
+  - first:
+      213: -1855166940454093980
+    second: Void Mage-Sheet_12
+  - first:
+      213: -975749247876903856
+    second: Void Mage-Sheet_13
+  - first:
+      213: 8068290308605333580
+    second: Void Mage-Sheet_14
+  - first:
+      213: -148830675445170750
+    second: Void Mage-Sheet_15
+  - first:
+      213: 3566737330643484303
+    second: Void Mage-Sheet_16
+  - first:
+      213: -5587397315963539036
+    second: Void Mage-Sheet_17
+  - first:
+      213: 7454990628620730737
+    second: Void Mage-Sheet_18
+  - first:
+      213: -1770568230543089662
+    second: Void Mage-Sheet_19
+  - first:
+      213: -5051606206011733418
+    second: Void Mage-Sheet_20
+  - first:
+      213: -674482293149916433
+    second: Void Mage-Sheet_21
+  - first:
+      213: 8705963023935140493
+    second: Void Mage-Sheet_22
+  - first:
+      213: 7293892378303008156
+    second: Void Mage-Sheet_23
+  - first:
+      213: 6471888419850337877
+    second: Void Mage-Sheet_24
+  - first:
+      213: -3718465994192901039
+    second: Void Mage-Sheet_25
+  - first:
+      213: -1525789187693586539
+    second: Void Mage-Sheet_26
+  - first:
+      213: -3973470083286211985
+    second: Void Mage-Sheet_27
+  - first:
+      213: 7184090562994091938
+    second: Void Mage-Sheet_28
+  - first:
+      213: 4669062776228296020
+    second: Void Mage-Sheet_29
+  - first:
+      213: -8670915305735398568
+    second: Void Mage-Sheet_30
+  - first:
+      213: -16736659597396212
+    second: Void Mage-Sheet_31
+  - first:
+      213: -1134229748798301031
+    second: Void Mage-Sheet_32
+  - first:
+      213: 7779013314149264555
+    second: Void Mage-Sheet_33
+  - first:
+      213: -3866290546073615180
+    second: Void Mage-Sheet_34
+  - first:
+      213: 1423913730125930979
+    second: Void Mage-Sheet_35
+  - first:
+      213: -1665192434253441300
+    second: Void Mage-Sheet_36
+  - first:
+      213: 1842903446938166286
+    second: Void Mage-Sheet_37
+  - first:
+      213: 1524319625022505570
+    second: Void Mage-Sheet_38
+  - first:
+      213: -3581011874662165174
+    second: Void Mage-Sheet_39
+  - first:
+      213: -5676779044615220407
+    second: Void Mage-Sheet_40
+  - first:
+      213: 5778550891192516679
+    second: Void Mage-Sheet_41
+  - first:
+      213: 8658978475090888116
+    second: Void Mage-Sheet_42
+  - first:
+      213: 4062978031672262125
+    second: Void Mage-Sheet_43
+  - first:
+      213: -5163143020620644421
+    second: Void Mage-Sheet_44
+  - first:
+      213: 2392307524696006650
+    second: Void Mage-Sheet_45
+  - first:
+      213: 6239648452770019389
+    second: Void Mage-Sheet_46
+  - first:
+      213: 1690451910367880067
+    second: Void Mage-Sheet_47
+  - first:
+      213: -7262664751739907867
+    second: Void Mage-Sheet_48
+  - first:
+      213: 5539930272205113931
+    second: Void Mage-Sheet_49
+  - first:
+      213: -2329145559332290985
+    second: Void Mage-Sheet_50
+  - first:
+      213: 5945939760139493863
+    second: Void Mage-Sheet_51
+  - first:
+      213: -9205304994717677347
+    second: Void Mage-Sheet_52
+  - first:
+      213: -5804329514205032890
+    second: Void Mage-Sheet_53
+  - first:
+      213: 2394299781330449761
+    second: Void Mage-Sheet_54
+  - first:
+      213: -3078200677548248606
+    second: Void Mage-Sheet_55
+  - first:
+      213: 7674364718267394456
+    second: Void Mage-Sheet_56
+  - first:
+      213: -2430329980315416749
+    second: Void Mage-Sheet_57
+  - first:
+      213: -5360533266573977072
+    second: Void Mage-Sheet_58
+  - first:
+      213: -8826471158010106636
+    second: Void Mage-Sheet_59
+  - first:
+      213: 7449197031671029445
+    second: Void Mage-Sheet_60
+  - first:
+      213: -5477379200652053958
+    second: Void Mage-Sheet_61
+  - first:
+      213: 8199590347336267357
+    second: Void Mage-Sheet_62
+  - first:
+      213: 1436559482796125611
+    second: Void Mage-Sheet_63
+  - first:
+      213: -1941989300872275983
+    second: Void Mage-Sheet_64
+  - first:
+      213: -9074827745283789334
+    second: Void Mage-Sheet_65
+  - first:
+      213: -2780594759293736374
+    second: Void Mage-Sheet_66
+  - first:
+      213: -5209762762540986871
+    second: Void Mage-Sheet_67
+  - first:
+      213: -8286788781857824781
+    second: Void Mage-Sheet_68
+  - first:
+      213: -2064702261691309390
+    second: Void Mage-Sheet_69
+  - first:
+      213: 8964709424506028874
+    second: Void Mage-Sheet_70
+  - first:
+      213: 7295997147064405476
+    second: Void Mage-Sheet_71
+  - first:
+      213: 4210453405196401272
+    second: Void Mage-Sheet_72
+  - first:
+      213: -8093347173560020776
+    second: Void Mage-Sheet_73
+  - first:
+      213: -7625220837101874873
+    second: Void Mage-Sheet_74
+  - first:
+      213: -3056442134437158964
+    second: Void Mage-Sheet_75
+  - first:
+      213: -2882905851702219316
+    second: Void Mage-Sheet_76
+  - first:
+      213: -2528306726548772535
+    second: Void Mage-Sheet_77
+  - first:
+      213: -2019724548072544227
+    second: Void Mage-Sheet_78
+  - first:
+      213: 8556799447309032038
+    second: Void Mage-Sheet_79
+  - first:
+      213: -5247664023916853536
+    second: Void Mage-Sheet_80
+  - first:
+      213: 913219253360262853
+    second: Void Mage-Sheet_81
+  - first:
+      213: -7043185825750071861
+    second: Void Mage-Sheet_82
+  - first:
+      213: -7824687181221002392
+    second: Void Mage-Sheet_83
+  - first:
+      213: 2243674288669786981
+    second: Void Mage-Sheet_84
+  - first:
+      213: -1841288957381223906
+    second: Void Mage-Sheet_85
+  - first:
+      213: -4457384356611056153
+    second: Void Mage-Sheet_86
+  - first:
+      213: 2967076465064588989
+    second: Void Mage-Sheet_87
+  - first:
+      213: -8732669494973371579
+    second: Void Mage-Sheet_88
+  - first:
+      213: -8163751855511713345
+    second: Void Mage-Sheet_89
+  - first:
+      213: 3631770127566526266
+    second: Void Mage-Sheet_90
+  - first:
+      213: -4175411841790947829
+    second: Void Mage-Sheet_91
+  - first:
+      213: -7545646740055450095
+    second: Void Mage-Sheet_92
+  - first:
+      213: 8909261964398690993
+    second: Void Mage-Sheet_93
+  - first:
+      213: -776908954666470479
+    second: Void Mage-Sheet_94
+  - first:
+      213: 3020915764229959698
+    second: Void Mage-Sheet_95
+  - first:
+      213: 1704700586043522850
+    second: Void Mage-Sheet_96
+  - first:
+      213: 669511092638192643
+    second: Void Mage-Sheet_97
+  - first:
+      213: -8102987425486366728
+    second: Void Mage-Sheet_98
+  - first:
+      213: -1074150633211015839
+    second: Void Mage-Sheet_99
+  - first:
+      213: 3955066041362814116
+    second: Void Mage-Sheet_100
+  - first:
+      213: 6274146426740526621
+    second: Void Mage-Sheet_101
+  - first:
+      213: 882079503113582307
+    second: Void Mage-Sheet_102
+  - first:
+      213: 5422568356264540395
+    second: Void Mage-Sheet_103
+  - first:
+      213: -5179863993776918021
+    second: Void Mage-Sheet_104
+  - first:
+      213: 7208960421225875942
+    second: Void Mage-Sheet_105
+  - first:
+      213: 2088089749395744255
+    second: Void Mage-Sheet_106
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Void Mage-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 90
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f3342d30aaf7f10800000000000000
+      internalID: 2269719670607265576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5f3b09689208ccb48913be9b7b3a7e0b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Void Mage-Sheet_0: 2269719670607265576
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
