@@ -7,6 +7,8 @@ namespace GravityRoguelike.World.Visuals
     public class BlackHoleBackdrop : MonoBehaviour
     {
         [SerializeField] private Camera viewCamera;
+        [Tooltip("Optional generated run. Its current room centre takes priority over the preview anchor.")]
+        [SerializeField] private ProceduralGameplayDemo generatedRun;
         [Tooltip("Optional read-only room anchor. Without one, the camera's global position supplies the viewing angle.")]
         [SerializeField] private Transform roomAnchor;
         [SerializeField] private Vector2 worldReferencePoint;
@@ -41,9 +43,15 @@ namespace GravityRoguelike.World.Visuals
                 : Mathf.Tan(viewCamera.fieldOfView * 0.5f * Mathf.Deg2Rad) * distance;
             float halfWidth = halfHeight * viewCamera.aspect;
             Vector2 cameraPosition = cameraTransform.position;
-            Vector2 roomPosition = roomAnchor != null ? (Vector2)roomAnchor.position : cameraPosition;
+            Vector2 roomPosition = cameraPosition;
+            bool hasRoom = generatedRun != null && generatedRun.TryGetCurrentRoomWorldPosition(out roomPosition);
+            if (!hasRoom)
+            {
+                hasRoom = roomAnchor != null;
+                roomPosition = hasRoom ? (Vector2)roomAnchor.position : cameraPosition;
+            }
             Vector2 desired = -(roomPosition - worldReferencePoint) * roomPositionToOffsetMultiplier
-                - (cameraPosition - (roomAnchor != null ? roomPosition : worldReferencePoint)) * parallaxFactor;
+                - (cameraPosition - (hasRoom ? roomPosition : worldReferencePoint)) * parallaxFactor;
             Vector3 worldOffset = desired;
             desired = new Vector2(Vector3.Dot(worldOffset, cameraTransform.right),
                 Vector3.Dot(worldOffset, cameraTransform.up));

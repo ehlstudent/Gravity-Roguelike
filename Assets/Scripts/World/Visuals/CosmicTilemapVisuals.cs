@@ -18,9 +18,26 @@ namespace GravityRoguelike.World.Visuals
         [SerializeField] private GameObject[] rocks;
         [Min(0), SerializeField] private int decorationLimit = 36;
         [Min(1), SerializeField] private int decorationSpacing = 7;
+        [Tooltip("Extra world-space clearance between decoration artwork and generated portals/spawns.")]
+        [Min(0), SerializeField] private float portalDecorationPadding = 0.5f;
 
         private TilemapRenderer sourceRenderer;
         private bool rebuild;
+        private Bounds[] decorationExclusions;
+
+        /// <summary>Connects the reusable visual template to the generator's existing collision map.</summary>
+        public void BindTo(Tilemap tilemap)
+        {
+            source = tilemap;
+            rebuild = true;
+        }
+
+        /// <summary>Only excludes scenery; portal and player collision geometry stays untouched.</summary>
+        public void SetDecorationExclusions(params Bounds[] areas)
+        {
+            decorationExclusions = areas;
+            rebuild = true;
+        }
 
         private void OnEnable()
         {
@@ -129,8 +146,30 @@ namespace GravityRoguelike.World.Visuals
                         source.layoutGrid.cellSize.y * (tree ? 1f : 0.6f), 0));
                 float size = tree ? 0.55f + (hash % 5) * 0.07f : 0.2f + (hash % 3) * 0.04f;
                 instance.transform.localScale = new Vector3((hash & 4) == 0 ? size : -size, size, 1);
+                if (CoversReservedArea(instance))
+                {
+                    instance.SetActive(false);
+                    if (Application.isPlaying) Destroy(instance);
+                    else DestroyImmediate(instance);
+                    continue;
+                }
                 count++;
             }
+        }
+
+        private bool CoversReservedArea(GameObject decoration)
+        {
+            if (decorationExclusions == null) return false;
+            SpriteRenderer sprite = decoration.GetComponentInChildren<SpriteRenderer>();
+            if (sprite == null) return false;
+            Bounds bounds = sprite.bounds;
+            // Compare XY only: sorting depth must not allow scenery to hide an entrance.
+            foreach (Bounds area in decorationExclusions)
+                if (bounds.min.x < area.max.x + portalDecorationPadding
+                    && bounds.max.x > area.min.x - portalDecorationPadding
+                    && bounds.min.y < area.max.y + portalDecorationPadding
+                    && bounds.max.y > area.min.y - portalDecorationPadding) return true;
+            return false;
         }
     }
 }
