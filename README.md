@@ -13,6 +13,7 @@ Die Höhlen werden prozedural aus Seeds generiert und anschließend darauf gepr�
 | Laufen | `A` / `D` oder `←` / `→` | Linker Stick |
 | Springen | `Leertaste` | `A` / `×` (Süd-Taste) |
 | Angreifen (Schwert) | Linke Maustaste oder `Enter` | `X` / `□` (West-Taste) |
+| Schwertstoß (Attack A-stab) | Rechte Maustaste oder `F` | `Y` / `△` (Nord-Taste) |
 | Zielen | Maus | – |
 | Schwerkraft nach links drehen | `Q` | Linke Schultertaste |
 | Schwerkraft nach rechts drehen | `E` | Rechte Schultertaste |
@@ -43,6 +44,14 @@ Die Schwerkraft lässt sich **höchstens einmal pro Sekunde** drehen (Cooldown).
 - Schwert mit abwechselnden Schlägen, Zielen mit der Maus
 - Schadenssystem mit Rückstoß (Knockback)
 - Lebenspunkte für Spieler und Gegner
+- Void-Knight-Körper mit schwertlosen Idle-/Run-/Attack-A-Frames; das Schwert bleibt separat.
+- Der Stoß startet Körper und Schwert gemeinsam und trifft nur während der Ausstreckphase.
+  Swings und Stab teilen Angriffssperre, Schaden und Item-Boni.
+- Zum Testen `SwordCombatPreview` öffnen. Dauer und Trefferreferenzen liegen unter
+  `Dulli_roomtester → ActiveWeapon → Sword`; Trefferflächen werden bei Auswahl als Gizmos angezeigt.
+- Die vier verwendeten Sheets liegen als Kopien unter `Assets/Sprites/Player/VoidKnight`.
+  Körper: native 96er Frames bei 16 PPU mit gemeinsamem Fußpunkt; Stab-Schwert: 32 PPU.
+  Originale im Premiumordner, Player-Collider und Weltmaßstab bleiben erhalten.
 
 ### Gegner
 - **Walker:** läuft am Boden, verfolgt den Spieler in Sichtweite, springt über kleine Kanten

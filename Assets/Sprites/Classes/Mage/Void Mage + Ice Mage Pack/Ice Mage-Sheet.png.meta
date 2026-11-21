@@ -1,0 +1,3200 @@
+fileFormatVersion: 2
+guid: 2559aaf0895d75d40a5c7ce3d2351181
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1014478534166784628
+    second: Ice Mage-Sheet_0
+  - first:
+      213: -363385291076115415
+    second: Ice Mage-Sheet_1
+  - first:
+      213: 2760990476270803361
+    second: Ice Mage-Sheet_2
+  - first:
+      213: -7377353394622043076
+    second: Ice Mage-Sheet_3
+  - first:
+      213: 6210754260303890727
+    second: Ice Mage-Sheet_4
+  - first:
+      213: -7146420255329925185
+    second: Ice Mage-Sheet_5
+  - first:
+      213: -8493988700387496306
+    second: Ice Mage-Sheet_6
+  - first:
+      213: 5658979658498594690
+    second: Ice Mage-Sheet_7
+  - first:
+      213: -828728373190191982
+    second: Ice Mage-Sheet_8
+  - first:
+      213: 7250643612881041574
+    second: Ice Mage-Sheet_9
+  - first:
+      213: -5845729366068135986
+    second: Ice Mage-Sheet_10
+  - first:
+      213: -7672873856480165529
+    second: Ice Mage-Sheet_11
+  - first:
+      213: 5161778055577395382
+    second: Ice Mage-Sheet_12
+  - first:
+      213: 9178073534409038512
+    second: Ice Mage-Sheet_13
+  - first:
+      213: 1498915759387634105
+    second: Ice Mage-Sheet_14
+  - first:
+      213: 8865977564240090970
+    second: Ice Mage-Sheet_15
+  - first:
+      213: -2101597075955581134
+    second: Ice Mage-Sheet_16
+  - first:
+      213: -8298716987200430757
+    second: Ice Mage-Sheet_17
+  - first:
+      213: -5712727445723229941
+    second: Ice Mage-Sheet_18
+  - first:
+      213: 3557248925405590887
+    second: Ice Mage-Sheet_19
+  - first:
+      213: -4594309085648768624
+    second: Ice Mage-Sheet_20
+  - first:
+      213: 1292150683551772258
+    second: Ice Mage-Sheet_21
+  - first:
+      213: -5950592479792485489
+    second: Ice Mage-Sheet_22
+  - first:
+      213: -4510350197115633489
+    second: Ice Mage-Sheet_23
+  - first:
+      213: 8625110619396832528
+    second: Ice Mage-Sheet_24
+  - first:
+      213: 3639226439178496018
+    second: Ice Mage-Sheet_25
+  - first:
+      213: -8311580331227814349
+    second: Ice Mage-Sheet_26
+  - first:
+      213: -3960160279134974604
+    second: Ice Mage-Sheet_27
+  - first:
+      213: -3798492828496479687
+    second: Ice Mage-Sheet_28
+  - first:
+      213: -4633735423569196840
+    second: Ice Mage-Sheet_29
+  - first:
+      213: -4750129516155598003
+    second: Ice Mage-Sheet_30
+  - first:
+      213: 4293223203376728856
+    second: Ice Mage-Sheet_31
+  - first:
+      213: -6231518611566644853
+    second: Ice Mage-Sheet_32
+  - first:
+      213: 179520903719237502
+    second: Ice Mage-Sheet_33
+  - first:
+      213: 8847484854108124853
+    second: Ice Mage-Sheet_34
+  - first:
+      213: 7025292028463869393
+    second: Ice Mage-Sheet_35
+  - first:
+      213: -7735800977839399841
+    second: Ice Mage-Sheet_36
+  - first:
+      213: -1468595810370252089
+    second: Ice Mage-Sheet_37
+  - first:
+      213: -87327305831624261
+    second: Ice Mage-Sheet_38
+  - first:
+      213: -6191716409666300386
+    second: Ice Mage-Sheet_39
+  - first:
+      213: 3323954770242118140
+    second: Ice Mage-Sheet_40
+  - first:
+      213: -8570631837198957555
+    second: Ice Mage-Sheet_41
+  - first:
+      213: -6419901366904150949
+    second: Ice Mage-Sheet_42
+  - first:
+      213: -2072665301901188398
+    second: Ice Mage-Sheet_43
+  - first:
+      213: 874058001693322925
+    second: Ice Mage-Sheet_44
+  - first:
+      213: 7518448344348524831
+    second: Ice Mage-Sheet_45
+  - first:
+      213: 8812891443377867713
+    second: Ice Mage-Sheet_46
+  - first:
+      213: -6546934554387397077
+    second: Ice Mage-Sheet_47
+  - first:
+      213: 5313597622901082104
+    second: Ice Mage-Sheet_48
+  - first:
+      213: -2279359903493979749
+    second: Ice Mage-Sheet_49
+  - first:
+      213: -4965689172858427076
+    second: Ice Mage-Sheet_50
+  - first:
+      213: 2690124288176079292
+    second: Ice Mage-Sheet_51
+  - first:
+      213: -5422249085579909699
+    second: Ice Mage-Sheet_52
+  - first:
+      213: -7829162799361268264
+    second: Ice Mage-Sheet_53
+  - first:
+      213: 5347855800112413370
+    second: Ice Mage-Sheet_54
+  - first:
+      213: 3036971901504236942
+    second: Ice Mage-Sheet_55
+  - first:
+      213: 4305930825492411473
+    second: Ice Mage-Sheet_56
+  - first:
+      213: 8492263832174242993
+    second: Ice Mage-Sheet_57
+  - first:
+      213: 2564408579795764988
+    second: Ice Mage-Sheet_58
+  - first:
+      213: -4220137173513120268
+    second: Ice Mage-Sheet_59
+  - first:
+      213: -278962162612871116
+    second: Ice Mage-Sheet_60
+  - first:
+      213: 3385998708565703533
+    second: Ice Mage-Sheet_61
+  - first:
+      213: 5137825352872364841
+    second: Ice Mage-Sheet_62
+  - first:
+      213: 6365367811844200215
+    second: Ice Mage-Sheet_63
+  - first:
+      213: -2379147676062644283
+    second: Ice Mage-Sheet_64
+  - first:
+      213: 1487055755844062456
+    second: Ice Mage-Sheet_65
+  - first:
+      213: -5139837861990820046
+    second: Ice Mage-Sheet_66
+  - first:
+      213: -5961945423704923635
+    second: Ice Mage-Sheet_67
+  - first:
+      213: 8664651969273671419
+    second: Ice Mage-Sheet_68
+  - first:
+      213: 3856246636573287817
+    second: Ice Mage-Sheet_69
+  - first:
+      213: 2535899264694434064
+    second: Ice Mage-Sheet_70
+  - first:
+      213: -9035366043210359723
+    second: Ice Mage-Sheet_71
+  - first:
+      213: -7160568011482995042
+    second: Ice Mage-Sheet_72
+  - first:
+      213: -4236643581938233796
+    second: Ice Mage-Sheet_73
+  - first:
+      213: 3153517310430183532
+    second: Ice Mage-Sheet_74
+  - first:
+      213: -3665634899100873992
+    second: Ice Mage-Sheet_75
+  - first:
+      213: 3009197533194532535
+    second: Ice Mage-Sheet_76
+  - first:
+      213: -8754039016422642486
+    second: Ice Mage-Sheet_77
+  - first:
+      213: 8266425522792496359
+    second: Ice Mage-Sheet_78
+  - first:
+      213: -8592929288624578492
+    second: Ice Mage-Sheet_79
+  - first:
+      213: -8130915819235134949
+    second: Ice Mage-Sheet_80
+  - first:
+      213: -8410202869938222528
+    second: Ice Mage-Sheet_81
+  - first:
+      213: 517166223745107548
+    second: Ice Mage-Sheet_82
+  - first:
+      213: -4068241926373857432
+    second: Ice Mage-Sheet_83
+  - first:
+      213: 7243090141947659039
+    second: Ice Mage-Sheet_84
+  - first:
+      213: -1503464405780063097
+    second: Ice Mage-Sheet_85
+  - first:
+      213: 1171998094185684505
+    second: Ice Mage-Sheet_86
+  - first:
+      213: 7693372675673936185
+    second: Ice Mage-Sheet_87
+  - first:
+      213: -8769818358783499463
+    second: Ice Mage-Sheet_88
+  - first:
+      213: 1195759732854750443
+    second: Ice Mage-Sheet_89
+  - first:
+      213: 7413869133560946976
+    second: Ice Mage-Sheet_90
+  - first:
+      213: 6738885645127528005
+    second: Ice Mage-Sheet_91
+  - first:
+      213: 5848247744041144813
+    second: Ice Mage-Sheet_92
+  - first:
+      213: 3773294611709861330
+    second: Ice Mage-Sheet_93
+  - first:
+      213: -8071643948584784276
+    second: Ice Mage-Sheet_94
+  - first:
+      213: 9116789504169745748
+    second: Ice Mage-Sheet_95
+  - first:
+      213: 8855656904197662498
+    second: Ice Mage-Sheet_96
+  - first:
+      213: 3132574909256851468
+    second: Ice Mage-Sheet_97
+  - first:
+      213: -4421685245600687710
+    second: Ice Mage-Sheet_98
+  - first:
+      213: -3563940796911373361
+    second: Ice Mage-Sheet_99
+  - first:
+      213: 7019084534819318132
+    second: Ice Mage-Sheet_100
+  - first:
+      213: 525657120947224423
+    second: Ice Mage-Sheet_101
+  - first:
+      213: 3580943686754250483
+    second: Ice Mage-Sheet_102
+  - first:
+      213: -4437322761060294384
+    second: Ice Mage-Sheet_103
+  - first:
+      213: 5141607018963371927
+    second: Ice Mage-Sheet_104
+  - first:
+      213: 7744947491139568841
+    second: Ice Mage-Sheet_105
+  - first:
+      213: 8318582779323277427
+    second: Ice Mage-Sheet_106
+  - first:
+      213: -5308858160172615951
+    second: Ice Mage-Sheet_107
+  - first:
+      213: -6649301749029127693
+    second: Ice Mage-Sheet_108
+  - first:
+      213: 7434233335525616574
+    second: Ice Mage-Sheet_109
+  - first:
+      213: -4777714358066345031
+    second: Ice Mage-Sheet_110
+  - first:
+      213: 7302699153634799569
+    second: Ice Mage-Sheet_111
+  - first:
+      213: -7993552361263535510
+    second: Ice Mage-Sheet_112
+  - first:
+      213: 2014216784343569259
+    second: Ice Mage-Sheet_113
+  - first:
+      213: 2880861341232501569
+    second: Ice Mage-Sheet_114
+  - first:
+      213: -2043465000183783997
+    second: Ice Mage-Sheet_115
+  - first:
+      213: 1432153933533558526
+    second: Ice Mage-Sheet_116
+  - first:
+      213: 9161267078564150022
+    second: Ice Mage-Sheet_117
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 607
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85dabae529dbe1f0800000000000000
+      internalID: -1014478534166784628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 607
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9246ec8c00ff4faf0800000000000000
+      internalID: -363385291076115415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 607
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a99b56b532015620800000000000000
+      internalID: 2760990476270803361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 608
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ce70bac206e9990800000000000000
+      internalID: -7377353394622043076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 607
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72948a00818013650800000000000000
+      internalID: 6210754260303890727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 607
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7476124a0d2dc90800000000000000
+      internalID: -7146420255329925185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 608
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ea833b74a4f1a80800000000000000
+      internalID: -8493988700387496306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 511
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28758ff440cb88e40800000000000000
+      internalID: 5658979658498594690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 530
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29416b47fe3cf74f0800000000000000
+      internalID: -828728373190191982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 553
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8baba43f57f9460800000000000000
+      internalID: 7250643612881041574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 541
+        width: 42
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec770721d1ccfdea0800000000000000
+      internalID: -5845729366068135986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 510
+        width: 86
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7614e1251e9748590800000000000000
+      internalID: -7672873856480165529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 530
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0e8141bc152a740800000000000000
+      internalID: 5161778055577395382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 513
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba5dd480411f5f70800000000000000
+      internalID: 9178073534409038512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 511
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9e88a01f73dc410800000000000000
+      internalID: 1498915759387634105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a571d17ee974a0b70800000000000000
+      internalID: 8865977564240090970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ffaaa1890a5d2e0800000000000000
+      internalID: -2101597075955581134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d1b6e5ed805dc80800000000000000
+      internalID: -8298716987200430757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 509
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01da0bc7a058b0b0800000000000000
+      internalID: -5712727445723229941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 415
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765b070fc03ed5130800000000000000
+      internalID: 3557248925405590887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 414
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0913e817a3cbd30c0800000000000000
+      internalID: -4594309085648768624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 415
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ea1695334aee110800000000000000
+      internalID: 1292150683551772258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 414
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8babdecaaf3b6da0800000000000000
+      internalID: -5950592479792485489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 433
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa04f4084640861c0800000000000000
+      internalID: -4510350197115633489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 415
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01df899196c82b770800000000000000
+      internalID: 8625110619396832528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 415
+        width: 43
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218a17c3a21218230800000000000000
+      internalID: 3639226439178496018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 415
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336ea03b9b557ac80800000000000000
+      internalID: -8311580331227814349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 415
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d4c8c353faa09c0800000000000000
+      internalID: -3960160279134974604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 415
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a3993d5ea094bc0800000000000000
+      internalID: -3798492828496479687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 415
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8830fce2aa1bfb0800000000000000
+      internalID: -4633735423569196840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 56
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b82705f56241eb0800000000000000
+      internalID: -4750129516155598003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 295
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b0cbac1c7949b30800000000000000
+      internalID: 4293223203376728856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 319
+        width: 58
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81b55ab6d23589a0800000000000000
+      internalID: -6231518611566644853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 320
+        width: 58
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7731ff8f49cd7200800000000000000
+      internalID: 179520903719237502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 321
+        width: 90
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b673cc499498ca70800000000000000
+      internalID: 8847484854108124853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 319
+        width: 56
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dde8f7d0e9de7160800000000000000
+      internalID: 7025292028463869393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 319
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c53c62ff9e4a490800000000000000
+      internalID: -7735800977839399841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 270
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2114434ef7e9be0800000000000000
+      internalID: -1468595810370252089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 273
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1d6bc2740c9cef0800000000000000
+      internalID: -87327305831624261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 223
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1612e30bba921aa0800000000000000
+      internalID: -6191716409666300386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 223
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf12fb1a04f012e20800000000000000
+      internalID: 3323954770242118140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 223
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d044a13d0cffe0980800000000000000
+      internalID: -8570631837198957555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 223
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5422ac88bde7e6a0800000000000000
+      internalID: -6419901366904150949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 223
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2e6eda3e96c33e0800000000000000
+      internalID: -2072665301901188398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 223
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daea4002f17412c00800000000000000
+      internalID: 874058001693322925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 238
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11840b4fe4e65860800000000000000
+      internalID: 7518448344348524831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 200
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cb0e96331ead4a70800000000000000
+      internalID: 8812891443377867713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 226
+        width: 15
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26420eb5bd9425a0800000000000000
+      internalID: -6546934554387397077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 206
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f70168a2e0bdb940800000000000000
+      internalID: 5313597622901082104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 177
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9109fc8e361e50e0800000000000000
+      internalID: -2279359903493979749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 176
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3925c2b104561bb0800000000000000
+      internalID: -4965689172858427076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 167
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1c26689cd355520800000000000000
+      internalID: 2690124288176079292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 166
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5a25a5f2d40c4b0800000000000000
+      internalID: -5422249085579909699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 167
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d56e572ae9395390800000000000000
+      internalID: -7829162799361268264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 183
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba76bb1486673a40800000000000000
+      internalID: 5347855800112413370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 166
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8da0069add752a20800000000000000
+      internalID: 3036971901504236942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 180
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15431e0a54db1cb30800000000000000
+      internalID: 4305930825492411473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 174
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bca4af16f49ad570800000000000000
+      internalID: 8492263832174242993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 172
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6c0b9340c969320800000000000000
+      internalID: 2564408579795764988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 161
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f55455999f0f65c0800000000000000
+      internalID: -4220137173513120268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 168
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4306faf146de02cf0800000000000000
+      internalID: -278962162612871116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 167
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b7df9b2eb7dfe20800000000000000
+      internalID: 3385998708565703533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 151
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b04f3efe83d4740800000000000000
+      internalID: 5137825352872364841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 165
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717dda9bc44565850800000000000000
+      internalID: 6365367811844200215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 167
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7071c3bc19bfed0800000000000000
+      internalID: -2379147676062644283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 107
+        width: 53
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc0948c45513a410800000000000000
+      internalID: 1487055755844062456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 107
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2371fe052b0aba8b0800000000000000
+      internalID: -5139837861990820046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 157
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d026dc1993ae24da0800000000000000
+      internalID: -5961945423704923635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 127
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe22fa0f070f3870800000000000000
+      internalID: 8664651969273671419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 161
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985ee3b72e3248530800000000000000
+      internalID: 3856246636573287817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 156
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019394a02f2513320800000000000000
+      internalID: 2535899264694434064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 127
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55cd1d2847eeb9280800000000000000
+      internalID: -9035366043210359723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 153
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e96e785f45d80ac90800000000000000
+      internalID: -7160568011482995042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 122
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e02a2eb1b6435c0800000000000000
+      internalID: -4236643581938233796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 102
+        width: 39
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c608c39294b83cb20800000000000000
+      internalID: 3153517310430183532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 151
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa41da0b7c012dc0800000000000000
+      internalID: -3665634899100873992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 163
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6ba098631d2c920800000000000000
+      internalID: 3009197533194532535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 122
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acce73c35e7638680800000000000000
+      internalID: -8754039016422642486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 141
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ecf440373e38b270800000000000000
+      internalID: 8266425522792496359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 145
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4406b7bd658cfb880800000000000000
+      internalID: -8592929288624578492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 141
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12b2ef442f292f80800000000000000
+      internalID: -8130915819235134949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 145
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a8c588c05f84b80800000000000000
+      internalID: -8410202869938222528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 97
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c564820c0f75d2700800000000000000
+      internalID: 517166223745107548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 125
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867a22eb583ba87c0800000000000000
+      internalID: -4068241926373857432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 125
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f138ceacb10a48460800000000000000
+      internalID: 7243090141947659039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 125
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c1901b61f922be0800000000000000
+      internalID: -1503464405780063097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 124
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e5f51ae06c34010800000000000000
+      internalID: 1171998094185684505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 129
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931dd32ffa954ca60800000000000000
+      internalID: 7693372675673936185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 128
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933a20ccaa85b4680800000000000000
+      internalID: -8769818358783499463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 124
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becf5814421389010800000000000000
+      internalID: 1195759732854750443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 125
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021222552ba53e660800000000000000
+      internalID: 7413869133560946976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 134
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e2ec34ac4558d50800000000000000
+      internalID: 6738885645127528005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 129
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de15d0e7656292150800000000000000
+      internalID: 5848247744041144813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 106
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd9cd3257f6d5430800000000000000
+      internalID: 3773294611709861330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 110
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e2c2b1892cbff80800000000000000
+      internalID: -8071643948584784276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 98
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d1c0050c7558e70800000000000000
+      internalID: 9116789504169745748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 227ef6bf80d95ea70800000000000000
+      internalID: 8855656904197662498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 97
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c006e8a6844297b20800000000000000
+      internalID: 3132574909256851468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 119
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9926b32b403a2c0800000000000000
+      internalID: -4421685245600687710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 102
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3339f4ab65a8ec0800000000000000
+      internalID: -3563940796911373361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 113
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479e75a123cc86160800000000000000
+      internalID: 7019084534819318132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 97
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fb6bfcd528b4700800000000000000
+      internalID: 525657120947224423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 109
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe2aa97f4112b130800000000000000
+      internalID: 3580943686754250483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 106
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011ee3175767b62c0800000000000000
+      internalID: -4437322761060294384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 110
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79787f3a758aa5740800000000000000
+      internalID: 5141607018963371927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 103
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c44d6d65b49b7b60800000000000000
+      internalID: 7744947491139568841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 103
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370ee3cc6fa817370800000000000000
+      internalID: 8318582779323277427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 103
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f63aff71a52356b0800000000000000
+      internalID: -5308858160172615951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 99
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f93cbce94fe8b3a0800000000000000
+      internalID: -6649301749029127693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 103
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb2f5594d3bb2760800000000000000
+      internalID: 7434233335525616574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 102
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb0c21da1622bdb0800000000000000
+      internalID: -4777714358066345031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 102
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dfa2f95036685560800000000000000
+      internalID: 7302699153634799569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 26
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ae665aa72311190800000000000000
+      internalID: -7993552361263535510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 31
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b639d6b5e7fe3fb10800000000000000
+      internalID: 2014216784343569259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 31
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143915b5020eaf720800000000000000
+      internalID: 2880861341232501569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 30
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd1a19b86724a3e0800000000000000
+      internalID: -2043465000183783997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 31
+        width: 46
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef632f72a6800e310800000000000000
+      internalID: 1432153933533558526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice Mage-Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 26
+        width: 66
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bfb469edb532f70800000000000000
+      internalID: 9161267078564150022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ice Mage-Sheet_0: -1014478534166784628
+      Ice Mage-Sheet_1: -363385291076115415
+      Ice Mage-Sheet_10: -5845729366068135986
+      Ice Mage-Sheet_100: 7019084534819318132
+      Ice Mage-Sheet_101: 525657120947224423
+      Ice Mage-Sheet_102: 3580943686754250483
+      Ice Mage-Sheet_103: -4437322761060294384
+      Ice Mage-Sheet_104: 5141607018963371927
+      Ice Mage-Sheet_105: 7744947491139568841
+      Ice Mage-Sheet_106: 8318582779323277427
+      Ice Mage-Sheet_107: -5308858160172615951
+      Ice Mage-Sheet_108: -6649301749029127693
+      Ice Mage-Sheet_109: 7434233335525616574
+      Ice Mage-Sheet_11: -7672873856480165529
+      Ice Mage-Sheet_110: -4777714358066345031
+      Ice Mage-Sheet_111: 7302699153634799569
+      Ice Mage-Sheet_112: -7993552361263535510
+      Ice Mage-Sheet_113: 2014216784343569259
+      Ice Mage-Sheet_114: 2880861341232501569
+      Ice Mage-Sheet_115: -2043465000183783997
+      Ice Mage-Sheet_116: 1432153933533558526
+      Ice Mage-Sheet_117: 9161267078564150022
+      Ice Mage-Sheet_12: 5161778055577395382
+      Ice Mage-Sheet_13: 9178073534409038512
+      Ice Mage-Sheet_14: 1498915759387634105
+      Ice Mage-Sheet_15: 8865977564240090970
+      Ice Mage-Sheet_16: -2101597075955581134
+      Ice Mage-Sheet_17: -8298716987200430757
+      Ice Mage-Sheet_18: -5712727445723229941
+      Ice Mage-Sheet_19: 3557248925405590887
+      Ice Mage-Sheet_2: 2760990476270803361
+      Ice Mage-Sheet_20: -4594309085648768624
+      Ice Mage-Sheet_21: 1292150683551772258
+      Ice Mage-Sheet_22: -5950592479792485489
+      Ice Mage-Sheet_23: -4510350197115633489
+      Ice Mage-Sheet_24: 8625110619396832528
+      Ice Mage-Sheet_25: 3639226439178496018
+      Ice Mage-Sheet_26: -8311580331227814349
+      Ice Mage-Sheet_27: -3960160279134974604
+      Ice Mage-Sheet_28: -3798492828496479687
+      Ice Mage-Sheet_29: -4633735423569196840
+      Ice Mage-Sheet_3: -7377353394622043076
+      Ice Mage-Sheet_30: -4750129516155598003
+      Ice Mage-Sheet_31: 4293223203376728856
+      Ice Mage-Sheet_32: -6231518611566644853
+      Ice Mage-Sheet_33: 179520903719237502
+      Ice Mage-Sheet_34: 8847484854108124853
+      Ice Mage-Sheet_35: 7025292028463869393
+      Ice Mage-Sheet_36: -7735800977839399841
+      Ice Mage-Sheet_37: -1468595810370252089
+      Ice Mage-Sheet_38: -87327305831624261
+      Ice Mage-Sheet_39: -6191716409666300386
+      Ice Mage-Sheet_4: 6210754260303890727
+      Ice Mage-Sheet_40: 3323954770242118140
+      Ice Mage-Sheet_41: -8570631837198957555
+      Ice Mage-Sheet_42: -6419901366904150949
+      Ice Mage-Sheet_43: -2072665301901188398
+      Ice Mage-Sheet_44: 874058001693322925
+      Ice Mage-Sheet_45: 7518448344348524831
+      Ice Mage-Sheet_46: 8812891443377867713
+      Ice Mage-Sheet_47: -6546934554387397077
+      Ice Mage-Sheet_48: 5313597622901082104
+      Ice Mage-Sheet_49: -2279359903493979749
+      Ice Mage-Sheet_5: -7146420255329925185
+      Ice Mage-Sheet_50: -4965689172858427076
+      Ice Mage-Sheet_51: 2690124288176079292
+      Ice Mage-Sheet_52: -5422249085579909699
+      Ice Mage-Sheet_53: -7829162799361268264
+      Ice Mage-Sheet_54: 5347855800112413370
+      Ice Mage-Sheet_55: 3036971901504236942
+      Ice Mage-Sheet_56: 4305930825492411473
+      Ice Mage-Sheet_57: 8492263832174242993
+      Ice Mage-Sheet_58: 2564408579795764988
+      Ice Mage-Sheet_59: -4220137173513120268
+      Ice Mage-Sheet_6: -8493988700387496306
+      Ice Mage-Sheet_60: -278962162612871116
+      Ice Mage-Sheet_61: 3385998708565703533
+      Ice Mage-Sheet_62: 5137825352872364841
+      Ice Mage-Sheet_63: 6365367811844200215
+      Ice Mage-Sheet_64: -2379147676062644283
+      Ice Mage-Sheet_65: 1487055755844062456
+      Ice Mage-Sheet_66: -5139837861990820046
+      Ice Mage-Sheet_67: -5961945423704923635
+      Ice Mage-Sheet_68: 8664651969273671419
+      Ice Mage-Sheet_69: 3856246636573287817
+      Ice Mage-Sheet_7: 5658979658498594690
+      Ice Mage-Sheet_70: 2535899264694434064
+      Ice Mage-Sheet_71: -9035366043210359723
+      Ice Mage-Sheet_72: -7160568011482995042
+      Ice Mage-Sheet_73: -4236643581938233796
+      Ice Mage-Sheet_74: 3153517310430183532
+      Ice Mage-Sheet_75: -3665634899100873992
+      Ice Mage-Sheet_76: 3009197533194532535
+      Ice Mage-Sheet_77: -8754039016422642486
+      Ice Mage-Sheet_78: 8266425522792496359
+      Ice Mage-Sheet_79: -8592929288624578492
+      Ice Mage-Sheet_8: -828728373190191982
+      Ice Mage-Sheet_80: -8130915819235134949
+      Ice Mage-Sheet_81: -8410202869938222528
+      Ice Mage-Sheet_82: 517166223745107548
+      Ice Mage-Sheet_83: -4068241926373857432
+      Ice Mage-Sheet_84: 7243090141947659039
+      Ice Mage-Sheet_85: -1503464405780063097
+      Ice Mage-Sheet_86: 1171998094185684505
+      Ice Mage-Sheet_87: 7693372675673936185
+      Ice Mage-Sheet_88: -8769818358783499463
+      Ice Mage-Sheet_89: 1195759732854750443
+      Ice Mage-Sheet_9: 7250643612881041574
+      Ice Mage-Sheet_90: 7413869133560946976
+      Ice Mage-Sheet_91: 6738885645127528005
+      Ice Mage-Sheet_92: 5848247744041144813
+      Ice Mage-Sheet_93: 3773294611709861330
+      Ice Mage-Sheet_94: -8071643948584784276
+      Ice Mage-Sheet_95: 9116789504169745748
+      Ice Mage-Sheet_96: 8855656904197662498
+      Ice Mage-Sheet_97: 3132574909256851468
+      Ice Mage-Sheet_98: -4421685245600687710
+      Ice Mage-Sheet_99: -3563940796911373361
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

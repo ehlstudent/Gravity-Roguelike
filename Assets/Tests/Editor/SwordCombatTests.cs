@@ -77,10 +77,9 @@ namespace GravityRoguelike.Tests
             Assert.That(AssetDatabase.GetAssetPath(reference), Is.EqualTo("Assets/Settings/InputSystem_Actions.inputactions"));
             Assert.That(reference.action.bindings.Any(b => b.path == "<Mouse>/leftButton"), Is.True);
             Assert.That(settings.FindProperty("hitPoint").objectReferenceValue, Is.Not.Null);
-            Assert.That(settings.FindProperty("slashPrefab").objectReferenceValue, Is.Not.Null);
             var spawn = settings.FindProperty("slashAnimSpawnPoint").objectReferenceValue as Transform;
             Assert.That(spawn.parent, Is.EqualTo(sword.transform.parent),
-                "The slash follows aim, without inheriting the sword's animated rotation again.");
+                "The obstruction-check origin follows aim without the sword's swing rotation.");
             Assert.That(player.GetComponentsInChildren<Rigidbody2D>().Length, Is.EqualTo(1));
             Assert.That(player.GetComponents<PlayerController2D>().Length, Is.EqualTo(1));
         }
@@ -121,7 +120,9 @@ namespace GravityRoguelike.Tests
             Assert.That(clip.isLooping, Is.False);
             var cleanup = AnimationUtility.GetAnimationEvents(clip).Single();
             Assert.That(cleanup.functionName, Is.EqualTo(nameof(SlashAnim.DestroySelf)));
-            Assert.That(cleanup.time, Is.EqualTo(clip.length).Within(0.001f));
+            // Unity includes one display frame after the last sprite key in clip.length.
+            Assert.That(cleanup.time, Is.GreaterThanOrEqualTo(frames.Last().time));
+            Assert.That(cleanup.time, Is.LessThanOrEqualTo(clip.length));
         }
     }
 }

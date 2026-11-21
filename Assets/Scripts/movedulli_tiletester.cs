@@ -48,6 +48,19 @@ public class PlayerController2D : MonoBehaviour
     /// <summary>True while the ground check touches the ground layer.</summary>
     public bool IsGrounded => isGrounded;
 
+    /// <summary>Visual landing anticipation; reuses the feet, ground mask and gravity direction.</summary>
+    public bool HasGroundBelow(float distance)
+    {
+        if (groundCheck == null || distance <= 0f) return false;
+        Vector2 up = transform.up;
+        int count = Physics2D.CircleCast(groundCheck.position, groundCheckRadius, -up,
+            wallFilter, castHits, distance);
+        for (int i = 0; i < count; i++)
+            if (castHits[i].collider != bodyCollider && Vector2.Dot(castHits[i].normal, up) > 0.5f)
+                return true;
+        return false;
+    }
+
     public float MoveSpeed => moveSpeed;
     public float BaseMoveSpeed => baseMoveSpeed;
 

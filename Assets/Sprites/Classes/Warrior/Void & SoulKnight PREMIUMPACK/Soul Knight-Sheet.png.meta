@@ -1,0 +1,1276 @@
+fileFormatVersion: 2
+guid: c70b4cb79a0c82343939ea641fa9b7ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4803656807415811095
+    second: Soul Knight-Sheet_0
+  - first:
+      213: 8346737211139582643
+    second: Soul Knight-Sheet_1
+  - first:
+      213: -4486211802812658983
+    second: Soul Knight-Sheet_2
+  - first:
+      213: -7371762683699337688
+    second: Soul Knight-Sheet_3
+  - first:
+      213: 8797450463907798883
+    second: Soul Knight-Sheet_4
+  - first:
+      213: -109307127552457023
+    second: Soul Knight-Sheet_5
+  - first:
+      213: 8586743952044393592
+    second: Soul Knight-Sheet_6
+  - first:
+      213: 609443177566250690
+    second: Soul Knight-Sheet_7
+  - first:
+      213: 6168768175499754496
+    second: Soul Knight-Sheet_8
+  - first:
+      213: -4040469386195986107
+    second: Soul Knight-Sheet_9
+  - first:
+      213: -6441861744841578353
+    second: Soul Knight-Sheet_10
+  - first:
+      213: -7136122203590350044
+    second: Soul Knight-Sheet_11
+  - first:
+      213: -114288221180188792
+    second: Soul Knight-Sheet_12
+  - first:
+      213: 3004272938324939698
+    second: Soul Knight-Sheet_13
+  - first:
+      213: 6218631742395314562
+    second: Soul Knight-Sheet_14
+  - first:
+      213: -5102215036218862461
+    second: Soul Knight-Sheet_15
+  - first:
+      213: 8769732112240287741
+    second: Soul Knight-Sheet_16
+  - first:
+      213: -3576434944331349737
+    second: Soul Knight-Sheet_17
+  - first:
+      213: 4284302843321612363
+    second: Soul Knight-Sheet_18
+  - first:
+      213: 855624983572081695
+    second: Soul Knight-Sheet_19
+  - first:
+      213: 338949662347079911
+    second: Soul Knight-Sheet_20
+  - first:
+      213: -3017710709148420222
+    second: Soul Knight-Sheet_21
+  - first:
+      213: -4533243431487865438
+    second: Soul Knight-Sheet_22
+  - first:
+      213: -3472666142527195929
+    second: Soul Knight-Sheet_23
+  - first:
+      213: -6929031272026102007
+    second: Soul Knight-Sheet_24
+  - first:
+      213: -8154267457251331027
+    second: Soul Knight-Sheet_25
+  - first:
+      213: 7118940978679283676
+    second: Soul Knight-Sheet_26
+  - first:
+      213: -4058665328933979306
+    second: Soul Knight-Sheet_27
+  - first:
+      213: 9131146217776942384
+    second: Soul Knight-Sheet_28
+  - first:
+      213: 4068989615145572899
+    second: Soul Knight-Sheet_29
+  - first:
+      213: 2342486755807545995
+    second: Soul Knight-Sheet_30
+  - first:
+      213: -1039203102715084974
+    second: Soul Knight-Sheet_31
+  - first:
+      213: -243135703426784073
+    second: Soul Knight-Sheet_32
+  - first:
+      213: -4773885599966191806
+    second: Soul Knight-Sheet_33
+  - first:
+      213: 7082492580731048803
+    second: Soul Knight-Sheet_34
+  - first:
+      213: -5626117884008929965
+    second: Soul Knight-Sheet_35
+  - first:
+      213: 7394633086288133405
+    second: Soul Knight-Sheet_36
+  - first:
+      213: -7376720115792675839
+    second: Soul Knight-Sheet_37
+  - first:
+      213: -9033466813927477417
+    second: Soul Knight-Sheet_38
+  - first:
+      213: 4811001886422327382
+    second: Soul Knight-Sheet_39
+  - first:
+      213: -833396478429919766
+    second: Soul Knight-Sheet_40
+  - first:
+      213: -5254900575395139404
+    second: Soul Knight-Sheet_41
+  - first:
+      213: -2829804486308544439
+    second: Soul Knight-Sheet_42
+  - first:
+      213: 6477281191973715723
+    second: Soul Knight-Sheet_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 607
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3f713a59bf55db0800000000000000
+      internalID: -4803656807415811095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 607
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba6287454195d370800000000000000
+      internalID: 8346737211139582643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 607
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dacf226226cdb1c0800000000000000
+      internalID: -4486211802812658983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 607
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826ee9d75ec32b990800000000000000
+      internalID: -7371762683699337688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 607
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36fd1560692d61a70800000000000000
+      internalID: 8797450463907798883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 607
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c641d22fb9ab7ef0800000000000000
+      internalID: -109307127552457023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 607
+        width: 69
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87407de312e3a2770800000000000000
+      internalID: 8586743952044393592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 511
+        width: 62
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c62f9d475d257800800000000000000
+      internalID: 609443177566250690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 511
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00cb56ad8fddb9550800000000000000
+      internalID: 6168768175499754496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 511
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54992f5208e5de7c0800000000000000
+      internalID: -4040469386195986107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 511
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f882a8e9fd8e996a0800000000000000
+      internalID: -6441861744841578353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 511
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b28352aa667fc90800000000000000
+      internalID: -7136122203590350044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 511
+        width: 53
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8872b86e777f96ef0800000000000000
+      internalID: -114288221180188792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 511
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b35d21f15251b920800000000000000
+      internalID: 3004272938324939698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 415
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281f07a3f940d4650800000000000000
+      internalID: 6218631742395314562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 415
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384948e057a4139b0800000000000000
+      internalID: -5102215036218862461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 421
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff1b6d54e854b970800000000000000
+      internalID: 8769732112240287741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 415
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71106dced53fd5ec0800000000000000
+      internalID: -3576434944331349737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 415
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48716e9cb6e47b30800000000000000
+      internalID: 4284302843321612363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 414
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c63c6a36acfdb00800000000000000
+      internalID: 855624983572081695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 415
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0bfec0ce034b400800000000000000
+      internalID: 338949662347079911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 416
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 287f05a3910fe16d0800000000000000
+      internalID: -3017710709148420222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 320
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2adfac10e1fa611c0800000000000000
+      internalID: -4533243431487865438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 319
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4f327da8c9ecfc0800000000000000
+      internalID: -3472666142527195929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 319
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907af4905c227df90800000000000000
+      internalID: -6929031272026102007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 320
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24b10763f836de80800000000000000
+      internalID: -8154267457251331027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 320
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf76233a1f8bc260800000000000000
+      internalID: 7118940978679283676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 319
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b32b61369bca7c0800000000000000
+      internalID: -4058665328933979306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 319
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d0fbe2b1958be70800000000000000
+      internalID: 9131146217776942384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 228
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a518d1f74f77830800000000000000
+      internalID: 4068989615145572899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 239
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a47fa1b4f228020800000000000000
+      internalID: 2342486755807545995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 243
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ffe25b8420491f0800000000000000
+      internalID: -1039203102715084974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 195
+        width: 91
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4280dad5530acf0800000000000000
+      internalID: -243135703426784073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 220
+        width: 25
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f99a70750cfbdb0800000000000000
+      internalID: -4773885599966191806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 228
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36350de3a711a4260800000000000000
+      internalID: 7082492580731048803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 224
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355ec2bc7930ce1b0800000000000000
+      internalID: -5626117884008929965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 127
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1dfd801d930f9660800000000000000
+      internalID: 7394633086288133405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 127
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10cf2b26320a0a990800000000000000
+      internalID: -7376720115792675839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 124
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75fa2994bcda2a280800000000000000
+      internalID: -9033466813927477417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 122
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650efe5d9bc14c240800000000000000
+      internalID: 4811001886422327382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 123
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae58f12815e2f64f0800000000000000
+      internalID: -833396478429919766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 123
+        width: 45
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0b391b4c7d217b0800000000000000
+      internalID: -5254900575395139404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 123
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940c5c900d38ab8d0800000000000000
+      internalID: -2829804486308544439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soul Knight-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 27
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f79ed0dece3e950800000000000000
+      internalID: 6477281191973715723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Soul Knight-Sheet_0: -4803656807415811095
+      Soul Knight-Sheet_1: 8346737211139582643
+      Soul Knight-Sheet_10: -6441861744841578353
+      Soul Knight-Sheet_11: -7136122203590350044
+      Soul Knight-Sheet_12: -114288221180188792
+      Soul Knight-Sheet_13: 3004272938324939698
+      Soul Knight-Sheet_14: 6218631742395314562
+      Soul Knight-Sheet_15: -5102215036218862461
+      Soul Knight-Sheet_16: 8769732112240287741
+      Soul Knight-Sheet_17: -3576434944331349737
+      Soul Knight-Sheet_18: 4284302843321612363
+      Soul Knight-Sheet_19: 855624983572081695
+      Soul Knight-Sheet_2: -4486211802812658983
+      Soul Knight-Sheet_20: 338949662347079911
+      Soul Knight-Sheet_21: -3017710709148420222
+      Soul Knight-Sheet_22: -4533243431487865438
+      Soul Knight-Sheet_23: -3472666142527195929
+      Soul Knight-Sheet_24: -6929031272026102007
+      Soul Knight-Sheet_25: -8154267457251331027
+      Soul Knight-Sheet_26: 7118940978679283676
+      Soul Knight-Sheet_27: -4058665328933979306
+      Soul Knight-Sheet_28: 9131146217776942384
+      Soul Knight-Sheet_29: 4068989615145572899
+      Soul Knight-Sheet_3: -7371762683699337688
+      Soul Knight-Sheet_30: 2342486755807545995
+      Soul Knight-Sheet_31: -1039203102715084974
+      Soul Knight-Sheet_32: -243135703426784073
+      Soul Knight-Sheet_33: -4773885599966191806
+      Soul Knight-Sheet_34: 7082492580731048803
+      Soul Knight-Sheet_35: -5626117884008929965
+      Soul Knight-Sheet_36: 7394633086288133405
+      Soul Knight-Sheet_37: -7376720115792675839
+      Soul Knight-Sheet_38: -9033466813927477417
+      Soul Knight-Sheet_39: 4811001886422327382
+      Soul Knight-Sheet_4: 8797450463907798883
+      Soul Knight-Sheet_40: -833396478429919766
+      Soul Knight-Sheet_41: -5254900575395139404
+      Soul Knight-Sheet_42: -2829804486308544439
+      Soul Knight-Sheet_43: 6477281191973715723
+      Soul Knight-Sheet_5: -109307127552457023
+      Soul Knight-Sheet_6: 8586743952044393592
+      Soul Knight-Sheet_7: 609443177566250690
+      Soul Knight-Sheet_8: 6168768175499754496
+      Soul Knight-Sheet_9: -4040469386195986107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

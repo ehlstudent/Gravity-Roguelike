@@ -1,0 +1,2914 @@
+fileFormatVersion: 2
+guid: f54ddad294ddb5c41aa2bea394a3f2ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2269719670607265576
+    second: Void Mage-Sheet_0
+  - first:
+      213: -1213083518371005255
+    second: Void Mage-Sheet_1
+  - first:
+      213: -6084907742173830051
+    second: Void Mage-Sheet_2
+  - first:
+      213: 7997319167274454663
+    second: Void Mage-Sheet_3
+  - first:
+      213: 7414276602307569587
+    second: Void Mage-Sheet_4
+  - first:
+      213: 3400899672909243452
+    second: Void Mage-Sheet_5
+  - first:
+      213: -9170802038738545108
+    second: Void Mage-Sheet_6
+  - first:
+      213: -5335071439671251372
+    second: Void Mage-Sheet_7
+  - first:
+      213: -4263277890755028759
+    second: Void Mage-Sheet_8
+  - first:
+      213: -9087840287581386954
+    second: Void Mage-Sheet_9
+  - first:
+      213: -3340321121013299142
+    second: Void Mage-Sheet_10
+  - first:
+      213: 4502805859870063382
+    second: Void Mage-Sheet_11
+  - first:
+      213: -1855166940454093980
+    second: Void Mage-Sheet_12
+  - first:
+      213: -975749247876903856
+    second: Void Mage-Sheet_13
+  - first:
+      213: 8068290308605333580
+    second: Void Mage-Sheet_14
+  - first:
+      213: -148830675445170750
+    second: Void Mage-Sheet_15
+  - first:
+      213: 3566737330643484303
+    second: Void Mage-Sheet_16
+  - first:
+      213: -5587397315963539036
+    second: Void Mage-Sheet_17
+  - first:
+      213: 7454990628620730737
+    second: Void Mage-Sheet_18
+  - first:
+      213: -1770568230543089662
+    second: Void Mage-Sheet_19
+  - first:
+      213: -5051606206011733418
+    second: Void Mage-Sheet_20
+  - first:
+      213: -674482293149916433
+    second: Void Mage-Sheet_21
+  - first:
+      213: 8705963023935140493
+    second: Void Mage-Sheet_22
+  - first:
+      213: 7293892378303008156
+    second: Void Mage-Sheet_23
+  - first:
+      213: 6471888419850337877
+    second: Void Mage-Sheet_24
+  - first:
+      213: -3718465994192901039
+    second: Void Mage-Sheet_25
+  - first:
+      213: -1525789187693586539
+    second: Void Mage-Sheet_26
+  - first:
+      213: -3973470083286211985
+    second: Void Mage-Sheet_27
+  - first:
+      213: 7184090562994091938
+    second: Void Mage-Sheet_28
+  - first:
+      213: 4669062776228296020
+    second: Void Mage-Sheet_29
+  - first:
+      213: -8670915305735398568
+    second: Void Mage-Sheet_30
+  - first:
+      213: -16736659597396212
+    second: Void Mage-Sheet_31
+  - first:
+      213: -1134229748798301031
+    second: Void Mage-Sheet_32
+  - first:
+      213: 7779013314149264555
+    second: Void Mage-Sheet_33
+  - first:
+      213: -3866290546073615180
+    second: Void Mage-Sheet_34
+  - first:
+      213: 1423913730125930979
+    second: Void Mage-Sheet_35
+  - first:
+      213: -1665192434253441300
+    second: Void Mage-Sheet_36
+  - first:
+      213: 1842903446938166286
+    second: Void Mage-Sheet_37
+  - first:
+      213: 1524319625022505570
+    second: Void Mage-Sheet_38
+  - first:
+      213: -3581011874662165174
+    second: Void Mage-Sheet_39
+  - first:
+      213: -5676779044615220407
+    second: Void Mage-Sheet_40
+  - first:
+      213: 5778550891192516679
+    second: Void Mage-Sheet_41
+  - first:
+      213: 8658978475090888116
+    second: Void Mage-Sheet_42
+  - first:
+      213: 4062978031672262125
+    second: Void Mage-Sheet_43
+  - first:
+      213: -5163143020620644421
+    second: Void Mage-Sheet_44
+  - first:
+      213: 2392307524696006650
+    second: Void Mage-Sheet_45
+  - first:
+      213: 6239648452770019389
+    second: Void Mage-Sheet_46
+  - first:
+      213: 1690451910367880067
+    second: Void Mage-Sheet_47
+  - first:
+      213: -7262664751739907867
+    second: Void Mage-Sheet_48
+  - first:
+      213: 5539930272205113931
+    second: Void Mage-Sheet_49
+  - first:
+      213: -2329145559332290985
+    second: Void Mage-Sheet_50
+  - first:
+      213: 5945939760139493863
+    second: Void Mage-Sheet_51
+  - first:
+      213: -9205304994717677347
+    second: Void Mage-Sheet_52
+  - first:
+      213: -5804329514205032890
+    second: Void Mage-Sheet_53
+  - first:
+      213: 2394299781330449761
+    second: Void Mage-Sheet_54
+  - first:
+      213: -3078200677548248606
+    second: Void Mage-Sheet_55
+  - first:
+      213: 7674364718267394456
+    second: Void Mage-Sheet_56
+  - first:
+      213: -2430329980315416749
+    second: Void Mage-Sheet_57
+  - first:
+      213: -5360533266573977072
+    second: Void Mage-Sheet_58
+  - first:
+      213: -8826471158010106636
+    second: Void Mage-Sheet_59
+  - first:
+      213: 7449197031671029445
+    second: Void Mage-Sheet_60
+  - first:
+      213: -5477379200652053958
+    second: Void Mage-Sheet_61
+  - first:
+      213: 8199590347336267357
+    second: Void Mage-Sheet_62
+  - first:
+      213: 1436559482796125611
+    second: Void Mage-Sheet_63
+  - first:
+      213: -1941989300872275983
+    second: Void Mage-Sheet_64
+  - first:
+      213: -9074827745283789334
+    second: Void Mage-Sheet_65
+  - first:
+      213: -2780594759293736374
+    second: Void Mage-Sheet_66
+  - first:
+      213: -5209762762540986871
+    second: Void Mage-Sheet_67
+  - first:
+      213: -8286788781857824781
+    second: Void Mage-Sheet_68
+  - first:
+      213: -2064702261691309390
+    second: Void Mage-Sheet_69
+  - first:
+      213: 8964709424506028874
+    second: Void Mage-Sheet_70
+  - first:
+      213: 7295997147064405476
+    second: Void Mage-Sheet_71
+  - first:
+      213: 4210453405196401272
+    second: Void Mage-Sheet_72
+  - first:
+      213: -8093347173560020776
+    second: Void Mage-Sheet_73
+  - first:
+      213: -7625220837101874873
+    second: Void Mage-Sheet_74
+  - first:
+      213: -3056442134437158964
+    second: Void Mage-Sheet_75
+  - first:
+      213: -2882905851702219316
+    second: Void Mage-Sheet_76
+  - first:
+      213: -2528306726548772535
+    second: Void Mage-Sheet_77
+  - first:
+      213: -2019724548072544227
+    second: Void Mage-Sheet_78
+  - first:
+      213: 8556799447309032038
+    second: Void Mage-Sheet_79
+  - first:
+      213: -5247664023916853536
+    second: Void Mage-Sheet_80
+  - first:
+      213: 913219253360262853
+    second: Void Mage-Sheet_81
+  - first:
+      213: -7043185825750071861
+    second: Void Mage-Sheet_82
+  - first:
+      213: -7824687181221002392
+    second: Void Mage-Sheet_83
+  - first:
+      213: 2243674288669786981
+    second: Void Mage-Sheet_84
+  - first:
+      213: -1841288957381223906
+    second: Void Mage-Sheet_85
+  - first:
+      213: -4457384356611056153
+    second: Void Mage-Sheet_86
+  - first:
+      213: 2967076465064588989
+    second: Void Mage-Sheet_87
+  - first:
+      213: -8732669494973371579
+    second: Void Mage-Sheet_88
+  - first:
+      213: -8163751855511713345
+    second: Void Mage-Sheet_89
+  - first:
+      213: 3631770127566526266
+    second: Void Mage-Sheet_90
+  - first:
+      213: -4175411841790947829
+    second: Void Mage-Sheet_91
+  - first:
+      213: -7545646740055450095
+    second: Void Mage-Sheet_92
+  - first:
+      213: 8909261964398690993
+    second: Void Mage-Sheet_93
+  - first:
+      213: -776908954666470479
+    second: Void Mage-Sheet_94
+  - first:
+      213: 3020915764229959698
+    second: Void Mage-Sheet_95
+  - first:
+      213: 1704700586043522850
+    second: Void Mage-Sheet_96
+  - first:
+      213: 669511092638192643
+    second: Void Mage-Sheet_97
+  - first:
+      213: -8102987425486366728
+    second: Void Mage-Sheet_98
+  - first:
+      213: -1074150633211015839
+    second: Void Mage-Sheet_99
+  - first:
+      213: 3955066041362814116
+    second: Void Mage-Sheet_100
+  - first:
+      213: 6274146426740526621
+    second: Void Mage-Sheet_101
+  - first:
+      213: 882079503113582307
+    second: Void Mage-Sheet_102
+  - first:
+      213: 5422568356264540395
+    second: Void Mage-Sheet_103
+  - first:
+      213: -5179863993776918021
+    second: Void Mage-Sheet_104
+  - first:
+      213: 7208960421225875942
+    second: Void Mage-Sheet_105
+  - first:
+      213: 2088089749395744255
+    second: Void Mage-Sheet_106
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Void Mage-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 607
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f3342d30aaf7f10800000000000000
+      internalID: 2269719670607265576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 607
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc7d9c97f24a2fe0800000000000000
+      internalID: -1213083518371005255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 607
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5464b0d5a01e8ba0800000000000000
+      internalID: -6084907742173830051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 608
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e01d8396f2cfe60800000000000000
+      internalID: 7997319167274454663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 607
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b7680b894dc4e660800000000000000
+      internalID: 7414276602307569587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 607
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c346f78db3c623f20800000000000000
+      internalID: 3400899672909243452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 608
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c269f8f7224cab080800000000000000
+      internalID: -9170802038738545108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 520
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e2013cac406f5b0800000000000000
+      internalID: -5335071439671251372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 534
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e815ce985bc5d4c0800000000000000
+      internalID: -4263277890755028759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 541
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6374a3b686181e180800000000000000
+      internalID: -9087840287581386954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 550
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38844263abc4a1d0800000000000000
+      internalID: -3340321121013299142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 511
+        width: 61
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b3a1a921e2d7e30800000000000000
+      internalID: 4502805859870063382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 534
+        width: 37
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b7f2b2f7f1146e0800000000000000
+      internalID: -1855166940454093980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 511
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c41729a317572f0800000000000000
+      internalID: -975749247876903856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 513
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40d52db94358ff60800000000000000
+      internalID: 8068290308605333580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 511
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cdb86a0a4f3fedf0800000000000000
+      internalID: -148830675445170750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e312074b89f7130800000000000000
+      internalID: 3566737330643484303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1b5039eb39572b0800000000000000
+      internalID: -5587397315963539036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1710ece7a72757760800000000000000
+      internalID: 7454990628620730737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 511
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20023ef339dad67e0800000000000000
+      internalID: -1770568230543089662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 424
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a03819be615e9b0800000000000000
+      internalID: -5051606206011733418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 415
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2228d8de1c3a6f0800000000000000
+      internalID: -674482293149916433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 415
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82f65d7e3bc1d870800000000000000
+      internalID: 8705963023935140493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 415
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d0eae297c193560800000000000000
+      internalID: 7293892378303008156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 415
+        width: 43
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55eb4237a34c0d950800000000000000
+      internalID: 6471888419850337877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 434
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c23ca21ea556cc0800000000000000
+      internalID: -3718465994192901039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 415
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597546951de43dae0800000000000000
+      internalID: -1525789187693586539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 415
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f626518f2066bd8c0800000000000000
+      internalID: -3973470083286211985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 415
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7bf79dd4403b360800000000000000
+      internalID: 7184090562994091938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 415
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45536137bd7dbc040800000000000000
+      internalID: 4669062776228296020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 416
+        width: 56
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85bd42c4878baa780800000000000000
+      internalID: -8670915305735398568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0778f5c81a84cff0800000000000000
+      internalID: -16736659597396212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 319
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c52398d086240f0800000000000000
+      internalID: -1134229748798301031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 323
+        width: 39
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baca6ece46b94fb60800000000000000
+      internalID: 7779013314149264555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 320
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4c4da9b3d285ac0800000000000000
+      internalID: -3866290546073615180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 323
+        width: 39
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e125fa4ef1c2c310800000000000000
+      internalID: 1423913730125930979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 321
+        width: 90
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6d7a9bd4c04e8e0800000000000000
+      internalID: -1665192434253441300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 319
+        width: 56
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e04a71ebbee439910800000000000000
+      internalID: 1842903446938166286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 319
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2628f9d6f98772510800000000000000
+      internalID: 1524319625022505570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 319
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a455e4a4ca0bd4ec0800000000000000
+      internalID: -3581011874662165174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 270
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943145929870831b0800000000000000
+      internalID: -5676779044615220407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 273
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7400c026b69813050800000000000000
+      internalID: 5778550891192516679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 270
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5cb8dbb0fda2870800000000000000
+      internalID: 8658978475090888116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 273
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded7a044ef8926830800000000000000
+      internalID: 4062978031672262125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 267
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf7e5b37c4d858b0800000000000000
+      internalID: -5163143020620644421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 272
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affdffac40f233120800000000000000
+      internalID: 2392307524696006650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 232
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d383cae653fa79650800000000000000
+      internalID: 6239648452770019389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 264
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383ab5b5e01b57710800000000000000
+      internalID: 1690451910367880067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 196
+        width: 31
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0dac533e4d53b90800000000000000
+      internalID: -7262664751739907867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 223
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a08331b39c1ec40800000000000000
+      internalID: 5539930272205113931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 223
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ef1d144763dafd0800000000000000
+      internalID: -2329145559332290985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 223
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e16cfa75b8348250800000000000000
+      internalID: 5945939760139493863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 200
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd849bc01ef204080800000000000000
+      internalID: -9205304994717677347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 226
+        width: 15
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e4e7a3f01e27fa0800000000000000
+      internalID: -5804329514205032890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 223
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1653fff27f24a3120800000000000000
+      internalID: 2394299781330449761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 257
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e1be53fac80845d0800000000000000
+      internalID: -3078200677548248606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 241
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8996e1dfc02d08a60800000000000000
+      internalID: 7674364718267394456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 237
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357415462cbb54ed0800000000000000
+      internalID: -2430329980315416749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 223
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a9137356f8b95b0800000000000000
+      internalID: -5360533266573977072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 248
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fca3961f33128580800000000000000
+      internalID: -8826471158010106636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 241
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce55a69b3dd06760800000000000000
+      internalID: 7449197031671029445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 218
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32750d23a07cf3b0800000000000000
+      internalID: -5477379200652053958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 238
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5633b44afbcac170800000000000000
+      internalID: 8199590347336267357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 237
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad28c60d3fafe310800000000000000
+      internalID: 1436559482796125611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 226
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f716eb150bac05e0800000000000000
+      internalID: -1941989300872275983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 226
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed20840f3cbf0280800000000000000
+      internalID: -9074827745283789334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 195
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4aebf37cc75969d0800000000000000
+      internalID: -2780594759293736374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 206
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ecfa6be5433b7b0800000000000000
+      internalID: -5209762762540986871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff1ca812896ffc80800000000000000
+      internalID: -8286788781857824781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 206
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2a1f47b34b853e0800000000000000
+      internalID: -2064702261691309390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 200
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43474a79bb096c70800000000000000
+      internalID: 8964709424506028874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 202
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed8909dfb6904560800000000000000
+      internalID: 7295997147064405476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 206
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ab01860198e6a30800000000000000
+      internalID: 4210453405196401272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 200
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d01b0440a7aeaf80800000000000000
+      internalID: -8093347173560020776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 195
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741d2ae7c06cd2690800000000000000
+      internalID: -7625220837101874873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 136
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf165c82165595d0800000000000000
+      internalID: -3056442134437158964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 168
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccde464f66cddf7d0800000000000000
+      internalID: -2882905851702219316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 168
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94964d08d66a9ecd0800000000000000
+      internalID: -2528306726548772535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 168
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18eff7793f78f3e0800000000000000
+      internalID: -2019724548072544227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 145
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a1d1fe2cbdfb670800000000000000
+      internalID: 8556799447309032038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 183
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6c6d1af5d8c27b0800000000000000
+      internalID: -5247664023916853536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 122
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cef59e82186cac00800000000000000
+      internalID: 913219253360262853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 100
+        width: 31
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5c911dec3914e90800000000000000
+      internalID: -7043185825750071861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 144
+        width: 40
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86305c43770296390800000000000000
+      internalID: -7824687181221002392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 122
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56307d7c0e1232f10800000000000000
+      internalID: 2243674288669786981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 147
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a5176e27d6276e0800000000000000
+      internalID: -1841288957381223906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 144
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed90dc3b803422c0800000000000000
+      internalID: -4457384356611056153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 151
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6b891235c2d2920800000000000000
+      internalID: 2967076465064588989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 127
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54be83bac535fc680800000000000000
+      internalID: -8732669494973371579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 155
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9c9c9d0f684be80800000000000000
+      internalID: -8163751855511713345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 127
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a375a7760b3a66230800000000000000
+      internalID: 3631770127566526266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 127
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0e471b5d05fd06c0800000000000000
+      internalID: -4175411841790947829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 126
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e196ab44a784790800000000000000
+      internalID: -7545646740055450095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 99
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b202e6ad8e04ab70800000000000000
+      internalID: 8909261964398690993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 122
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3f8460c6dd735f0800000000000000
+      internalID: -776908954666470479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 108
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210fd4fc1e27ce920800000000000000
+      internalID: 3020915764229959698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 132
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f368fa62058a710800000000000000
+      internalID: 1704700586043522850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 127
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30412e1aac49a4900800000000000000
+      internalID: 669511092638192643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 99
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f79d643ed76c8f80800000000000000
+      internalID: -8102987425486366728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 99
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d4230b0b9d711f0800000000000000
+      internalID: -1074150633211015839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 100
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a414aa1c9733e630800000000000000
+      internalID: 3955066041362814116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 108
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ec7aaeeee321750800000000000000
+      internalID: 6274146426740526621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 100
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6fcb672a6cd3c00800000000000000
+      internalID: 882079503113582307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 99
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8fb65a035d04b40800000000000000
+      internalID: 5422568356264540395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 100
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1371a442d6d18b0800000000000000
+      internalID: -5179863993776918021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 100
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e9c403fe4f5b0460800000000000000
+      internalID: 7208960421225875942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void Mage-Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 29
+        width: 59
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff52edb50926afc10800000000000000
+      internalID: 2088089749395744255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Void Mage-Sheet_0: 2269719670607265576
+      Void Mage-Sheet_1: -1213083518371005255
+      Void Mage-Sheet_10: -3340321121013299142
+      Void Mage-Sheet_100: 3955066041362814116
+      Void Mage-Sheet_101: 6274146426740526621
+      Void Mage-Sheet_102: 882079503113582307
+      Void Mage-Sheet_103: 5422568356264540395
+      Void Mage-Sheet_104: -5179863993776918021
+      Void Mage-Sheet_105: 7208960421225875942
+      Void Mage-Sheet_106: 2088089749395744255
+      Void Mage-Sheet_11: 4502805859870063382
+      Void Mage-Sheet_12: -1855166940454093980
+      Void Mage-Sheet_13: -975749247876903856
+      Void Mage-Sheet_14: 8068290308605333580
+      Void Mage-Sheet_15: -148830675445170750
+      Void Mage-Sheet_16: 3566737330643484303
+      Void Mage-Sheet_17: -5587397315963539036
+      Void Mage-Sheet_18: 7454990628620730737
+      Void Mage-Sheet_19: -1770568230543089662
+      Void Mage-Sheet_2: -6084907742173830051
+      Void Mage-Sheet_20: -5051606206011733418
+      Void Mage-Sheet_21: -674482293149916433
+      Void Mage-Sheet_22: 8705963023935140493
+      Void Mage-Sheet_23: 7293892378303008156
+      Void Mage-Sheet_24: 6471888419850337877
+      Void Mage-Sheet_25: -3718465994192901039
+      Void Mage-Sheet_26: -1525789187693586539
+      Void Mage-Sheet_27: -3973470083286211985
+      Void Mage-Sheet_28: 7184090562994091938
+      Void Mage-Sheet_29: 4669062776228296020
+      Void Mage-Sheet_3: 7997319167274454663
+      Void Mage-Sheet_30: -8670915305735398568
+      Void Mage-Sheet_31: -16736659597396212
+      Void Mage-Sheet_32: -1134229748798301031
+      Void Mage-Sheet_33: 7779013314149264555
+      Void Mage-Sheet_34: -3866290546073615180
+      Void Mage-Sheet_35: 1423913730125930979
+      Void Mage-Sheet_36: -1665192434253441300
+      Void Mage-Sheet_37: 1842903446938166286
+      Void Mage-Sheet_38: 1524319625022505570
+      Void Mage-Sheet_39: -3581011874662165174
+      Void Mage-Sheet_4: 7414276602307569587
+      Void Mage-Sheet_40: -5676779044615220407
+      Void Mage-Sheet_41: 5778550891192516679
+      Void Mage-Sheet_42: 8658978475090888116
+      Void Mage-Sheet_43: 4062978031672262125
+      Void Mage-Sheet_44: -5163143020620644421
+      Void Mage-Sheet_45: 2392307524696006650
+      Void Mage-Sheet_46: 6239648452770019389
+      Void Mage-Sheet_47: 1690451910367880067
+      Void Mage-Sheet_48: -7262664751739907867
+      Void Mage-Sheet_49: 5539930272205113931
+      Void Mage-Sheet_5: 3400899672909243452
+      Void Mage-Sheet_50: -2329145559332290985
+      Void Mage-Sheet_51: 5945939760139493863
+      Void Mage-Sheet_52: -9205304994717677347
+      Void Mage-Sheet_53: -5804329514205032890
+      Void Mage-Sheet_54: 2394299781330449761
+      Void Mage-Sheet_55: -3078200677548248606
+      Void Mage-Sheet_56: 7674364718267394456
+      Void Mage-Sheet_57: -2430329980315416749
+      Void Mage-Sheet_58: -5360533266573977072
+      Void Mage-Sheet_59: -8826471158010106636
+      Void Mage-Sheet_6: -9170802038738545108
+      Void Mage-Sheet_60: 7449197031671029445
+      Void Mage-Sheet_61: -5477379200652053958
+      Void Mage-Sheet_62: 8199590347336267357
+      Void Mage-Sheet_63: 1436559482796125611
+      Void Mage-Sheet_64: -1941989300872275983
+      Void Mage-Sheet_65: -9074827745283789334
+      Void Mage-Sheet_66: -2780594759293736374
+      Void Mage-Sheet_67: -5209762762540986871
+      Void Mage-Sheet_68: -8286788781857824781
+      Void Mage-Sheet_69: -2064702261691309390
+      Void Mage-Sheet_7: -5335071439671251372
+      Void Mage-Sheet_70: 8964709424506028874
+      Void Mage-Sheet_71: 7295997147064405476
+      Void Mage-Sheet_72: 4210453405196401272
+      Void Mage-Sheet_73: -8093347173560020776
+      Void Mage-Sheet_74: -7625220837101874873
+      Void Mage-Sheet_75: -3056442134437158964
+      Void Mage-Sheet_76: -2882905851702219316
+      Void Mage-Sheet_77: -2528306726548772535
+      Void Mage-Sheet_78: -2019724548072544227
+      Void Mage-Sheet_79: 8556799447309032038
+      Void Mage-Sheet_8: -4263277890755028759
+      Void Mage-Sheet_80: -5247664023916853536
+      Void Mage-Sheet_81: 913219253360262853
+      Void Mage-Sheet_82: -7043185825750071861
+      Void Mage-Sheet_83: -7824687181221002392
+      Void Mage-Sheet_84: 2243674288669786981
+      Void Mage-Sheet_85: -1841288957381223906
+      Void Mage-Sheet_86: -4457384356611056153
+      Void Mage-Sheet_87: 2967076465064588989
+      Void Mage-Sheet_88: -8732669494973371579
+      Void Mage-Sheet_89: -8163751855511713345
+      Void Mage-Sheet_9: -9087840287581386954
+      Void Mage-Sheet_90: 3631770127566526266
+      Void Mage-Sheet_91: -4175411841790947829
+      Void Mage-Sheet_92: -7545646740055450095
+      Void Mage-Sheet_93: 8909261964398690993
+      Void Mage-Sheet_94: -776908954666470479
+      Void Mage-Sheet_95: 3020915764229959698
+      Void Mage-Sheet_96: 1704700586043522850
+      Void Mage-Sheet_97: 669511092638192643
+      Void Mage-Sheet_98: -8102987425486366728
+      Void Mage-Sheet_99: -1074150633211015839
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

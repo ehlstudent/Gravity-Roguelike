@@ -281,6 +281,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602710818509431086, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602710818509431086, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602710818509431086, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602710818509431086, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457620772053408664, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457620772053408664, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 4696939339559477083, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
       propertyPath: m_Name
       value: Dulli_roomtester
