@@ -45,6 +45,21 @@ public class ShadowSlimeCombat : MonoBehaviour
 
     public void Bind(Transform player) => target = player;
 
+    private void OnEnable()
+    {
+        GravityRotator.GravityChanged += AlignWithGravity;
+        AlignWithGravity(Vector2Int.RoundToInt(Physics2D.gravity.normalized));
+    }
+
+    private void AlignWithGravity(Vector2Int down)
+    {
+        if (down == Vector2Int.zero) return;
+        float angle = Mathf.Atan2(down.y, down.x) * Mathf.Rad2Deg + 90f;
+        // Rotate the animated sprite and its local hitboxes together, including during attacks/death.
+        body.rotation = angle;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
     private void FixedUpdate()
     {
         if (state == State.Dead || target == null) return;
@@ -165,7 +180,11 @@ public class ShadowSlimeCombat : MonoBehaviour
     }
 
     public void FinishDeath() { if (state == State.Dead) Destroy(gameObject); }
-    private void OnDisable() => spikesActive = false;
+    private void OnDisable()
+    {
+        GravityRotator.GravityChanged -= AlignWithGravity;
+        spikesActive = false;
+    }
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
