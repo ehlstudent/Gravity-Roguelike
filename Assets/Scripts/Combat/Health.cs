@@ -30,6 +30,16 @@ namespace GravityRoguelike.Combat
         // Fired once when health reaches 0, before the object is deactivated
         public event Action Died;
 
+        /// <summary>
+        /// Fired for every Health after damage was applied (also for the killing hit), before
+        /// the object is deactivated. Used by global listeners such as GameVfx (hit flash, sparks).
+        /// </summary>
+        public static event Action<Health, DamageInfo> AnyDamaged;
+
+        // Static events can survive between Play sessions in the editor (Reload Domain off).
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics() => AnyDamaged = null;
+
         private int baseMaxHealth;
         private float invincibleUntil;   // Time.time until which hits are ignored
 
@@ -60,6 +70,7 @@ namespace GravityRoguelike.Combat
             invincibleUntil = Time.time + invincibilityDuration;
             CurrentHealth = Mathf.Max(0, CurrentHealth - info.amount);
             Damaged?.Invoke(info);
+            AnyDamaged?.Invoke(this, info);
 
             if (IsDead)
             {
