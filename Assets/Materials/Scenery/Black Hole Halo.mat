@@ -26,6 +26,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _ShimmerSpeed: 0.25
+    - _GlowIntensity: 0.75
+    - _HaloAlpha: 0.3
     m_Colors:
     - _Color: {r: 0.41999996, g: 0.11999995, b: 0.7, a: 0.45}
   m_BuildTextureStacks: []

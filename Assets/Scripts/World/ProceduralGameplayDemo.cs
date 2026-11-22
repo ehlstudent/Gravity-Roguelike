@@ -141,6 +141,7 @@ namespace GravityRoguelike.World
                 RoomCellularAutomata.ApplyIterations(room, 5, 2);
                 if (RoomRegionCleanup.Clean(room).Succeeded) rooms.Add(room);
             }
+            if (roomVisuals != null) roomVisuals.SetDecorationSeed(world.Seed);
             roomRenderer.RenderWorld(world);
             map.GetComponent<TilemapCollider2D>().ProcessTilemapChanges();
             Physics2D.SyncTransforms();

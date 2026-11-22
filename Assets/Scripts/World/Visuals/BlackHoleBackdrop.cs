@@ -24,15 +24,46 @@ namespace GravityRoguelike.World.Visuals
         [SerializeField] private SpriteRenderer sky;
         [SerializeField] private Transform blackHole;
         [SerializeField] private Transform farClouds;
+        [Header("Background intensity")]
+        [Range(0, 2), SerializeField] private float glowIntensity = 0.75f;
+        [Range(0, 1), SerializeField] private float haloAlpha = 0.3f;
+        [Range(0, 1), SerializeField] private float discBrightness = 0.65f;
+        [Range(0, 1), SerializeField] private float discOpacity = 0.8f;
+        [SerializeField] private Renderer haloRenderer;
+        [SerializeField] private SpriteRenderer discRenderer;
 
         private Vector2 offset;
         private Vector2 offsetVelocity;
         private bool positioned;
+        private MaterialPropertyBlock haloProperties;
+        private bool appearanceDirty = true;
 
-        private void OnEnable() => positioned = false;
+        private void OnEnable()
+        {
+            positioned = false;
+            appearanceDirty = true;
+        }
+
+        private void OnValidate() => appearanceDirty = true;
+
+        private void ApplyAppearance()
+        {
+            if (haloRenderer != null)
+            {
+                if (haloProperties == null) haloProperties = new MaterialPropertyBlock();
+                haloRenderer.GetPropertyBlock(haloProperties);
+                haloProperties.SetFloat("_GlowIntensity", glowIntensity);
+                haloProperties.SetFloat("_HaloAlpha", haloAlpha);
+                haloRenderer.SetPropertyBlock(haloProperties);
+            }
+            if (discRenderer != null)
+                discRenderer.color = new Color(discBrightness, discBrightness, discBrightness, discOpacity);
+            appearanceDirty = false;
+        }
 
         private void LateUpdate()
         {
+            if (appearanceDirty) ApplyAppearance();
             if (viewCamera == null) viewCamera = Camera.main;
             if (viewCamera == null || sky == null || blackHole == null) return;
 
