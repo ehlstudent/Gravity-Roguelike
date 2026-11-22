@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using GravityRoguelike.Items;
+using GravityRoguelike.World.Visuals;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -22,6 +23,8 @@ namespace GravityRoguelike.World
         [SerializeField] private DemoGoal goal;
         [Tooltip("Optional. Spawns random items in each playable room.")]
         [SerializeField] private ItemSpawner itemSpawner;
+        [Tooltip("Visual-only room template. Reads generated tiles without changing their collisions.")]
+        [SerializeField] private CosmicTilemapVisuals roomVisuals;
 
         private bool generating;
         private string status;
@@ -30,8 +33,30 @@ namespace GravityRoguelike.World
         private readonly SpriteRenderer[] arrivalMarkers = new SpriteRenderer[2];
         private readonly string[] roomTurns = new string[3];
         private bool playing;
+        private RoomData[] routeRooms;
 
-        private void Start() => StartCoroutine(NewRun());
+        private int CurrentRoomIndex => middlePortal.Used ? 2 : portal.Used ? 1 : 0;
+
+        /// <summary>The existing one-way portal route determines the current generated room.</summary>
+        public RoomData CurrentRoom => playing && routeRooms != null ? routeRooms[CurrentRoomIndex] : null;
+
+        /// <summary>Converts the room's grid bounds to a world-space centre, including Grid scale.</summary>
+        public bool TryGetCurrentRoomWorldPosition(out Vector2 position)
+        {
+            RoomData room = CurrentRoom;
+            position = Vector2.zero;
+            if (room == null) return false;
+            RectInt bounds = room.Bounds;
+            position = (map.CellToWorld(new Vector3Int(bounds.xMin, bounds.yMin, 0))
+                + map.CellToWorld(new Vector3Int(bounds.xMax, bounds.yMax, 0))) * 0.5f;
+            return true;
+        }
+
+        private void Start()
+        {
+            if (roomVisuals != null) roomVisuals.BindTo(map);
+            StartCoroutine(NewRun());
+        }
 
         private void Update()
         {
@@ -43,6 +68,8 @@ namespace GravityRoguelike.World
         {
             generating = true;
             playing = false;
+            routeRooms = null;
+            if (roomVisuals != null) roomVisuals.SetDecorationExclusions();
             player.gameObject.SetActive(false);
             portal.gameObject.SetActive(false);
             goal.gameObject.SetActive(false);
@@ -114,6 +141,7 @@ namespace GravityRoguelike.World
                 RoomCellularAutomata.ApplyIterations(room, 5, 2);
                 if (RoomRegionCleanup.Clean(room).Succeeded) rooms.Add(room);
             }
+            if (roomVisuals != null) roomVisuals.SetDecorationSeed(world.Seed);
             roomRenderer.RenderWorld(world);
             map.GetComponent<TilemapCollider2D>().ProcessTilemapChanges();
             Physics2D.SyncTransforms();
@@ -183,6 +211,12 @@ namespace GravityRoguelike.World
                         itemSpawner.SpawnInRoom(room, leg.Start.Value, leg.Goal.Value,
                             unchecked(candidate * 31 + room.Seed), cell => clearance.Center(room, cell), leg.RestingCosts);
                 }
+                if (roomVisuals != null)
+                    roomVisuals.SetDecorationExclusions(portal.GetComponent<Collider2D>().bounds,
+                        middlePortal.GetComponent<Collider2D>().bounds, goal.GetComponent<Collider2D>().bounds,
+                        playerBox.bounds, new Bounds(spawns[1], playerBox.bounds.size),
+                        new Bounds(spawns[2], playerBox.bounds.size));
+                routeRooms = selected;
                 playing = true;
                 return true;
             }
@@ -215,8 +249,8 @@ namespace GravityRoguelike.World
                 arrivalMarker.sharedMaterial = entrance.sharedMaterial;
                 arrivalMarker.drawMode = entrance.drawMode;
                 arrivalMarker.size = entrance.size;
-                arrivalMarker.sortingLayerID = player.GetComponent<SpriteRenderer>().sortingLayerID;
-                arrivalMarker.sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder - 1;
+                arrivalMarker.sortingLayerID = entrance.sortingLayerID;
+                arrivalMarker.sortingOrder = entrance.sortingOrder;
                 arrivalMarker.color = new Color(entrance.color.r, entrance.color.g, entrance.color.b, 0.6f);
                 arrivalMarker.transform.localScale = portal.transform.lossyScale * 0.6f;
             }
@@ -229,7 +263,7 @@ namespace GravityRoguelike.World
             string stage = "";
             if (playing)
             {
-                int index = middlePortal.Used ? 2 : portal.Used ? 1 : 0;
+                int index = CurrentRoomIndex;
                 stage = goal.Complete ? "LEVEL COMPLETE" : index == 2 ? "Room 3: reach the green goal"
                     : $"Room {index + 1}: reach the purple portal";
                 if (!goal.Complete) stage += "\nRoute from entry: " + roomTurns[index];
