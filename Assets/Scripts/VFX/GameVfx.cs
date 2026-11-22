@@ -52,10 +52,10 @@ namespace GravityRoguelike.VFX
         [Header("Gravity feedback")]
         [SerializeField] private Color gravityColor = new Color(0.4f, 0.9f, 1f);
         [SerializeField] private Color blockedColor = new Color(1f, 0.4f, 0.3f);
-        [SerializeField, Range(0f, 1f)] private float gravityPulseAlpha = 0.45f;
-        [SerializeField, Min(0)] private int gravityDustCount = 28;
+        [SerializeField, Range(0f, 1f)] private float gravityPulseAlpha = 0.06f;
+        [SerializeField, Min(0)] private int gravityDustCount = 0;
         [Tooltip("Small pulse when the gravity cooldown is over and Q/E work again.")]
-        [SerializeField] private bool pulseWhenReady = true;
+        [SerializeField] private bool pulseWhenReady = false;
 
         [Header("Overlay")]
         [Tooltip("Canvas sorting order of the effect overlay. Keep it below the HUD.")]
@@ -155,11 +155,13 @@ namespace GravityRoguelike.VFX
                 VfxAssets.Burst(center, away, sparkColor, hitParticleCount, 5.5f, knownSource ? 80f : 360f, 0.18f, 0.35f, layer, order);
             }
 
-            if (isPlayer) Pulse(playerFlashColor, playerHitPulseAlpha, 0.35f);
+            if (isPlayer && !(health.TryGetComponent<HurtFlash>(out var hurtFeedback) && hurtFeedback.isActiveAndEnabled))
+                Pulse(playerFlashColor, playerHitPulseAlpha, 0.35f);
         }
 
         private void Flash(Health target, Color color)
         {
+            if (target.TryGetComponent<HurtFlash>(out var hurtFlash) && hurtFlash.isActiveAndEnabled) return;
             if (flashDuration <= 0f) return;
             target.GetComponentsInChildren(false, flashBuffer);
             Material flashMaterial = VfxAssets.FlashMaterial;
@@ -232,14 +234,14 @@ namespace GravityRoguelike.VFX
 
         private void OnGravityChanged(Vector2Int down)
         {
-            Pulse(gravityColor, gravityPulseAlpha, 0.55f);
+            Pulse(gravityColor, gravityPulseAlpha, 0.18f);
             SpawnGravityDust(new Vector2(down.x, down.y));
             wasCoolingDown = true;
         }
 
         private void OnRotationBlocked(float remaining)
         {
-            Pulse(blockedColor, 0.22f, 0.3f);
+            Pulse(blockedColor, 0.04f, 0.15f);
             ShowStatus(remaining > 0f ? $"Gravity recharging  {remaining:0.0}s" : "Gravity: stand on the ground", blockedColor);
         }
 

@@ -25,6 +25,8 @@ namespace GravityRoguelike.World
         [SerializeField] private ItemSpawner itemSpawner;
         [Tooltip("Visual-only room template. Reads generated tiles without changing their collisions.")]
         [SerializeField] private CosmicTilemapVisuals roomVisuals;
+        [SerializeField] private EnemySpawner enemySpawner;
+        [SerializeField] private RoomGrid enemyGrid;
 
         private bool generating;
         private string status;
@@ -69,6 +71,7 @@ namespace GravityRoguelike.World
             generating = true;
             playing = false;
             routeRooms = null;
+            if (enemySpawner != null) enemySpawner.Clear();
             if (roomVisuals != null) roomVisuals.SetDecorationExclusions();
             player.gameObject.SetActive(false);
             portal.gameObject.SetActive(false);
@@ -202,11 +205,15 @@ namespace GravityRoguelike.World
                 middlePortal.gameObject.SetActive(true);
                 goal.gameObject.SetActive(true);
                 Physics2D.SyncTransforms();
+                int spawnedEnemies = 0;
                 for (int i = 0; i < selected.Length; i++)
                 {
                     var room = selected[i];
                     var leg = legs[i];
                     roomTurns[i] = TurnKeys(leg);
+                    if (enemySpawner != null && enemyGrid != null)
+                        spawnedEnemies += enemySpawner.SpawnInRoom(enemyGrid, player.transform, room.Bounds,
+                            spawns[i], clearance.Center(room, leg.Goal.Value), unchecked(candidate * 31 + room.Seed));
                     if (itemSpawner != null)
                         itemSpawner.SpawnInRoom(room, leg.Start.Value, leg.Goal.Value,
                             unchecked(candidate * 31 + room.Seed), cell => clearance.Center(room, cell), leg.RestingCosts);
@@ -218,6 +225,7 @@ namespace GravityRoguelike.World
                         new Bounds(spawns[2], playerBox.bounds.size));
                 routeRooms = selected;
                 playing = true;
+                if (enemySpawner != null) Debug.Log($"Spawned {spawnedEnemies} enemies across the three playable rooms.", this);
                 return true;
             }
             return false;
