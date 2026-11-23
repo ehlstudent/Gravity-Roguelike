@@ -1,0 +1,1458 @@
+fileFormatVersion: 2
+guid: 3146648098a400941a925327efe5f2ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6491367000612620141
+    second: Shadow Slime-Sheet_0
+  - first:
+      213: -8907130559963384501
+    second: Shadow Slime-Sheet_1
+  - first:
+      213: 4287941351828599507
+    second: Shadow Slime-Sheet_2
+  - first:
+      213: -8873363988628367850
+    second: Shadow Slime-Sheet_3
+  - first:
+      213: -1648638799943328588
+    second: Shadow Slime-Sheet_4
+  - first:
+      213: -2855764578416961274
+    second: Shadow Slime-Sheet_5
+  - first:
+      213: 8631408759512726525
+    second: Shadow Slime-Sheet_6
+  - first:
+      213: 8785451025993824782
+    second: Shadow Slime-Sheet_7
+  - first:
+      213: -3698403775776879860
+    second: Shadow Slime-Sheet_8
+  - first:
+      213: 7474504077972886377
+    second: Shadow Slime-Sheet_9
+  - first:
+      213: 4665404268532768449
+    second: Shadow Slime-Sheet_10
+  - first:
+      213: -2441857398330900845
+    second: Shadow Slime-Sheet_11
+  - first:
+      213: 5126206688558790514
+    second: Shadow Slime-Sheet_12
+  - first:
+      213: -3583150048213882628
+    second: Shadow Slime-Sheet_13
+  - first:
+      213: -1588174291620207177
+    second: Shadow Slime-Sheet_14
+  - first:
+      213: 7904695228969118721
+    second: Shadow Slime-Sheet_15
+  - first:
+      213: 4061473552280388534
+    second: Shadow Slime-Sheet_16
+  - first:
+      213: 409260930908461334
+    second: Shadow Slime-Sheet_17
+  - first:
+      213: -4763694355891847867
+    second: Shadow Slime-Sheet_18
+  - first:
+      213: -4853044189664020329
+    second: Shadow Slime-Sheet_19
+  - first:
+      213: 2254470332054622265
+    second: Shadow Slime-Sheet_20
+  - first:
+      213: -6270316375380324589
+    second: Shadow Slime-Sheet_21
+  - first:
+      213: 6325175400849794834
+    second: Shadow Slime-Sheet_22
+  - first:
+      213: 4800210468981844480
+    second: Shadow Slime-Sheet_23
+  - first:
+      213: -3026694083461967772
+    second: Shadow Slime-Sheet_24
+  - first:
+      213: -6096435380211514051
+    second: Shadow Slime-Sheet_25
+  - first:
+      213: -882882416711962293
+    second: Shadow Slime-Sheet_26
+  - first:
+      213: 3559840208415937553
+    second: Shadow Slime-Sheet_27
+  - first:
+      213: 4013388130648637058
+    second: Shadow Slime-Sheet_28
+  - first:
+      213: 5461835594671976144
+    second: Shadow Slime-Sheet_29
+  - first:
+      213: -7803641918350450216
+    second: Shadow Slime-Sheet_30
+  - first:
+      213: -7946694286376755573
+    second: Shadow Slime-Sheet_31
+  - first:
+      213: -3891716800809448513
+    second: Shadow Slime-Sheet_32
+  - first:
+      213: -9208742226819295409
+    second: Shadow Slime-Sheet_33
+  - first:
+      213: 2268069187890744066
+    second: Shadow Slime-Sheet_34
+  - first:
+      213: 8279021672819673082
+    second: Shadow Slime-Sheet_35
+  - first:
+      213: 6073981834403224723
+    second: Shadow Slime-Sheet_36
+  - first:
+      213: 6341916740085652957
+    second: Shadow Slime-Sheet_37
+  - first:
+      213: -3632642426695050803
+    second: Shadow Slime-Sheet_38
+  - first:
+      213: -8135398998704196615
+    second: Shadow Slime-Sheet_39
+  - first:
+      213: 3326016483491495096
+    second: Shadow Slime-Sheet_40
+  - first:
+      213: 6901414456221101434
+    second: Shadow Slime-Sheet_41
+  - first:
+      213: 4317041413919399977
+    second: Shadow Slime-Sheet_42
+  - first:
+      213: 7357426793528269280
+    second: Shadow Slime-Sheet_43
+  - first:
+      213: -3501213179665092550
+    second: Shadow Slime-Sheet_44
+  - first:
+      213: 3575746117283066034
+    second: Shadow Slime-Sheet_45
+  - first:
+      213: -4378466648507253416
+    second: Shadow Slime-Sheet_46
+  - first:
+      213: 5853064760738366181
+    second: Shadow Slime-Sheet_47
+  - first:
+      213: -5481400353185796813
+    second: Shadow Slime-Sheet_48
+  - first:
+      213: 3765211997102489772
+    second: Shadow Slime-Sheet_49
+  - first:
+      213: -4840577091240908221
+    second: Shadow Slime-Sheet_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 515
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398bacd0b180ae5a0800000000000000
+      internalID: -6491367000612620141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 526
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b453b5d92f3836480800000000000000
+      internalID: -8907130559963384501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 530
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d2b375e0f3d18b30800000000000000
+      internalID: 4287941351828599507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 532
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6161017277a7bd480800000000000000
+      internalID: -8873363988628367850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 511
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc937e0fbbde19e0800000000000000
+      internalID: -1648638799943328588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 511
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60950551f394e58d0800000000000000
+      internalID: -2855764578416961274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 511
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb73fd198ce8c770800000000000000
+      internalID: 8631408759512726525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 511
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0af3fb29213ce970800000000000000
+      internalID: 8785451025993824782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 435
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b0bd46c51acacc0800000000000000
+      internalID: -3698403775776879860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 446
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96358c77bd5cab760800000000000000
+      internalID: 7474504077972886377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 450
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce9c7fb678deb040800000000000000
+      internalID: 4665404268532768449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 452
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39eb35c32a7cc1ed0800000000000000
+      internalID: -2441857398330900845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 450
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27737ccc2d1f32740800000000000000
+      internalID: 5126206688558790514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 446
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8a947f308164ec0800000000000000
+      internalID: -3583150048213882628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 435
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5e19275eba5f9e0800000000000000
+      internalID: -1588174291620207177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 431
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ced6c0e6e13bd60800000000000000
+      internalID: 7904695228969118721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 351
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3015c5da04d5830800000000000000
+      internalID: 4061473552280388534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 355
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6199e37f5acfda500800000000000000
+      internalID: 409260930908461334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 366
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d7882f835f3edb0800000000000000
+      internalID: -4763694355891847867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 370
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7987dc3a50686acb0800000000000000
+      internalID: -4853044189664020329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 372
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930d5c282dc794f10800000000000000
+      internalID: 2254470332054622265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 370
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f04286a7c5bf8a0800000000000000
+      internalID: -6270316375380324589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 351
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217e0bdc38987c750800000000000000
+      internalID: 6325175400849794834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 351
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a26ca2df5cd9240800000000000000
+      internalID: 4800210468981844480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 275
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460197764c50ff5d0800000000000000
+      internalID: -3026694083461967772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 271
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d358e5e625c156ba0800000000000000
+      internalID: -6096435380211514051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 271
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41f175ae1f5fb3f0800000000000000
+      internalID: -882882416711962293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 271
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114d8c70fc7176130800000000000000
+      internalID: 3559840208415937553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 271
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28eb411bd3b62b730800000000000000
+      internalID: 4013388130648637058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 270
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dee10a09865ccb40800000000000000
+      internalID: 5461835594671976144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 242
+        width: 85
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1af5e4505e3b390800000000000000
+      internalID: -7803641918350450216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 230
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e13e166aba7b190800000000000000
+      internalID: -7946694286376755573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 168
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb45595038ddf9c0800000000000000
+      internalID: -3891716800809448513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 187
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47db461cb9f33080800000000000000
+      internalID: -9208742226819295409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 191
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b8c3ed8ecc97f10800000000000000
+      internalID: 2268069187890744066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af74d28e85ef4e270800000000000000
+      internalID: 8279021672819673082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 190
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c97cb0c4e1b4450800000000000000
+      internalID: 6073981834403224723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 162
+        width: 85
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd98e79ca3030850800000000000000
+      internalID: 6341916740085652957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 168
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc914d0a5f2469dc0800000000000000
+      internalID: -3632642426695050803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 168
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3fa20c6b1491f80800000000000000
+      internalID: -8135398998704196615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 107
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcba97ae52682e20800000000000000
+      internalID: 3326016483491495096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 111
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dedc6f1efb6cf50800000000000000
+      internalID: 6901414456221101434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 111
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920e0551b4639eb30800000000000000
+      internalID: 4317041413919399977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 111
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e99139ffa4da1660800000000000000
+      internalID: 7357426793528269280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 111
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30752fc921396fc0800000000000000
+      internalID: -3501213179665092550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 111
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0b3a7062a9f9130800000000000000
+      internalID: 3575746117283066034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 111
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d74d208cf8c33c0800000000000000
+      internalID: -4378466648507253416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 111
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2ca2793634a3150800000000000000
+      internalID: 5853064760738366181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 31
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33de8a4ab672ee3b0800000000000000
+      internalID: -5481400353185796813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 31
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca04557cc58b04430800000000000000
+      internalID: 3765211997102489772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Slime-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 31
+        width: 101
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a21b038c0d2dcb0800000000000000
+      internalID: -4840577091240908221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Shadow Slime-Sheet_0: -6491367000612620141
+      Shadow Slime-Sheet_1: -8907130559963384501
+      Shadow Slime-Sheet_10: 4665404268532768449
+      Shadow Slime-Sheet_11: -2441857398330900845
+      Shadow Slime-Sheet_12: 5126206688558790514
+      Shadow Slime-Sheet_13: -3583150048213882628
+      Shadow Slime-Sheet_14: -1588174291620207177
+      Shadow Slime-Sheet_15: 7904695228969118721
+      Shadow Slime-Sheet_16: 4061473552280388534
+      Shadow Slime-Sheet_17: 409260930908461334
+      Shadow Slime-Sheet_18: -4763694355891847867
+      Shadow Slime-Sheet_19: -4853044189664020329
+      Shadow Slime-Sheet_2: 4287941351828599507
+      Shadow Slime-Sheet_20: 2254470332054622265
+      Shadow Slime-Sheet_21: -6270316375380324589
+      Shadow Slime-Sheet_22: 6325175400849794834
+      Shadow Slime-Sheet_23: 4800210468981844480
+      Shadow Slime-Sheet_24: -3026694083461967772
+      Shadow Slime-Sheet_25: -6096435380211514051
+      Shadow Slime-Sheet_26: -882882416711962293
+      Shadow Slime-Sheet_27: 3559840208415937553
+      Shadow Slime-Sheet_28: 4013388130648637058
+      Shadow Slime-Sheet_29: 5461835594671976144
+      Shadow Slime-Sheet_3: -8873363988628367850
+      Shadow Slime-Sheet_30: -7803641918350450216
+      Shadow Slime-Sheet_31: -7946694286376755573
+      Shadow Slime-Sheet_32: -3891716800809448513
+      Shadow Slime-Sheet_33: -9208742226819295409
+      Shadow Slime-Sheet_34: 2268069187890744066
+      Shadow Slime-Sheet_35: 8279021672819673082
+      Shadow Slime-Sheet_36: 6073981834403224723
+      Shadow Slime-Sheet_37: 6341916740085652957
+      Shadow Slime-Sheet_38: -3632642426695050803
+      Shadow Slime-Sheet_39: -8135398998704196615
+      Shadow Slime-Sheet_4: -1648638799943328588
+      Shadow Slime-Sheet_40: 3326016483491495096
+      Shadow Slime-Sheet_41: 6901414456221101434
+      Shadow Slime-Sheet_42: 4317041413919399977
+      Shadow Slime-Sheet_43: 7357426793528269280
+      Shadow Slime-Sheet_44: -3501213179665092550
+      Shadow Slime-Sheet_45: 3575746117283066034
+      Shadow Slime-Sheet_46: -4378466648507253416
+      Shadow Slime-Sheet_47: 5853064760738366181
+      Shadow Slime-Sheet_48: -5481400353185796813
+      Shadow Slime-Sheet_49: 3765211997102489772
+      Shadow Slime-Sheet_5: -2855764578416961274
+      Shadow Slime-Sheet_50: -4840577091240908221
+      Shadow Slime-Sheet_6: 8631408759512726525
+      Shadow Slime-Sheet_7: 8785451025993824782
+      Shadow Slime-Sheet_8: -3698403775776879860
+      Shadow Slime-Sheet_9: 7474504077972886377
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

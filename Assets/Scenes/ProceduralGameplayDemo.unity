@@ -119,6 +119,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &61009901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780976667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04781a87442246646baf92ad8260fdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemies:
+  - prefab: {fileID: 4396646813977449455, guid: 62de1582462f458c85f6169c171fe450, type: 3}
+    count: 6
+  - prefab: {fileID: 4396646813977449455, guid: 3e06bc18564f4bb494b23edf28bf61a8, type: 3}
+    count: 3
+  minDistanceFromPlayer: 5
+  useFixedSeed: 1
+  seed: 1234
+  spawnOnStart: 0
+--- !u!114 &61009902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780976667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fe711130ae76241a5fb0f4e147608c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomGrid
+  solid: {fileID: 2113198093}
 --- !u!1001 &704599038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,6 +282,8 @@ GameObject:
   - component: {fileID: 780976670}
   - component: {fileID: 780976669}
   - component: {fileID: 780976668}
+  - component: {fileID: 61009901}
+  - component: {fileID: 61009902}
   m_Layer: 0
   m_Name: Generated World Grid
   m_TagString: Untagged
@@ -282,6 +318,8 @@ MonoBehaviour:
   goal: {fileID: 906798323}
   itemSpawner: {fileID: 0}
   roomVisuals: {fileID: 1512341797}
+  enemySpawner: {fileID: 61009901}
+  enemyGrid: {fileID: 61009902}
 --- !u!114 &780976669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +821,14 @@ PrefabInstance:
     - target: {fileID: 828011848938452685, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602710818509431086, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602710818509431086, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4696939339559477083, guid: 22346b2b19e4e7f4a9c1ef82746a7bf4, type: 3}
       propertyPath: m_Name
