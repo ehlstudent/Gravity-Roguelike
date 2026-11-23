@@ -134,6 +134,8 @@ MonoBehaviour:
   enemies:
   - prefab: {fileID: 4396646813977449455, guid: 62de1582462f458c85f6169c171fe450, type: 3}
     count: 6
+  - prefab: {fileID: 4396646813977449455, guid: 3e06bc18564f4bb494b23edf28bf61a8, type: 3}
+    count: 3
   minDistanceFromPlayer: 5
   useFixedSeed: 1
   seed: 1234
