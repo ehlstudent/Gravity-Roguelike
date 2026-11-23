@@ -30,8 +30,12 @@ namespace GravityRoguelike.Combat
 
         public void Play(bool swingUp, float duration)
         {
+            // The width upgrade lives on the Sword this effect is spawned under (1 if none found).
+            Sword sword = GetComponentInParent<Sword>();
+            float width = sword != null ? sword.WidthMultiplier : 1f;
+
             // Mirror the whole effect, including the cropped frames' position curves.
-            baseScale = new Vector3(1f, swingUp ? -1f : 1f, 1f);
+            baseScale = new Vector3(width, swingUp ? -width : width, 1f);
             transform.localScale = baseScale * (1f - whooshScale);
             GetComponent<Animator>().speed = 1f / duration;
             // Safety net if the animation is interrupted or its final event is missed.

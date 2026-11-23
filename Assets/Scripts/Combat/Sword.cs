@@ -71,6 +71,31 @@ namespace GravityRoguelike.Combat
         public event System.Action SlashFinished;
         public int Damage => damage;
 
+        /// <summary>Upgrade: scales the swing's hit radius and slash visual (1 = base size).</summary>
+        public float WidthMultiplier { get; private set; } = 1f;
+
+        /// <summary>Upgrade: swing speed (2 = swing takes half as long). The stab ignores it.</summary>
+        public float SpeedMultiplier { get; private set; } = 1f;
+
+        /// <summary>Sets the width multiplier for the swing (hit radius and visual).</summary>
+        public void SetWidthMultiplier(float multiplier)
+        {
+            WidthMultiplier = Mathf.Max(0.1f, multiplier);
+        }
+
+        /// <summary>Sets the swing speed multiplier; only the swing duration changes, not the cooldown.</summary>
+        public void SetSpeedMultiplier(float multiplier)
+        {
+            SpeedMultiplier = Mathf.Max(0.1f, multiplier);
+        }
+
+        /// <summary>Back to base width and speed, e.g. for a new run.</summary>
+        public void ResetSwingUpgrades()
+        {
+            WidthMultiplier = 1f;
+            SpeedMultiplier = 1f;
+        }
+
         /// <summary>The current sword swing is the clock for the body's slash animation.</summary>
         public bool TryGetSlashProgress(out float progress)
         {
@@ -197,7 +222,8 @@ namespace GravityRoguelike.Combat
             hitWindowOpen = false;
             IsAttacking = true;
             IsStabbing = stab;
-            currentAttackDuration = stab ? stabDuration : attackDuration;
+            // Faster swing = shorter duration. The animator speed below follows automatically.
+            currentAttackDuration = stab ? stabDuration : attackDuration / SpeedMultiplier;
             attackStartedAt = Time.time;
             nextAttackAt = Time.time + attackCooldown;
             animator.speed = 1f / currentAttackDuration; // Attack clips use a one-second timeline.
@@ -262,7 +288,7 @@ namespace GravityRoguelike.Combat
                 GetStabHitBox(out hitOrigin, out Vector2 size, out float angle);
                 Physics2D.OverlapBox(hitOrigin, size, angle, filter, hitColliders);
             }
-            else Physics2D.OverlapCircle(point.position, hitRadius, filter, hitColliders);
+            else Physics2D.OverlapCircle(point.position, hitRadius * WidthMultiplier, filter, hitColliders);
             foreach (Collider2D candidate in hitColliders)
             {
                 Health health = candidate.GetComponentInParent<Health>();
@@ -318,7 +344,7 @@ namespace GravityRoguelike.Combat
             {
                 // The hit point follows the actual alternating swing and the holder's aim.
                 Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(hitPoint.position, hitRadius);
+                Gizmos.DrawWireSphere(hitPoint.position, hitRadius * WidthMultiplier);
             }
             if (stabHitPoint != null)
             {

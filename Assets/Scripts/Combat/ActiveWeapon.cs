@@ -8,6 +8,8 @@ namespace GravityRoguelike.Combat
     public class ActiveWeapon : MonoBehaviour
     {
         [SerializeField] private Camera aimCamera;
+        [Tooltip("Second sword: aims at the opposite side of the player, mirroring the first sword.")]
+        [SerializeField] private bool mirrorAim;
 
         private void LateUpdate()
         {
@@ -27,6 +29,9 @@ namespace GravityRoguelike.Combat
             Vector3 direction = worldPosition - transform.position;
             direction.z = 0f;
             if (direction.sqrMagnitude < 0.000001f) return;
+            // World-space reflection through the pivot; the parent conversion below keeps it
+            // correct when gravity rotates the player.
+            if (mirrorAim) direction = -direction;
 
             Transform parent = transform.parent;
             Vector3 localDirection = parent != null
