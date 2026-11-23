@@ -11,6 +11,9 @@ namespace GravityRoguelike.Combat
         [Header("Input and animation")]
         [SerializeField] private InputActionReference attackAction;
         [SerializeField] private InputActionReference stabAction;
+        [Tooltip("Second sword only: follows this sword, swinging at the same time in the opposite direction. " +
+            "A follower ignores the input actions above.")]
+        [SerializeField] private Sword leaderSword;
         [Tooltip("Origin for checking whether level geometry blocks an attack.")]
         [SerializeField] private Transform slashAnimSpawnPoint;
         [SerializeField, Min(0.01f)] private float attackDuration = 0.42f;
@@ -71,16 +74,22 @@ namespace GravityRoguelike.Combat
         public event System.Action SlashFinished;
         public int Damage => damage;
 
-        /// <summary>Upgrade: scales the swing's hit radius and slash visual (1 = base size).</summary>
+        /// <summary>True if the current (or last) swing goes bottom-up; used by a follower sword.</summary>
+        public bool IsSwingingUp => swingUp;
+
+        /// <summary>Upgrade: scales the whole sword (visual, reach) and the swing hit radius (1 = base size).</summary>
         public float WidthMultiplier { get; private set; } = 1f;
 
         /// <summary>Upgrade: swing speed (2 = swing takes half as long). The stab ignores it.</summary>
         public float SpeedMultiplier { get; private set; } = 1f;
 
-        /// <summary>Sets the width multiplier for the swing (hit radius and visual).</summary>
+        /// <summary>Sets the width multiplier: hit radius here, sword size via the weapon pivot.</summary>
         public void SetWidthMultiplier(float multiplier)
         {
             WidthMultiplier = Mathf.Max(0.1f, multiplier);
+            // includeInactive: the second sword's pivot is switched off until it is unlocked.
+            ActiveWeapon pivot = GetComponentInParent<ActiveWeapon>(true);
+            if (pivot != null) pivot.SetSizeMultiplier(WidthMultiplier);
         }
 
         /// <summary>Sets the swing speed multiplier; only the swing duration changes, not the cooldown.</summary>
@@ -133,6 +142,14 @@ namespace GravityRoguelike.Combat
 
         private void OnEnable()
         {
+            // A follower is driven by its leader instead of by input.
+            if (leaderSword != null)
+            {
+                leaderSword.SlashStarted += OnLeaderSlashStarted;
+                leaderSword.StabStarted += OnLeaderStabStarted;
+                return;
+            }
+
             if (attackAction == null || attackAction.action == null)
             {
                 Debug.LogWarning("Sword: assign the existing Player/Attack input action.", this);
@@ -153,6 +170,12 @@ namespace GravityRoguelike.Combat
 
         private void OnDisable()
         {
+            if (leaderSword != null)
+            {
+                leaderSword.SlashStarted -= OnLeaderSlashStarted;
+                leaderSword.StabStarted -= OnLeaderStabStarted;
+            }
+
             if (ownedAttackAction != null)
             {
                 ownedAttackAction.performed -= OnAttack;
@@ -176,11 +199,24 @@ namespace GravityRoguelike.Combat
             TryAttack();
         }
 
+        /// <summary>Leader started a swing: swing the opposite way, right now.</summary>
+        private void OnLeaderSlashStarted(float duration)
+        {
+            // The leader has already flipped its direction when this event fires.
+            TryAttack(!leaderSword.IsSwingingUp);
+        }
+
+        /// <summary>Leader started a stab: stab as well.</summary>
+        private void OnLeaderStabStarted(float duration) => TryStab();
+
         /// <summary>Starts one alternating swing if ready. Animation events gate damage.</summary>
-        public bool TryAttack()
+        public bool TryAttack() => TryAttack(!swingUp);
+
+        /// <summary>Starts a swing in the given direction (true = bottom-up) if ready.</summary>
+        private bool TryAttack(bool goUp)
         {
             if (!TryBeginAttack(false)) return false;
-            swingUp = !swingUp;
+            swingUp = goUp;
             animator.SetBool(SwingUpParameter, swingUp);
             animator.SetTrigger(AttackParameter);
             SlashStarted?.Invoke(currentAttackDuration);

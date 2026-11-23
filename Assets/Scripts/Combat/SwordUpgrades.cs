@@ -17,7 +17,7 @@ namespace GravityRoguelike.Combat
 
         [Header("Per level")]
         [Tooltip("Width bonus per level, additive: 0.25 means 1.25x / 1.5x / 1.75x.")]
-        [SerializeField, Min(0f)] private float widthBonusPerLevel = 0.25f;
+        [SerializeField, Min(0f)] private float widthBonusPerLevel = 0.1f;
         [Tooltip("Speed bonus per level, additive: 0.2 means 1.2x / 1.4x / 1.6x swing speed.")]
         [SerializeField, Min(0f)] private float speedBonusPerLevel = 0.2f;
 
@@ -30,7 +30,11 @@ namespace GravityRoguelike.Combat
         /// <summary>Finds the second Sword (even though its object is inactive) and applies level 0.</summary>
         private void Awake()
         {
-            if (secondSwordRoot != null)
+            if (primarySword == null)
+                Debug.LogWarning("SwordUpgrades: 'Primary Sword' is not assigned, upgrades will have no effect.", this);
+            if (secondSwordRoot == null)
+                Debug.LogWarning("SwordUpgrades: 'Second Sword Root' is not assigned, the second sword cannot be unlocked.", this);
+            else
                 secondSword = secondSwordRoot.GetComponentInChildren<Sword>(true);
             ResetUpgrades();
         }
@@ -50,6 +54,39 @@ namespace GravityRoguelike.Combat
             if (SpeedLevel >= MaxLevel) return false;
             SpeedLevel++;
             ApplyToSwords();
+            return true;
+        }
+
+        /// <summary>Current width multiplier, for UI and debugging.</summary>
+        public float WidthMultiplier => 1f + widthBonusPerLevel * WidthLevel;
+
+        /// <summary>Current swing speed multiplier, for UI and debugging.</summary>
+        public float SpeedMultiplier => 1f + speedBonusPerLevel * SpeedLevel;
+
+        /// <summary>Takes one width level away (undo). Returns false at level 0.</summary>
+        public bool TryDowngradeWidth()
+        {
+            if (WidthLevel <= 0) return false;
+            WidthLevel--;
+            ApplyToSwords();
+            return true;
+        }
+
+        /// <summary>Takes one speed level away (undo). Returns false at level 0.</summary>
+        public bool TryDowngradeSpeed()
+        {
+            if (SpeedLevel <= 0) return false;
+            SpeedLevel--;
+            ApplyToSwords();
+            return true;
+        }
+
+        /// <summary>Removes the second sword again (undo). Returns false if it was not unlocked.</summary>
+        public bool TryRemoveSecondSword()
+        {
+            if (!HasSecondSword) return false;
+            HasSecondSword = false;
+            secondSwordRoot.SetActive(false);
             return true;
         }
 
@@ -76,10 +113,8 @@ namespace GravityRoguelike.Combat
         /// <summary>Pushes the current levels as multipliers to both swords so they stay identical.</summary>
         private void ApplyToSwords()
         {
-            float width = 1f + widthBonusPerLevel * WidthLevel;
-            float speed = 1f + speedBonusPerLevel * SpeedLevel;
-            Apply(primarySword, width, speed);
-            Apply(secondSword, width, speed);
+            Apply(primarySword, WidthMultiplier, SpeedMultiplier);
+            Apply(secondSword, WidthMultiplier, SpeedMultiplier);
         }
 
         /// <summary>Sets width and speed on one sword if it exists.</summary>
