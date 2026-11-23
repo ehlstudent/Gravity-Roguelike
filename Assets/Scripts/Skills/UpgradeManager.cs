@@ -8,7 +8,7 @@ namespace GravityRoguelike.Combat
     /// <summary>
     /// Tracks acquired upgrades and generates level-up choices.
     /// Put this component on the player GameObject.
-    /// Press P to test a level-up: three choices are logged and one is selected randomly.
+    /// Press P to open a level-up choice set (the UI handles selection).
     /// </summary>
     public class UpgradeManager : MonoBehaviour
     {
@@ -163,9 +163,7 @@ namespace GravityRoguelike.Combat
                     this);
             }
 
-            UpgradeDefinition selected = choices[UnityEngine.Random.Range(0, choices.Count)];
-            Debug.Log($"Randomly selected: {selected.UpgradeName}", this);
-            TrySelectUpgrade(selected);
+            // Selection is now handled by UpgradeSelectionUI.
         }
 
         /// <summary>Resets tracked levels and asks each definition to remove its own effect at level 0.</summary>
