@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd8afd9b254a264494de2ef58f8bdad, type: 3}
   m_Name: ArcherPointBlank
   m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Combat.ArcherUpgradeDefinition
-  upgradeName: Auto Aim One Shot
-  description: When an enemy gets close an arrow is shot in its direction
+  upgradeName: Point Blank Hit
+  description: When an enemy gets close the next arrow one-shots it. Has a Xs cooldown
   icon: {fileID: 0}
   maxLevel: 1
   upgradeType: 2
