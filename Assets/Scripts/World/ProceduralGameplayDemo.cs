@@ -28,6 +28,27 @@ namespace GravityRoguelike.World
         [SerializeField] private EnemySpawner enemySpawner;
         [SerializeField] private RoomGrid enemyGrid;
 
+        private bool externalRunFlow;
+        private BoxCollider2D spawnFootprint;
+        private Vector2[] routeSpawns;
+        private GravityEndpointPlacementResult[] routeLegs;
+        private int acceptedSeed;
+
+        public bool HasGeneratedMap => routeRooms != null;
+        public Vector2 StartSpawnPosition => HasGeneratedMap ? routeSpawns[0]
+            : throw new InvalidOperationException("Generate a map before requesting its start spawn.");
+        public event Action MapGenerated;
+        private BoxCollider2D PlayerFootprint => externalRunFlow ? spawnFootprint : player.GetComponent<BoxCollider2D>();
+
+        /// <summary>Opt in before Start. The fixed prefab collider validates routes without creating a player.</summary>
+        public void UseExternalRunFlow(BoxCollider2D footprint)
+        {
+            if (footprint == null) throw new ArgumentNullException(nameof(footprint));
+            if (generating) throw new InvalidOperationException("Cannot change flow during generation.");
+            externalRunFlow = true;
+            spawnFootprint = footprint;
+        }
+
         private bool generating;
         private string status;
         private ShowcaseRouteClearance clearance;
@@ -40,7 +61,7 @@ namespace GravityRoguelike.World
         private int CurrentRoomIndex => middlePortal.Used ? 2 : portal.Used ? 1 : 0;
 
         /// <summary>The existing one-way portal route determines the current generated room.</summary>
-        public RoomData CurrentRoom => playing && routeRooms != null ? routeRooms[CurrentRoomIndex] : null;
+        public RoomData CurrentRoom => routeRooms != null ? routeRooms[playing ? CurrentRoomIndex : 0] : null;
 
         /// <summary>Converts the room's grid bounds to a world-space centre, including Grid scale.</summary>
         public bool TryGetCurrentRoomWorldPosition(out Vector2 position)
@@ -57,23 +78,26 @@ namespace GravityRoguelike.World
         private void Start()
         {
             if (roomVisuals != null) roomVisuals.BindTo(map);
-            StartCoroutine(NewRun());
+            if (!externalRunFlow) StartCoroutine(GenerateMap());
         }
 
         private void Update()
         {
-            if (!generating && Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
-                StartCoroutine(NewRun());
+            if (!externalRunFlow && !generating && Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
+                StartCoroutine(GenerateMap());
         }
 
-        private IEnumerator NewRun()
+        /// <summary>Runs the unchanged seeded placement/HDPCG pipeline; completes before MapGenerated fires.</summary>
+        public IEnumerator GenerateMap()
         {
+            if (generating) throw new InvalidOperationException("Map generation is already running.");
+            if (roomVisuals != null) roomVisuals.BindTo(map);
             generating = true;
             playing = false;
             routeRooms = null;
             if (enemySpawner != null) enemySpawner.Clear();
             if (roomVisuals != null) roomVisuals.SetDecorationExclusions();
-            player.gameObject.SetActive(false);
+            if (player != null) player.gameObject.SetActive(false);
             portal.gameObject.SetActive(false);
             goal.gameObject.SetActive(false);
             if (middlePortal == null)
@@ -83,15 +107,21 @@ namespace GravityRoguelike.World
                 if (marker != null) marker.enabled = false;
             goal.ResetGoal();
             var gravity = GravityRotator.Instance;
-            gravity.Rotate(-gravity.GravityAngle);
-            gravity.enabled = false;
-            var body = player.GetComponent<Rigidbody2D>();
-            body.rotation = 0;
-            body.linearVelocity = Vector2.zero;
-            body.angularVelocity = 0;
+            if (gravity != null)
+            {
+                gravity.Rotate(-gravity.GravityAngle);
+                gravity.enabled = false;
+            }
+            if (player != null)
+            {
+                var body = player.GetComponent<Rigidbody2D>();
+                body.rotation = 0;
+                body.linearVelocity = Vector2.zero;
+                body.angularVelocity = 0;
+            }
             roomRenderer.Clear();
             if (itemSpawner != null) itemSpawner.Clear();
-            ItemEffects.ResetUpgrades(player);
+            if (player != null) ItemEffects.ResetUpgrades(player);
             clearance = new ShowcaseRouteClearance(map);
 
             int initial = manualSeed ? seed : BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
@@ -114,6 +144,7 @@ namespace GravityRoguelike.World
                             + $"Limits: rotations {MinRequiredGravityRotations}-{MaxRequiredGravityRotations}, "
                             + $"distance {MinStartGoalDistance}, evaluations {MaxPlacementEvaluations}.", this);
                         generating = false;
+                        MapGenerated?.Invoke();
                         yield break;
                     }
                 }
@@ -162,7 +193,7 @@ namespace GravityRoguelike.World
             var selected = new RoomData[3];
             var legs = new GravityEndpointPlacementResult[3];
             var spawns = new Vector2[3];
-            var playerBox = player.GetComponent<BoxCollider2D>();
+            var playerBox = PlayerFootprint;
             foreach (var last in rooms)
             {
                 var end = FindLeg(last, goal.GetComponent<BoxCollider2D>(), goals);
@@ -193,49 +224,96 @@ namespace GravityRoguelike.World
                 goal.transform.position = clearance.Center(last, end.Goal.Value);
                 ShowArrivalMarker(0, spawns[1]);
                 ShowArrivalMarker(1, spawns[2]);
-                var body = player.GetComponent<Rigidbody2D>();
-                player.transform.SetPositionAndRotation(spawns[0], Quaternion.identity);
-                player.gameObject.SetActive(true);
-                body.position = player.transform.position;
-                body.rotation = 0;
-                body.linearVelocity = Vector2.zero;
-                body.angularVelocity = 0;
-                GravityRotator.Instance.enabled = true;
-                portal.gameObject.SetActive(true);
-                middlePortal.gameObject.SetActive(true);
-                goal.gameObject.SetActive(true);
-                Physics2D.SyncTransforms();
-                int spawnedEnemies = 0;
                 for (int i = 0; i < selected.Length; i++)
                 {
                     var room = selected[i];
                     var leg = legs[i];
                     roomTurns[i] = TurnKeys(leg);
-                    if (enemySpawner != null && enemyGrid != null)
-                        spawnedEnemies += enemySpawner.SpawnInRoom(enemyGrid, player.transform, room.Bounds,
-                            spawns[i], clearance.Center(room, leg.Goal.Value), unchecked(candidate * 31 + room.Seed));
                     if (itemSpawner != null)
                         itemSpawner.SpawnInRoom(room, leg.Start.Value, leg.Goal.Value,
                             unchecked(candidate * 31 + room.Seed), cell => clearance.Center(room, cell), leg.RestingCosts);
                 }
                 if (roomVisuals != null)
-                    roomVisuals.SetDecorationExclusions(portal.GetComponent<Collider2D>().bounds,
-                        middlePortal.GetComponent<Collider2D>().bounds, goal.GetComponent<Collider2D>().bounds,
-                        playerBox.bounds, new Bounds(spawns[1], playerBox.bounds.size),
-                        new Bounds(spawns[2], playerBox.bounds.size));
+                    roomVisuals.SetDecorationExclusions(SpawnBounds(portal.GetComponent<BoxCollider2D>(), portal.transform.position),
+                        SpawnBounds(middlePortal.GetComponent<BoxCollider2D>(), middlePortal.transform.position),
+                        SpawnBounds(goal.GetComponent<BoxCollider2D>(), goal.transform.position),
+                        SpawnBounds(playerBox, spawns[0]), SpawnBounds(playerBox, spawns[1]),
+                        SpawnBounds(playerBox, spawns[2]));
                 routeRooms = selected;
-                playing = true;
-                if (enemySpawner != null) Debug.Log($"Spawned {spawnedEnemies} enemies across the three playable rooms.", this);
+                routeSpawns = spawns;
+                routeLegs = legs;
+                acceptedSeed = candidate;
+                if (!externalRunFlow) BeginPlay(player);
                 return true;
             }
             return false;
+        }
+
+        // A prefab collider has no live physics bounds; use its authored geometry for visual exclusions.
+        private static Bounds SpawnBounds(BoxCollider2D box, Vector2 position)
+        {
+            Vector2 scale = box.transform.lossyScale;
+            return new Bounds(position + Vector2.Scale(box.offset, scale),
+                Vector2.Scale(box.size, new Vector2(Mathf.Abs(scale.x), Mathf.Abs(scale.y))));
+        }
+
+        /// <summary>Bind the selected instance to the already accepted map; never generates or consumes layout RNG.</summary>
+        public void BeginPlay(PlayerController2D instance)
+        {
+            if (!HasGeneratedMap) throw new InvalidOperationException("Generate a map before starting play.");
+            if (instance == null) throw new ArgumentNullException(nameof(instance));
+            if (playing) throw new InvalidOperationException("A run is already playing.");
+            player = instance;
+            var body = player.GetComponent<Rigidbody2D>();
+            player.transform.SetPositionAndRotation(routeSpawns[0], Quaternion.identity);
+            player.gameObject.SetActive(true);
+            body.position = routeSpawns[0];
+            body.rotation = 0;
+            body.linearVelocity = Vector2.zero;
+            body.angularVelocity = 0;
+            var gravity = GravityRotator.Instance;
+            if (gravity == null) gravity = new GameObject("Gravity Rotator (auto)").AddComponent<GravityRotator>();
+            gravity.enabled = true;
+            portal.SetSameSceneArrival(routeSpawns[1]);
+            middlePortal.SetSameSceneArrival(routeSpawns[2]);
+            goal.ResetGoal();
+            portal.gameObject.SetActive(true);
+            middlePortal.gameObject.SetActive(true);
+            goal.gameObject.SetActive(true);
+            Physics2D.SyncTransforms();
+            int spawnedEnemies = 0;
+            for (int i = 0; i < routeRooms.Length; i++)
+                if (enemySpawner != null && enemyGrid != null)
+                    spawnedEnemies += enemySpawner.SpawnInRoom(enemyGrid, player.transform, routeRooms[i].Bounds,
+                        routeSpawns[i], clearance.Center(routeRooms[i], routeLegs[i].Goal.Value),
+                        unchecked(acceptedSeed * 31 + routeRooms[i].Seed));
+            playing = true;
+            if (enemySpawner != null) Debug.Log($"Spawned {spawnedEnemies} enemies across the three playable rooms.", this);
+        }
+
+        /// <summary>Defer player-dependent objects while keeping the accepted map and its start spawn intact.</summary>
+        public void SuspendPlay()
+        {
+            playing = false;
+            if (enemySpawner != null) enemySpawner.Clear();
+            portal.gameObject.SetActive(false);
+            if (middlePortal != null) middlePortal.gameObject.SetActive(false);
+            goal.gameObject.SetActive(false);
+            if (player != null) player.gameObject.SetActive(false);
+            player = null;
+            var gravity = GravityRotator.Instance;
+            if (gravity != null)
+            {
+                gravity.enabled = false;
+                gravity.Rotate(-gravity.GravityAngle);
+            }
         }
 
         private GravityEndpointPlacementResult FindLeg(RoomData room, BoxCollider2D marker,
             Dictionary<int, GravityEndpointPlacementResult> cache)
         {
             if (cache.TryGetValue(room.Id, out var result)) return result;
-            var box = player.GetComponent<BoxCollider2D>();
+            var box = PlayerFootprint;
             result = GravityEndpointPlacement.Find(room, GravityDirection.Down, MinRequiredGravityRotations,
                 MaxRequiredGravityRotations, MinStartGoalDistance, MaxPlacementEvaluations,
                 route => clearance.Accept(room, route.Path, box, marker), new System.Random(room.Seed),
@@ -268,6 +346,7 @@ namespace GravityRoguelike.World
 
         private void OnGUI()
         {
+            if (externalRunFlow && !playing) return;
             string stage = "";
             if (playing)
             {

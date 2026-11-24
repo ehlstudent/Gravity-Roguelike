@@ -13,6 +13,18 @@ public class CameraFollow2D : MonoBehaviour
     private Vector3 velocity;
     private float angleVelocity;
 
+    /// <summary>Bind a late-spawned player (or a preview anchor); optionally snap using the existing offset.</summary>
+    public void SetTarget(Transform newTarget, bool snap = false)
+    {
+        target = newTarget;
+        if (!snap || target == null) return;
+        angleVelocity = 0f;
+        if (rotateWithGravity)
+            transform.rotation = Quaternion.Euler(0f, 0f,
+                GravityRotator.Instance != null ? GravityRotator.Instance.GravityAngle : 0f);
+        transform.position = target.position + transform.rotation * offset;
+    }
+
     private void LateUpdate()
     {
         if (target == null) return;
