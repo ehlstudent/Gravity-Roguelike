@@ -96,10 +96,27 @@ namespace GravityRoguelike.Combat
             isOpen = true;
             panel.SetActive(true);
         }
-
+        /*
         private void SelectChoice(UpgradeDefinition choice)
         {
             if (upgradeManager != null && upgradeManager.TrySelectUpgrade(choice))
+                ClosePanel();
+        }*/
+        private void SelectChoice(UpgradeDefinition choice)
+        {
+            Debug.Log("Selected upgrade: " + choice.UpgradeName);
+
+            if (upgradeManager == null)
+            {
+                Debug.LogError("UpgradeManager is NULL!");
+                return;
+            }
+
+            bool success = upgradeManager.TrySelectUpgrade(choice);
+
+            Debug.Log("Upgrade application successful: " + success);
+
+            if (success)
                 ClosePanel();
         }
 

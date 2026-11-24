@@ -21,6 +21,11 @@ namespace GravityRoguelike.Combat
         // Set by upgrades via ConfigureUpgrades(). 0 means: no bounce / no explosion.
         private int bouncesLeft;
         private bool hasBounced;
+        private int piercesLeft;
+        private float speedMultiplier = 1f;
+        // Enemies this arrow already pierced; it must never hit the same one twice.
+        private readonly System.Collections.Generic.HashSet<Health> piercedTargets =
+            new System.Collections.Generic.HashSet<Health>();
         private float explosionRadius;
         private BoxCollider2D hitbox;
         private Transform owner;
@@ -42,10 +47,23 @@ namespace GravityRoguelike.Combat
         }
 
         /// <summary>Sets upgrade effects: number of wall bounces and explosion radius (0 = no explosion).</summary>
-        public void ConfigureUpgrades(int bounces, float radius)
+        public void ConfigureUpgrades(int bounces, float radius, int pierces = 0)
         {
             bouncesLeft = Mathf.Max(0, bounces);
             explosionRadius = Mathf.Max(0f, radius);
+            piercesLeft = Mathf.Max(0, pierces);
+        }
+
+        /// <summary>Upgrade: multiplies the flight speed. Call before Launch().</summary>
+        public void ConfigureSpeedMultiplier(float multiplier)
+        {
+            speedMultiplier = Mathf.Max(0.1f, multiplier);
+        }
+
+        /// <summary>Upgrade: overrides the damage of this arrow (e.g. a one-shot). Call before Launch().</summary>
+        public void SetDamage(int newDamage)
+        {
+            damage = Mathf.Max(1, newDamage);
         }
 
         public void Launch(Transform shooter, Vector2 direction, Camera camera)
@@ -56,7 +74,7 @@ namespace GravityRoguelike.Combat
             viewCamera = camera;
             direction.Normalize();
             body.rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            body.linearVelocity = direction * speed;
+            body.linearVelocity = direction * speed * speedMultiplier;
             foreach (Collider2D ownCollider in owner.GetComponentsInChildren<Collider2D>())
                 Physics2D.IgnoreCollision(hitbox, ownCollider);
             launched = true;
@@ -84,6 +102,12 @@ namespace GravityRoguelike.Combat
         {
             // Blobs fired together must never hit each other.
             if (other != null && other.GetComponentInParent<ArrowProjectile>() != null) return false;
+            // Enemies already pierced are ignored, so they can't mask walls behind them in the sweep.
+            if (other != null && piercedTargets.Count > 0)
+            {
+                Health pierced = other.GetComponentInParent<Health>();
+                if (pierced != null && piercedTargets.Contains(pierced)) return false;
+            }
             // The shooter is only hittable after a bounce (otherwise every blob would hit the mage on spawn).
             bool isOwner = other != null && other.transform.IsChildOf(owner);
             if (isOwner && !(hurtOwnerAfterBounce && hasBounced)) return false;
@@ -123,6 +147,13 @@ namespace GravityRoguelike.Combat
             // Renderer visibility is checked against the gameplay camera, never Scene-view isVisible.
             else if (health != null && IsPointInView(viewCamera, point, 0f) && IsTargetVisible(viewCamera, health))
                 health.TakeDamage(new DamageInfo { amount = damage, sourcePosition = owner.position });
+            // Piercing: after damaging an enemy the arrow flies on, until its pierces are used up.
+            if (health != null && explosionRadius <= 0f && piercesLeft > 0 && !other.transform.IsChildOf(owner))
+            {
+                piercesLeft--;
+                piercedTargets.Add(health);
+                return;
+            }
             Despawn("hit " + other.name);
         }
 
