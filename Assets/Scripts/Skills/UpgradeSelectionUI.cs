@@ -91,32 +91,20 @@ namespace GravityRoguelike.Combat
                 button.onClick.AddListener(buttonActions[i]);
             }
 
-            previousTimeScale = Time.timeScale;
-            Time.timeScale = 0f;
+            // Remember the time scale only on the first open. If new choices arrive while the panel is
+            // already open, the time scale is 0 and saving it again would freeze the game after closing.
+            if (!isOpen)
+            {
+                previousTimeScale = Time.timeScale;
+                Time.timeScale = 0f;
+            }
             isOpen = true;
             panel.SetActive(true);
         }
-        /*
+
         private void SelectChoice(UpgradeDefinition choice)
         {
             if (upgradeManager != null && upgradeManager.TrySelectUpgrade(choice))
-                ClosePanel();
-        }*/
-        private void SelectChoice(UpgradeDefinition choice)
-        {
-            Debug.Log("Selected upgrade: " + choice.UpgradeName);
-
-            if (upgradeManager == null)
-            {
-                Debug.LogError("UpgradeManager is NULL!");
-                return;
-            }
-
-            bool success = upgradeManager.TrySelectUpgrade(choice);
-
-            Debug.Log("Upgrade application successful: " + success);
-
-            if (success)
                 ClosePanel();
         }
 
