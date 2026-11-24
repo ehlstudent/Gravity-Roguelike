@@ -13,9 +13,14 @@ namespace GravityRoguelike.Combat
         [SerializeField] private LayerMask collisionLayers = ~0;
         [Tooltip("Layers damaged by an explosion (explosions also hurt the player, so include the player layer).")]
         [SerializeField] private LayerMask explosionLayers = ~0;
+        [Tooltip("After its first wall bounce, the blob can hit (and damage) the player who fired it.")]
+        [SerializeField] private bool hurtOwnerAfterBounce = true;
+        [Tooltip("Logs the reason every time a blob disappears.")]
+        [SerializeField] private bool debugDespawn;
         private Rigidbody2D body;
         // Set by upgrades via ConfigureUpgrades(). 0 means: no bounce / no explosion.
         private int bouncesLeft;
+        private bool hasBounced;
         private float explosionRadius;
         private BoxCollider2D hitbox;
         private Transform owner;
@@ -60,7 +65,7 @@ namespace GravityRoguelike.Combat
 
         private void Update()
         {
-            if (launched && !spent && !IsPointInView(viewCamera, transform.position, viewportMargin)) Despawn();
+            if (launched && !spent && !IsPointInView(viewCamera, transform.position, viewportMargin)) Despawn("left the camera view");
         }
 
         private void FixedUpdate()
@@ -77,7 +82,12 @@ namespace GravityRoguelike.Combat
 
         private bool CanHit(Collider2D other)
         {
-            if (other == null || other == hitbox || other.transform.IsChildOf(owner) ||
+            // Blobs fired together must never hit each other.
+            if (other != null && other.GetComponentInParent<ArrowProjectile>() != null) return false;
+            // The shooter is only hittable after a bounce (otherwise every blob would hit the mage on spawn).
+            bool isOwner = other != null && other.transform.IsChildOf(owner);
+            if (isOwner && !(hurtOwnerAfterBounce && hasBounced)) return false;
+            if (other == null || other == hitbox ||
                 (collisionLayers.value & (1 << other.gameObject.layer)) == 0) return false;
             // Ignore non-damageable trigger volumes such as pickups and portals.
             return !other.isTrigger || other.GetComponentInParent<Health>() != null;
@@ -113,13 +123,20 @@ namespace GravityRoguelike.Combat
             // Renderer visibility is checked against the gameplay camera, never Scene-view isVisible.
             else if (health != null && IsPointInView(viewCamera, point, 0f) && IsTargetVisible(viewCamera, health))
                 health.TakeDamage(new DamageInfo { amount = damage, sourcePosition = owner.position });
-            Despawn();
+            Despawn("hit " + other.name);
         }
 
         // Reflects the velocity on the wall normal, keeps the speed and uses up one bounce.
         private void Bounce(Vector2 normal)
         {
             bouncesLeft--;
+            if (hurtOwnerAfterBounce && !hasBounced)
+            {
+                hasBounced = true;
+                // Launch() disabled collisions with the shooter; turn them back on now.
+                foreach (Collider2D ownCollider in owner.GetComponentsInChildren<Collider2D>())
+                    Physics2D.IgnoreCollision(hitbox, ownCollider, false);
+            }
             Vector2 velocity = Vector2.Reflect(body.linearVelocity, normal);
             body.linearVelocity = velocity;
             body.rotation = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
@@ -163,8 +180,16 @@ namespace GravityRoguelike.Combat
             Destroy(go, 0.25f);
         }
 
-        private void Despawn()
+        // Logs why a blob vanished (enable "debugDespawn"), so mid-air disappearances can be traced.
+        private void OnDestroy()
         {
+            if (debugDespawn && !spent) Debug.Log($"{name}: destroyed by lifetime ({lifetime}s) at {transform.position}", this);
+        }
+
+        // Removes the blob; the reason is only used for the debug log.
+        private void Despawn(string reason)
+        {
+            if (debugDespawn) Debug.Log($"{name}: despawned - {reason} at {transform.position}", this);
             spent = true;
             body.linearVelocity = Vector2.zero;
             hitbox.enabled = false;
