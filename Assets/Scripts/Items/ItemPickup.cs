@@ -21,6 +21,8 @@ namespace GravityRoguelike.Items
 
         private Transform visual;
         private float bobOffset;
+        private float displayedAngle;   // smoothed angle the item is currently drawn at
+        [SerializeField, Min(0f)] private float rotateSpeed = 360f;   // degrees per second the item turns toward gravity
         private SpriteRenderer glowRenderer;
         private Color glowColor;
         private Vector3 glowBaseScale;
@@ -32,6 +34,7 @@ namespace GravityRoguelike.Items
             type = itemType;
             visual = bobbingVisual;
             bobOffset = Random.value * Mathf.PI * 2f;
+            displayedAngle = CurrentGravityAngle();
         }
 
         private void Reset()
@@ -47,7 +50,21 @@ namespace GravityRoguelike.Items
         private void Update()
         {
             if (visual != null)
-                visual.localPosition = Vector3.up * (Mathf.Sin(Time.time * bobSpeed + bobOffset) * bobHeight);
+            {
+                // Turn smoothly toward the current gravity angle (instead of snapping).
+                displayedAngle = Mathf.MoveTowardsAngle(displayedAngle, CurrentGravityAngle(), rotateSpeed * Time.deltaTime);
+                Quaternion rotation = Quaternion.Euler(0f, 0f, displayedAngle);
+
+                // Rotate the sprite so it stays upright relative to gravity.
+                visual.rotation = rotation;
+
+                // "Up" in world space for the current gravity, converted into the parent's local space.
+                Vector3 worldUp = rotation * Vector3.up;
+                Transform parent = visual.parent;
+                Vector3 localUp = parent != null ? parent.InverseTransformDirection(worldUp) : worldUp;
+
+                visual.localPosition = localUp * (Mathf.Sin(Time.time * bobSpeed + bobOffset) * bobHeight);
+            }
 
             if (glowRenderer != null)
             {
@@ -107,6 +124,11 @@ namespace GravityRoguelike.Items
                 if (r != glowRenderer) return r;
             }
             return null;
+        }
+        /// <summary>Current gravity angle in degrees (0 if there is no GravityRotator in the scene).</summary>
+        private static float CurrentGravityAngle()
+        {
+            return GravityRotator.Instance != null ? GravityRotator.Instance.GravityAngle : 0f;
         }
     }
 }
