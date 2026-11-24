@@ -11,7 +11,12 @@ namespace GravityRoguelike.Combat
         [Tooltip("Despawn margin in viewport units. Damage always requires the actual camera view.")]
         [SerializeField, Min(0f)] private float viewportMargin = 0f;
         [SerializeField] private LayerMask collisionLayers = ~0;
+        [Tooltip("Layers damaged by an explosion (explosions also hurt the player, so include the player layer).")]
+        [SerializeField] private LayerMask explosionLayers = ~0;
         private Rigidbody2D body;
+        // Set by upgrades via ConfigureUpgrades(). 0 means: no bounce / no explosion.
+        private int bouncesLeft;
+        private float explosionRadius;
         private BoxCollider2D hitbox;
         private Transform owner;
         private Camera viewCamera;
@@ -29,6 +34,13 @@ namespace GravityRoguelike.Combat
             hitbox = GetComponent<BoxCollider2D>();
             filter = new ContactFilter2D { useTriggers = true };
             filter.SetLayerMask(collisionLayers);
+        }
+
+        /// <summary>Sets upgrade effects: number of wall bounces and explosion radius (0 = no explosion).</summary>
+        public void ConfigureUpgrades(int bounces, float radius)
+        {
+            bouncesLeft = Mathf.Max(0, bounces);
+            explosionRadius = Mathf.Max(0f, radius);
         }
 
         public void Launch(Transform shooter, Vector2 direction, Camera camera)
@@ -60,7 +72,7 @@ namespace GravityRoguelike.Combat
             int nearest = -1;
             for (int i = 0; i < count; i++)
                 if (CanHit(hits[i].collider) && (nearest < 0 || hits[i].distance < hits[nearest].distance)) nearest = i;
-            if (nearest >= 0) Hit(hits[nearest].collider, hits[nearest].point);
+            if (nearest >= 0) Hit(hits[nearest].collider, hits[nearest].point, hits[nearest].normal);
         }
 
         private bool CanHit(Collider2D other)
@@ -73,17 +85,82 @@ namespace GravityRoguelike.Combat
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (launched && !spent && CanHit(other)) Hit(other, other.ClosestPoint(transform.position));
+            if (!launched || spent || !CanHit(other)) return;
+            // While bounces remain, walls are handled by the sweep in FixedUpdate (it knows the surface normal).
+            if (bouncesLeft > 0 && other.GetComponentInParent<Health>() == null) return;
+            Hit(other, other.ClosestPoint(transform.position), Vector2.zero);
         }
 
-        private void Hit(Collider2D other, Vector2 point)
+        // Handles one hit: bounce off a wall, or explode / deal damage and despawn.
+        private void Hit(Collider2D other, Vector2 point, Vector2 normal)
         {
             if (spent) return;
             Health health = other.GetComponentInParent<Health>();
+
+            // Wall (no Health) with bounces left: reflect instead of despawning.
+            if (health == null && bouncesLeft > 0 && normal.sqrMagnitude > 0.5f)
+            {
+                // Only bounce if we actually fly into the surface (avoids re-hitting the wall we just left).
+                if (Vector2.Dot(body.linearVelocity, normal) < 0f) Bounce(normal);
+                return;
+            }
+
+            if (explosionRadius > 0f)
+            {
+                // The explosion replaces the direct hit damage, so a target is never damaged twice.
+                Explode(transform.position);
+            }
             // Renderer visibility is checked against the gameplay camera, never Scene-view isVisible.
-            if (health != null && IsPointInView(viewCamera, point, 0f) && IsTargetVisible(viewCamera, health))
+            else if (health != null && IsPointInView(viewCamera, point, 0f) && IsTargetVisible(viewCamera, health))
                 health.TakeDamage(new DamageInfo { amount = damage, sourcePosition = owner.position });
             Despawn();
+        }
+
+        // Reflects the velocity on the wall normal, keeps the speed and uses up one bounce.
+        private void Bounce(Vector2 normal)
+        {
+            bouncesLeft--;
+            Vector2 velocity = Vector2.Reflect(body.linearVelocity, normal);
+            body.linearVelocity = velocity;
+            body.rotation = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+            // Nudge out of the wall so the next sweep doesn't start inside it.
+            body.position += normal * 0.02f;
+        }
+
+        // Damages every Health in the radius (including the player) with the constant projectile damage.
+        private void Explode(Vector2 center)
+        {
+            var damaged = new System.Collections.Generic.HashSet<Health>();
+            foreach (Collider2D target in Physics2D.OverlapCircleAll(center, explosionRadius, explosionLayers))
+            {
+                Health health = target.GetComponentInParent<Health>();
+                if (health == null || !health.isActiveAndEnabled || !damaged.Add(health)) continue;
+                if (!IsTargetVisible(viewCamera, health)) continue;
+                health.TakeDamage(new DamageInfo { amount = damage, sourcePosition = center });
+            }
+            SpawnExplosionPlaceholder(center, explosionRadius);
+        }
+
+        // PLACEHOLDER visual: a red circle outline that disappears after a short time. Replace with a real effect later.
+        private static void SpawnExplosionPlaceholder(Vector2 center, float radius)
+        {
+            const int segments = 32;
+            var go = new GameObject("ExplosionPlaceholder");
+            go.transform.position = center;
+            var line = go.AddComponent<LineRenderer>();
+            line.useWorldSpace = false;
+            line.loop = true;
+            line.positionCount = segments;
+            line.startWidth = line.endWidth = 0.08f;
+            line.sortingOrder = 100;
+            line.material = new Material(Shader.Find("Sprites/Default"));
+            line.startColor = line.endColor = Color.red;
+            for (int i = 0; i < segments; i++)
+            {
+                float angle = i * Mathf.PI * 2f / segments;
+                line.SetPosition(i, new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * radius);
+            }
+            Destroy(go, 0.25f);
         }
 
         private void Despawn()

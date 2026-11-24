@@ -13,6 +13,8 @@ namespace GravityRoguelike.Combat
         [SerializeField] private ArrowProjectile spellAOrb;
         [SerializeField] private MageSpellArea spellBArea;
         [SerializeField] private Camera aimCamera;
+        [Tooltip("Found automatically in the parents if left empty.")]
+        [SerializeField] private MageUpgrades upgrades;
         [SerializeField, Min(0.01f)] private float fireInterval = 0.35f;
         [Tooltip("Seconds after the last A shot before retracting. Use at least the fire interval for uninterrupted held fire.")]
         [SerializeField, Min(0f)] private float keepRaisedWindow = 0.6f;
@@ -54,7 +56,12 @@ namespace GravityRoguelike.Combat
             return true;
         }
 
-        private void Awake() => staff = GetComponent<Animator>();
+        private void Awake()
+        {
+            staff = GetComponent<Animator>();
+            // Optional: without MageUpgrades the mage simply fires a single blob.
+            if (upgrades == null) upgrades = GetComponentInParent<MageUpgrades>(true);
+        }
 
         private void OnEnable()
         {
@@ -164,8 +171,27 @@ namespace GravityRoguelike.Combat
         private void Fire(ArrowProjectile prefab, Vector3 target)
         {
             if (prefab == null || aimCamera == null) return;
-            var projectile = Instantiate(prefab, firePoint.position, Quaternion.identity);
-            projectile.Launch(player.transform, AimDirection(target), aimCamera);
+
+            Vector2 baseDirection = AimDirection(target);
+            int count = upgrades != null ? Mathf.Max(1, upgrades.ProjectileCount) : 1;
+            float spread = upgrades != null ? upgrades.SpreadAngle : 0f;
+            float spacing = upgrades != null ? upgrades.SpawnSpacing : 0f;
+            // Sideways axis of the aim direction, used to place the blobs next to each other.
+            Vector2 sideways = new Vector2(-baseDirection.y, baseDirection.x);
+
+            for (int i = 0; i < count; i++)
+            {
+                // Centered index: 2 blobs -> -0.5 / +0.5, 3 blobs -> -1 / 0 / +1.
+                float centered = i - (count - 1) * 0.5f;
+                Vector2 direction = Quaternion.Euler(0f, 0f, centered * spread) * baseDirection;
+                Vector3 spawn = firePoint.position + (Vector3)(sideways * (centered * spacing));
+
+                var projectile = Instantiate(prefab, spawn, Quaternion.identity);
+                // Every blob gets all active modifiers (bounces / explosion).
+                if (upgrades != null)
+                    projectile.ConfigureUpgrades(upgrades.BounceCount, upgrades.ExplosionRadius);
+                projectile.Launch(player.transform, direction, aimCamera);
+            }
             MarkAirCast();
         }
 
