@@ -179,7 +179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 655915092440223000, guid: 77f55cced3e393a45ae4293e5d62b930, type: 3}
       propertyPath: m_LocalScale.x
-      value: 13.784039
+      value: 12.444445
       objectReference: {fileID: 0}
     - target: {fileID: 655915092440223000, guid: 77f55cced3e393a45ae4293e5d62b930, type: 3}
       propertyPath: m_LocalScale.y
@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6617318042683322622, guid: 77f55cced3e393a45ae4293e5d62b930, type: 3}
       propertyPath: m_Size.x
-      value: 30.324886
+      value: 27.377779
       objectReference: {fileID: 0}
     - target: {fileID: 6617318042683322622, guid: 77f55cced3e393a45ae4293e5d62b930, type: 3}
       propertyPath: m_Size.y
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 780976668}
   - component: {fileID: 61009901}
   - component: {fileID: 61009902}
+  - component: {fileID: 780976672}
   m_Layer: 0
   m_Name: Generated World Grid
   m_TagString: Untagged
@@ -316,7 +317,7 @@ MonoBehaviour:
   player: {fileID: 1294239387}
   portal: {fileID: 1564183637}
   goal: {fileID: 906798323}
-  itemSpawner: {fileID: 0}
+  itemSpawner: {fileID: 780976672}
   roomVisuals: {fileID: 1512341797}
   enemySpawner: {fileID: 61009901}
   enemyGrid: {fileID: 61009902}
@@ -363,6 +364,28 @@ Transform:
   - {fileID: 1512341796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780976672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780976667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ca0a10a0dc493459d9df8348d34a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityRoguelike.Items.ItemSpawner
+  heartSprite: {fileID: -3224682052510888474, guid: f46a7ed5f81451740b02b1db65c85345, type: 3}
+  maxHealthCrystalSprite: {fileID: -6375932032478222398, guid: 5578fb7ad557fa84aab1d571f2c78fc5, type: 3}
+  damageShardSprite: {fileID: -4930466443283878255, guid: d1b319cefc42a9f4b843e6570c074170, type: 3}
+  speedBootsSprite: {fileID: 6158556718056138069, guid: dfce8e142332e3144a8459d4067332e0, type: 3}
+  itemsPerRoom: 3
+  keepClearAroundEndpoints: 2
+  minItemSpacing: 4
+  pickupRadius: 0.35
+  itemScale: 3
+  sortingOrder: 5
 --- !u!1 &906798322
 GameObject:
   m_ObjectHideFlags: 0
