@@ -31,6 +31,8 @@ namespace GravityRoguelike.Combat
         public void Play(bool swingUp, float duration)
         {
             // Mirror the whole effect, including the cropped frames' position curves.
+            // The width upgrade needs no code here: the weapon pivot is scaled, and this effect
+            // is spawned below it, so it grows with the sword.
             baseScale = new Vector3(1f, swingUp ? -1f : 1f, 1f);
             transform.localScale = baseScale * (1f - whooshScale);
             GetComponent<Animator>().speed = 1f / duration;

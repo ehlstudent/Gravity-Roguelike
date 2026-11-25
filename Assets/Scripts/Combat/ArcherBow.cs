@@ -13,6 +13,8 @@ namespace GravityRoguelike.Combat
         [SerializeField] private Transform firePoint;
         [SerializeField] private ArrowProjectile arrowPrefab;
         [SerializeField] private Camera viewCamera;
+        [Tooltip("Found automatically in the parents if left empty.")]
+        [SerializeField] private ArcherUpgrades upgrades;
         [SerializeField, Min(0.01f)] private float shootDuration = 0.7f;
         [Tooltip("Minimum seconds between shot starts. A draw in progress cannot be interrupted.")]
         [SerializeField, Min(0f)] private float attackDelay = 0.8f;
@@ -38,6 +40,12 @@ namespace GravityRoguelike.Combat
         {
             animator = GetComponent<Animator>();
             wielder = weapon != null ? weapon.transform.parent : transform.root;
+            // Optional: without ArcherUpgrades the bow behaves exactly as before.
+            if (upgrades == null) upgrades = GetComponentInParent<ArcherUpgrades>(true);
+            // ArcherUpgrades may sit on a sibling object, so also search the whole player hierarchy.
+            if (upgrades == null) upgrades = transform.root.GetComponentInChildren<ArcherUpgrades>(true);
+            if (upgrades == null)
+                Debug.LogWarning("ArcherBow: no ArcherUpgrades found in the player hierarchy, upgrades will have no effect.", this);
         }
 
         private void OnEnable()
@@ -110,6 +118,14 @@ namespace GravityRoguelike.Combat
                 if (viewCamera != null)
                 {
                     var arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+                    if (upgrades != null)
+                    {
+                        // Point blank shot: if ready and an enemy is very close, this arrow is a one-shot.
+                        if (upgrades.TryConsumePointBlankShot(firePoint.position, wielder, out int oneShotDamage))
+                            arrow.SetDamage(oneShotDamage);
+                        arrow.ConfigureUpgrades(0, 0f, upgrades.PierceCount);
+                        arrow.ConfigureSpeedMultiplier(upgrades.SpeedMultiplier);
+                    }
                     arrow.Launch(wielder, AimDirection, viewCamera);
                 }
             }

@@ -11,6 +11,9 @@ namespace GravityRoguelike.Combat
         [Header("Input and animation")]
         [SerializeField] private InputActionReference attackAction;
         [SerializeField] private InputActionReference stabAction;
+        [Tooltip("Second sword only: follows this sword, swinging at the same time in the opposite direction. " +
+            "A follower ignores the input actions above.")]
+        [SerializeField] private Sword leaderSword;
         [Tooltip("Origin for checking whether level geometry blocks an attack.")]
         [SerializeField] private Transform slashAnimSpawnPoint;
         [SerializeField, Min(0.01f)] private float attackDuration = 0.42f;
@@ -71,6 +74,37 @@ namespace GravityRoguelike.Combat
         public event System.Action SlashFinished;
         public int Damage => damage;
 
+        /// <summary>True if the current (or last) swing goes bottom-up; used by a follower sword.</summary>
+        public bool IsSwingingUp => swingUp;
+
+        /// <summary>Upgrade: scales the whole sword (visual, reach) and the swing hit radius (1 = base size).</summary>
+        public float WidthMultiplier { get; private set; } = 1f;
+
+        /// <summary>Upgrade: swing speed (2 = swing takes half as long). The stab ignores it.</summary>
+        public float SpeedMultiplier { get; private set; } = 1f;
+
+        /// <summary>Sets the width multiplier: hit radius here, sword size via the weapon pivot.</summary>
+        public void SetWidthMultiplier(float multiplier)
+        {
+            WidthMultiplier = Mathf.Max(0.1f, multiplier);
+            // includeInactive: the second sword's pivot is switched off until it is unlocked.
+            ActiveWeapon pivot = GetComponentInParent<ActiveWeapon>(true);
+            if (pivot != null) pivot.SetSizeMultiplier(WidthMultiplier);
+        }
+
+        /// <summary>Sets the swing speed multiplier; only the swing duration changes, not the cooldown.</summary>
+        public void SetSpeedMultiplier(float multiplier)
+        {
+            SpeedMultiplier = Mathf.Max(0.1f, multiplier);
+        }
+
+        /// <summary>Back to base width and speed, e.g. for a new run.</summary>
+        public void ResetSwingUpgrades()
+        {
+            WidthMultiplier = 1f;
+            SpeedMultiplier = 1f;
+        }
+
         /// <summary>The current sword swing is the clock for the body's slash animation.</summary>
         public bool TryGetSlashProgress(out float progress)
         {
@@ -108,6 +142,14 @@ namespace GravityRoguelike.Combat
 
         private void OnEnable()
         {
+            // A follower is driven by its leader instead of by input.
+            if (leaderSword != null)
+            {
+                leaderSword.SlashStarted += OnLeaderSlashStarted;
+                leaderSword.StabStarted += OnLeaderStabStarted;
+                return;
+            }
+
             if (attackAction == null || attackAction.action == null)
             {
                 Debug.LogWarning("Sword: assign the existing Player/Attack input action.", this);
@@ -128,6 +170,12 @@ namespace GravityRoguelike.Combat
 
         private void OnDisable()
         {
+            if (leaderSword != null)
+            {
+                leaderSword.SlashStarted -= OnLeaderSlashStarted;
+                leaderSword.StabStarted -= OnLeaderStabStarted;
+            }
+
             if (ownedAttackAction != null)
             {
                 ownedAttackAction.performed -= OnAttack;
@@ -151,11 +199,24 @@ namespace GravityRoguelike.Combat
             TryAttack();
         }
 
+        /// <summary>Leader started a swing: swing the opposite way, right now.</summary>
+        private void OnLeaderSlashStarted(float duration)
+        {
+            // The leader has already flipped its direction when this event fires.
+            TryAttack(!leaderSword.IsSwingingUp);
+        }
+
+        /// <summary>Leader started a stab: stab as well.</summary>
+        private void OnLeaderStabStarted(float duration) => TryStab();
+
         /// <summary>Starts one alternating swing if ready. Animation events gate damage.</summary>
-        public bool TryAttack()
+        public bool TryAttack() => TryAttack(!swingUp);
+
+        /// <summary>Starts a swing in the given direction (true = bottom-up) if ready.</summary>
+        private bool TryAttack(bool goUp)
         {
             if (!TryBeginAttack(false)) return false;
-            swingUp = !swingUp;
+            swingUp = goUp;
             animator.SetBool(SwingUpParameter, swingUp);
             animator.SetTrigger(AttackParameter);
             SlashStarted?.Invoke(currentAttackDuration);
@@ -197,7 +258,8 @@ namespace GravityRoguelike.Combat
             hitWindowOpen = false;
             IsAttacking = true;
             IsStabbing = stab;
-            currentAttackDuration = stab ? stabDuration : attackDuration;
+            // Faster swing = shorter duration. The animator speed below follows automatically.
+            currentAttackDuration = stab ? stabDuration : attackDuration / SpeedMultiplier;
             attackStartedAt = Time.time;
             nextAttackAt = Time.time + attackCooldown;
             animator.speed = 1f / currentAttackDuration; // Attack clips use a one-second timeline.
@@ -262,7 +324,7 @@ namespace GravityRoguelike.Combat
                 GetStabHitBox(out hitOrigin, out Vector2 size, out float angle);
                 Physics2D.OverlapBox(hitOrigin, size, angle, filter, hitColliders);
             }
-            else Physics2D.OverlapCircle(point.position, hitRadius, filter, hitColliders);
+            else Physics2D.OverlapCircle(point.position, hitRadius * WidthMultiplier, filter, hitColliders);
             foreach (Collider2D candidate in hitColliders)
             {
                 Health health = candidate.GetComponentInParent<Health>();
@@ -318,7 +380,7 @@ namespace GravityRoguelike.Combat
             {
                 // The hit point follows the actual alternating swing and the holder's aim.
                 Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(hitPoint.position, hitRadius);
+                Gizmos.DrawWireSphere(hitPoint.position, hitRadius * WidthMultiplier);
             }
             if (stabHitPoint != null)
             {

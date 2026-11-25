@@ -8,6 +8,10 @@ namespace GravityRoguelike.Combat
     public class ActiveWeapon : MonoBehaviour
     {
         [SerializeField] private Camera aimCamera;
+        [Tooltip("Second sword: aims at the opposite side of the player, mirroring the first sword.")]
+        [SerializeField] private bool mirrorAim;
+
+        private float sizeMultiplier = 1f;
 
         private void LateUpdate()
         {
@@ -21,12 +25,21 @@ namespace GravityRoguelike.Combat
                 AimAt(ray.GetPoint(distance));
         }
 
+        /// <summary>Upgrade: makes the whole weapon (sword, hit point, effects) bigger.</summary>
+        public void SetSizeMultiplier(float multiplier)
+        {
+            sizeMultiplier = Mathf.Max(0.1f, multiplier);
+        }
+
         /// <summary>Aim the pivot in the XY plane, independently of the animated sword.</summary>
         public void AimAt(Vector3 worldPosition)
         {
             Vector3 direction = worldPosition - transform.position;
             direction.z = 0f;
             if (direction.sqrMagnitude < 0.000001f) return;
+            // World-space reflection through the pivot; the parent conversion below keeps it
+            // correct when gravity rotates the player.
+            if (mirrorAim) direction = -direction;
 
             Transform parent = transform.parent;
             Vector3 localDirection = parent != null
@@ -37,7 +50,7 @@ namespace GravityRoguelike.Combat
 
             // PlayerController2D flips its entire X scale. Counter the reflection on
             // this pivot's Y axis so aim, swing direction and effects stay consistent.
-            transform.localScale = new Vector3(1f, handedness, 1f);
+            transform.localScale = new Vector3(sizeMultiplier, handedness * sizeMultiplier, 1f);
             transform.localRotation = Quaternion.Euler(0f, 0f,
                 Mathf.Atan2(localDirection.y, localDirection.x) * Mathf.Rad2Deg);
         }
